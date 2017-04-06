@@ -2,7 +2,6 @@ package InterviewBit;
 
 import java.util.LinkedList;
 /*https://www.interviewbit.com/problems/sliding-window-max/
-http://www.shuati123.com/blog/2014/07/27/Sliding-Window-Maximum/
 http://www.programcreek.com/2014/05/leetcode-sliding-window-maximum-java/
 https://github.com/ankit249/Algorithms/blob/master/src/com/ds/heap/SlidingWindowMaximum.java	
 http://n00tc0d3r.blogspot.com/2013/04/sliding-window-maximum.html?view=sidebar
