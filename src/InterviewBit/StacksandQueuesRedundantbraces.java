@@ -9,10 +9,10 @@ public class StacksandQueuesRedundantbraces {
 
 	public static void main(String[] args) {   
 	String a = "((a + b)) ";
-    System.out.println(braces(a));
+    System.out.println(hasRedundantBraces(a));
 }
 	
-	public static int braces(String str) {
+	public static boolean hasRedundantBraces(String str) {
 		Stack<Character> stack = new Stack<Character>();
 		int index = 0;
 		while (index < str.length()) {
@@ -21,7 +21,7 @@ public class StacksandQueuesRedundantbraces {
 				stack.push(c);
 			} else if (c == ')') {
 				if (stack.peek() == '(') {
-					return 1;
+					return true;
 				} else {
 					while (!stack.isEmpty() && stack.peek() != '(') {
 						stack.pop();
@@ -31,6 +31,6 @@ public class StacksandQueuesRedundantbraces {
 			}
 			index++;
 		}
-		return 0;
+		return false;
 	}
 }
