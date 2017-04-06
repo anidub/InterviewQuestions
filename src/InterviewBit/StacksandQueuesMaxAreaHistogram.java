@@ -3,6 +3,8 @@ package InterviewBit;
 import java.util.Stack;
 /*///http://www.geeksforgeeks.org/largest-rectangle-under-histogram//
 //https://www.interviewbit.com/problems/largest-rectangle-in-histogram/
+watch this video for understanding
+https://www.youtube.com/watch?v=ZmnqCZp9bBs
 ///https://github.com/mission-peace/interview/blob/master/src/com/interview/stackqueue/MaximumHistogram.java	
 Time complexity is O(n)//http://www.programcreek.com/2014/05/leetcode-largest-rectangle-in-histogram-java/
 * Space complexity is O(n)*/
