@@ -12,22 +12,28 @@ https://www.youtube.com/watch?v=39grPZtywyQ
 		int[] A =  {1, 3, -1, -3, 5 ,3 ,6, 7};			//{4,2,5,7,9};		
 		maxSlidingWindow(A,3);
 	}
-public static int[] maxSlidingWindow(int[] arr,int w){
+	public static int[] maxSlidingWindow(int[] arr, int w) {
 		int l = arr.length;
-		int[] result = new int[l-w+1];
-		
-		LinkedList<Integer> deQueue = new LinkedList<Integer>();
-		for(int i = 0; i < l; i++){
-			if(!deQueue.isEmpty() && deQueue.get(0) + w <= i)
-				deQueue.remove(0);
-			
-			if(!deQueue.isEmpty() && arr[deQueue.size() - 1] <= arr[i])
-				deQueue.remove(deQueue.size()-1);
-			
-			deQueue.add(arr[i]);
-			
-			if(i + 1 >= w )
-				result[i+1-w] = arr[deQueue.get(0)];
+		int[] result = new int[l + 1 - w];
+		if (l == 1) {
+			result[0] = arr[0];
+			return result;
+		}
+		LinkedList<Integer> deque = new LinkedList<Integer>();
+		for (int i = 0; i < l; i++) {
+		     if(!deque.isEmpty() && deque.peekFirst() == i - w){
+		    	 System.out.println(deque.peekFirst());
+		    	 deque.poll();
+		     }
+		 
+		        while(!deque.isEmpty() && arr[deque.peekLast()] < arr[i]){
+		            deque.removeLast();
+		        }    
+		 
+		        deque.offer(i);
+		 
+		        if(i + 1 >= w)
+		            result[i + 1 - w]= arr[deque.peek()];
 		}
 		return result;
 	}
