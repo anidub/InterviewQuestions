@@ -37,7 +37,7 @@ For example, given [0,1,0,2,1,0,1,3,2,1,2,1], return 6.	*/
 	 
 	    return water;
 	}
-	
+	//studied
 	public static int trap(int A[], int n) {
         int left = 0; int right = n - 1;
         int res = 0;
