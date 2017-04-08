@@ -46,13 +46,14 @@ Determine if a Sudoku is valid, according to: http://sudoku.com.au/TheRules.aspx
 			}
 		}
 
+//total 9 subgrids
 		for (int k = 0; k < 9; k++) {//all sub grids
 			int x = k / 3;
 			int y = k % 3;
 			hashSet.clear();
 			for (int i = 3 * x; i < 3 * x + 3; i++) {
 				for (int j = y * 3; j < y * 3 + 3; j++) {
-					char c = A.get(j).charAt(i);
+					char c = A.get(j).charAt(i);//goes in stading direction for every sub grid
 					if (c == '.')
 						continue;
 					if (hashSet.contains(c) || (c -'0') > 9) // >9 because digit cant be greater than 9.Invalid case if given is string
