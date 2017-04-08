@@ -36,35 +36,31 @@ are essentially zero forming vales*///O(n)
     }
         
  
-    // Drive method
+      // Drive method
     public static void main(String arg[]) {
-        int arr[] = {1 ,2 ,-2 ,4 ,-4};
+        int arr[] = {1 ,1 ,1 ,4 ,-4};
         ArrayList<Integer> in = new ArrayList<Integer>();
-        in.add(1);in.add(2);in.add(-3);in.add(3);//in.add(-4);
+        in.add(1);in.add(2);in.add(3);in.add(-3);in.add(4);
         
+        System.out.println(maxLen(arr,arr.length));
         System.out.println("Length of the longest 0 sum subarray is " + lszero(in));
     }
    
     
  // Returns length of the largest subarray with 0 sum//O(n2)
-    int maxLen(int arr[], int n)
-    {
+   static int maxLen(int arr[], int n) {
         int max_len = 0; // Initialize result
 
         // Pick a starting point
-        for (int i = 0; i < n; i++)
-        {
+        for (int i = 0; i < n; i++) {
             // Initialize currr_sum for every starting point
             int curr_sum = 0;
 
             // try all subarrays starting with 'i'
-            for (int j = i; j < n; j++)
-            {
+            for (int j = i; j < n; j++) {
                 curr_sum += arr[j];
 
-                // If curr_sum becomes 0, then update max_len
-                // if required
-                if (curr_sum == 0)
+                // If curr_sum becomes 0, then update max_len if required
                    max_len = Math.max(max_len, j-i+1);
             }
         }
@@ -72,11 +68,13 @@ are essentially zero forming vales*///O(n)
     }
 
     //this is used to print the elements//O(N)
+   //This can be used for any sum not just 0 by changing line 78 to given sum
     //https://github.com/nagajyothi/InterviewBit/blob/master/Hashing/LSZero.java  
     public static ArrayList<Integer> lszero(ArrayList<Integer> A) {
         ArrayList<Integer> result = new ArrayList<Integer>();
+        if(A == null) return result;
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
-        map.put(0, -1);
+        map.put(0, -1);//change this for other than zero sum
         int start = -1;
         int end = -1;
         int sum = 0;
@@ -84,8 +82,8 @@ are essentially zero forming vales*///O(n)
         for(int i = 0; i < A.size(); i++){
             sum += A.get(i);
 
-            if(map.get(sum) != null){
-                if(maxLength <= (i - map.get(sum))){
+            if(map.containsKey(sum)){
+                if(maxLength < (i - map.get(sum))){
                     start = map.get(sum) + 1;
                     end = i;
                     maxLength = i - map.get(sum); 
@@ -101,6 +99,6 @@ are essentially zero forming vales*///O(n)
             }
         }
         return result;
-    }
+    } 
     
   }

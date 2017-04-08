@@ -23,7 +23,6 @@ public class HashingColorfulNumber {
 			numbers.add(temp);
 			num = num/10;
 		}
-		Collections.reverse(numbers);
 		TreeSet<Integer> subSets = new TreeSet<Integer>();
 		for(int i = 0; i < numbers.size(); i++){
 			for(int j = i; j < numbers.size(); j++){
