@@ -1,7 +1,9 @@
 package numbers;
 
 import java.util.PriorityQueue;
-// using heap time complexity : nklogk... n is number of arrays, k is size
+/* using heap time complexity : nklogk... n is number of arrays, k is size
+https://www.interviewbit.com/problems/merge-k-sorted-lists/
+	startindex maintains the starting position of evry array in the priority queue*/
 public class mergeksortedarrays {
 
 	public static class ArrayContainer implements Comparable<ArrayContainer>{
