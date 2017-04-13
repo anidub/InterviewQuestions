@@ -10,7 +10,12 @@ Return :    1
            / \
           2   3
  http://www.geeksforgeeks.org/construct-tree-from-given-inorder-and-preorder-traversal/         
-Time Complexity: O(n^2). Worst case occurs when tree is left skewed. */
+Time Complexity: O(n^2). 
+char in[] = new char[]{'D', 'B', 'E', 'A', 'F', 'C'};
+char pre[] = new char[]{'A', 'B', 'D', 'E', 'C', 'F'};
+O/P:Inorder traversal of constructed tree is :
+D B E A F C
+Worst case occurs when tree is left skewed. Example Preorder and Inorder traversals for worst case are {A, B, C, D} and {D, C, B, A}.*/
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
@@ -35,6 +40,28 @@ Time Complexity: O(n^2). Worst case occurs when tree is left skewed. */
 		
 		node.left = construct(inorder, start, i-1,preorder, preorderindex + 1);// since the index has to the  element just after the discovered element i.e nodevalue
 		node.right = construct(inorder, i+1,end, preorder, preorderindex+i-start+1);// since the index has to the  element just after the last element
+		return node;		
+	}
+	
+	public static TreeNode constructTree(int[] inorder, int[] preorder){
+		if(inorder == null && preorder == null) return null;
+		if(inorder == null || preorder == null || inorder.length != preorder.length) return null;
+		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+		for(int i : inorder){
+			map.put(inorder[i], map.getOrDefault(inorder[i], 1)+1);
+		}
+		return constructTreeNode(map,inorder, 0, inorder.length-1, preorder);
+	}
+	
+	static int index = 0;
+	public static TreeNode constructTreeNode(HashMap<Integer, Integer> map, int[] inorder, int start, int end, int[] preorder){
+		if(start > end) return null;
+		TreeNode node = new TreeNode(preorder[index]);
+
+		int inorderindex = map.get(preorder[index]);
+		index++;
+		node.left = constructTreeNode(map, inorder, start, inorderindex-1, preorder);
+		node.right = constructTreeNode(map, inorder, start, inorderindex+1, preorder);
 		return node;		
 	}
 }

@@ -9,7 +9,18 @@ Return :
            / \
           2   3
 https://www.interviewbit.com/problems/construct-binary-tree-from-inorder-and-postorder/
-http://www.geeksforgeeks.org/construct-a-binary-tree-from-postorder-and-inorder/*/
+http://www.geeksforgeeks.org/construct-a-binary-tree-from-postorder-and-inorder/
+in[]   = {4, 8, 2, 5, 1, 6, 3, 7}
+post[] = {8, 4, 5, 2, 6, 7, 3, 1} 
+
+Output : Root of below tree
+          1
+       /     \
+     2        3
+   /    \   /   \
+  4     5   6    7
+    \
+      8*/
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
@@ -35,5 +46,4 @@ http://www.geeksforgeeks.org/construct-a-binary-tree-from-postorder-and-inorder/
 		node.right = construct(inorder, i+1, end, postorder, postindex-1);// since the postindex has to the  element just before the last element
 		return node;
 	}
-
 }
