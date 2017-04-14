@@ -47,15 +47,15 @@ Worst case occurs when tree is left skewed. Example Preorder and Inorder travers
 		if(inorder == null && preorder == null) return null;
 		if(inorder == null || preorder == null || inorder.length != preorder.length) return null;
 		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
-		for(int i : inorder){
-			map.put(inorder[i], map.getOrDefault(inorder[i], 1)+1);
+		for(int i = 0; i < inorder.length; i++){
+			map.put(inorder[i], i);
 		}
 		return constructTreeNode(map,inorder, 0, inorder.length-1, preorder);
 	}
 	
 	static int index = 0;
 	public static TreeNode constructTreeNode(HashMap<Integer, Integer> map, int[] inorder, int start, int end, int[] preorder){
-		if(start > end) return null;
+		if(index == inorder.length|| start > end) return null;
 		TreeNode node = new TreeNode(preorder[index]);
 
 		int inorderindex = map.get(preorder[index]);
