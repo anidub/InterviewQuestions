@@ -3,7 +3,11 @@ package InterviewBit;
 import java.util.Stack;
 
 public class TreesTwoSumBinary {
-
+/*/http://www.geeksforgeeks.org/find-a-pair-with-given-sum-in-bst/
+	Given a binary search tree T, where each node contains a positive integer, and an integer K, 
+	you have to find whether or not there exist two different nodes A and B such that A.value + B.value = K.
+			https://www.interviewbit.com/problems/2-sum-binary-tree/
+				 O(n) time, O(Logn) space and doesn’t modify BST*/
 	public static void main(String[] args) {
 		TreeNode root =  new TreeNode(15);
 		    root.left = new TreeNode(10);
@@ -27,7 +31,6 @@ public class TreesTwoSumBinary {
 		TreeNode curr1 = root;
 		TreeNode curr2 = root;
 		while (true) {
-
 			while (s1 == false) {
 				if (curr1 != null) {
 					st1.push(curr1);
@@ -69,6 +72,58 @@ public class TreesTwoSumBinary {
 
 			if (val1 >= val2)
 				return false;
+		}
+	}
+	
+	public static boolean find(TreeNode node, int target){
+		Stack<TreeNode> st1 = new Stack<TreeNode>();
+		Stack<TreeNode> st2 = new Stack<TreeNode>();
+		TreeNode current1 = node;
+		TreeNode current2 = node;
+		boolean s1 = false;
+		boolean s2 = false;
+		int val1 = 0;
+		int val2 = 0;
+		while(true){
+			if(s1 == false){
+				if(current1 != null){
+					st1.push(current1);
+					current1 = current1.left;
+				}else{
+					if(st1.isEmpty())
+						s1 = true;
+					else{
+						current1 = st1.pop();
+						val1 = current1.data;
+						s1 = true;
+						current1 = current1.right;
+					}
+				}
+				if(s2 == false){
+					if(current2 != null){
+						st2.push(current2);
+						current2 = current2.right;
+					}else{
+						if(st2.isEmpty()){
+							s2 = true;
+						}else{
+							current2 = st2.pop();
+							val2 = current2.data;
+							current2 = current2.left;
+							s2 = true;
+						}
+					}
+				}
+				if(val1 != val2 && val1 + val2 == target){
+					return true;
+				}else if(val1 + val2 > target){
+					s2 = false;
+				}else if(val1 + val2 < target){
+					s1 = false;
+				}
+				if(val1 >= val2)
+					return false;
+			}
 		}
 	}
 }
