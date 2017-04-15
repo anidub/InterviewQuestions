@@ -3,8 +3,21 @@ package InterviewBit;
 import java.util.Stack;
 
 public class TreesRecoverBinarySearchTree {
-
+	/*Two elements of a binary search tree (BST) are swapped by mistake.
+	Tell us the 2 values swapping which the tree will be restored.
+	https://www.interviewbit.com/problems/recover-binary-search-tree/
+*/
 	public static void main(String[] args) {
+		TreeNode root =  new TreeNode(15);	//			15
+	    root.left = new TreeNode(10);		//	10				20
+	    root.right = new TreeNode(20);		//8		12		25		16
+	    root.left.left = new TreeNode(8);//
+	    root.left.right = new TreeNode(12);
+	 /*   root.right.left = new TreeNode(16);
+	    root.right.right = new TreeNode(25);*/
+	    root.right.left = new TreeNode(25);
+	    root.right.right = new TreeNode(16);
+	    recoverMorris(root);
 
 	}
 //http://stackoverflow.com/questions/11824946/in-a-bst-two-nodes-are-randomly-swapped-we-need-to-find-those-two-nodes-and-swap
@@ -80,11 +93,12 @@ public class TreesRecoverBinarySearchTree {
 		int tmp = a.data;
 		a.data = b.data;
 		b.data = tmp;
+		
 	} 
 	
 // time O(n) and uses O(1) space! 	
 //http://n00tc0d3r.blogspot.com/2013/05/recover-binary-search-tree.html	
-private void recoverMorris(TreeNode root) {
+private static void recoverMorris(TreeNode root) {
 TreeNode pre = null, cur = root, n1 = null, n2 = null;
 	while (cur != null) {
 		if (cur.left != null) {
