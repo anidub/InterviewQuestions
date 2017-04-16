@@ -3,6 +3,11 @@ package InterviewBit;
 public class TreesInvertBinaryTree {
 //Given a binary tree, invert the binary tree and return it.//O(n)
 // give mirror image of binary tree	
+/*	  	1					1							
+	   /   \        ->            
+	  2     3			3			2
+	 / \   / \		7		6	5		4
+	4   5 6   7*/
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
@@ -19,3 +24,4 @@ public class TreesInvertBinaryTree {
 		return root;
 	}
 }
+
