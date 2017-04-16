@@ -125,4 +125,18 @@ protected class TreeLinkNode{
 			}
 		}
 	}
+		/*If complete binary tree*/
+	public void connectTree(TreeLinkNode root){
+	    while(root != null) {
+	    	TreeLinkNode ptr = root;
+	        while(ptr != null)  {
+	            if(ptr.left != null)
+	                ptr.left.next = ptr.right;
+	            if(ptr.right != null && ptr.next != null)
+	                ptr.right.next = ptr.next.left;
+	            ptr = ptr.next;
+	        }
+	        root = root.left;
+	    }
+	}
 }
