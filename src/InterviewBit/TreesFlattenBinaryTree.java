@@ -5,6 +5,11 @@ import java.util.Stack;
 public class TreesFlattenBinaryTree {
 /*//https://www.interviewbit.com/problems/flatten-binary-tree-to-linked-list/
 //Given a binary tree, flatten it to a linked list in-place.
+ *ip->   1
+        / \
+       2   5
+      / \   \
+     3   4   6
 	//o/p-> 
 	1
     \
