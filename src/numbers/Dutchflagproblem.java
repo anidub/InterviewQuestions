@@ -45,19 +45,4 @@ public class Dutchflagproblem {
 			}
 		}
 	} 
-	
-	public static boolean binarysearch(int[] arr, int k){
-		int low = 0;
-		int high = arr.length - 1;
-		int mid;
-		
-		while(low <= high){
-			mid = low + (high-low)/2;
-			if(arr[mid] == k) return true;
-			else if(arr[mid] > k) high = mid - 1;
-			else low = mid + 1;
-		}
-		if(low > high) return false;
-		return false;
-	}
 }
