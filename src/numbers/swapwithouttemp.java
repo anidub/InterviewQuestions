@@ -10,7 +10,5 @@ public class swapwithouttemp {
 		a = a - b;
 		System.out.println("a :" + a);
 		System.out.println("b :"  + b);
-
 	}
-
 }

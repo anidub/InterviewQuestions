@@ -15,7 +15,7 @@ public class searchinrotatedarray {
 	public static int search(int[] numbers, int low, int high, int key){
 		if(low > high)
 			return -1;
-		int mid = (low + high)/2;		
+		int mid = (low + (high-low)/2);		
 		if(numbers[mid] == key)
 			return mid;
 		
@@ -35,4 +35,49 @@ public class searchinrotatedarray {
 			
 			return search(numbers,low,mid-1,key);		
 	}
+/*	http://www.programcreek.com/2014/06/leetcode-search-in-rotated-sorted-array-java/
+*/	public static int getIndexIterative(int[] num, int key){
+		int low = 0; int high = num.length-1;
+		
+		while(low <= high){
+			int mid = low + (high-low)/2;
+			if(num[mid] == key)
+				return mid;
+			if(num[low] <= num[mid]){
+				if(key > num[low] && key <= num[mid]){
+					high = mid-1;
+				}else
+					low = mid+1;				
+			} else {
+				if (key > num[mid] && key <= num[high])
+					low = mid + 1;
+				else
+					high = mid - 1;
+			}
+		}
+		return -1;
+	}
+
+/*//find minimum in sorted array
+http://www.programcreek.com/2014/02/leetcode-find-minimum-in-rotated-sorted-array/
+*/public static int findMin(int[] arr){
+	if(arr.length == 1)
+		return arr[0];
+	
+	int low = 0; int high = arr.length-1;
+	if(arr[low] <= arr[high])
+		return arr[low];
+
+	while(low <= high){
+		if(high - low == 1)
+			return arr[high];
+		int mid = low + (high-low)/2;
+		
+		if(arr[mid] > arr[high])
+			low = mid;
+		else
+			high = mid;
+	}
+	return arr[low];
+}
 }

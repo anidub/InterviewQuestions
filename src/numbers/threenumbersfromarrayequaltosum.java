@@ -1,10 +1,6 @@
 package numbers;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.Scanner;
 
 public class threenumbersfromarrayequaltosum {
 
@@ -18,14 +14,10 @@ public class threenumbersfromarrayequaltosum {
 		int[] array2 = {2,3,4,5};
 		int[] array3 = {3,4,5,6};
 		int k = 8;
-		HashMap<Integer, Integer> nummap = new HashMap<Integer,Integer>();
-		
+		HashMap<Integer, Integer> nummap = new HashMap<Integer,Integer>();		
 		for(int i  = 0; i < array3.length; i++){
 			nummap.put(array3[i], 1);
-		}
-		
-		
-		
+		}		
 		for(int i = 0; i < array1.length; i++){
 			for(int j = 0; j < array2.length; j++){
 				int sum = array1[i] + array2[j];
@@ -36,9 +28,6 @@ public class threenumbersfromarrayequaltosum {
 					
 				}
 			}
-		}
-		
-		
+		}			
 	}
-
 }

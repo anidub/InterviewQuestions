@@ -24,27 +24,5 @@ public class StocksPrices {
 		System.out.println("The maximum profit is : " + profit);
 		System.out.println("The stock should be bought on : " + (buy + 1));
 		System.out.println("The stock should be sold on : " + (sell + 1));
-				
-		/*
-		int min = 0;
-		  int maxDiff = 0;
-		 int buy = 0,sell = 0;
-		  for (int i = 0; i < stocks.length; i++) {
-		    if (stocks[i] < stocks[min])
-		      min = i;
-		    int diff = stocks[i] - stocks[min];
-		    if (diff > maxDiff) {
-		      buy = min;
-		      sell = i;
-		      maxDiff = diff;
-		    }
-		  }
-		  
-		  System.out.println(maxDiff);
-		  System.out.println("Day " + (buy+1));
-		  System.out.println("Sell " + (sell+1));
-		  
-*/
 	}
-
 }
