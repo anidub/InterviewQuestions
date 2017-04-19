@@ -1,28 +1,19 @@
 package numbers;
-
+import java.util.TreeMap;
 public class stringprintwithspace {
 //print new characters on diff line and same on same line
 	public static void main(String[] args) {
-		String s1 = "abcc";
-		/*for(int i = 0; i <= s1.length(); i++){
-			if(s1.charAt(i) == s1.charAt(i+1)){
-				System.out.println(s1.charAt(i) + " " + s1.charAt(i+1));
-			}else{
-				System.out.println(s1.charAt(i));
+		String s1 = "abccdefffg";
+		print(s1);
+	}		
+	public static void print(String s){
+		TreeMap<Character, Integer> tm = new TreeMap<Character, Integer>();
+		System.out.print(s.charAt(0));
+		for(int i = 1; i < s.length(); i++){
+			if(s.charAt(i) != s.charAt(i-1)){
+				System.out.println();
 			}
-		}*/
-
-		for(int i = 0; i < s1.length(); i++){
-			for(int j = i + 1; j < s1.length(); j++){
-			if(s1.charAt(i) == s1.charAt(j)){
-				System.out.println(s1.charAt(i) + " " + s1.charAt(j));
-			}
-			}
-			//	System.out.println(s1.charAt(i));
-			
-		
-		
+			System.out.print(s.charAt(i));
+		}
 	}
-
-}
 }
