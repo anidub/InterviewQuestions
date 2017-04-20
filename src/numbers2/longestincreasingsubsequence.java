@@ -5,6 +5,8 @@ public class longestincreasingsubsequence {
 	//of a given sequence such that all elements of the subsequence are sorted in increasing order.
 	//For example, length of LIS for { 10, 22, 9, 33, 21, 50, 41, 60, 80 } is 6 and LIS is {10, 22, 33, 50, 60, 80}.
 	//http://www.geeksforgeeks.org/dynamic-programming-set-3-longest-increasing-subsequence/
+	//O(n^2)
+	//http://www.geeksforgeeks.org/longest-monotonically-increasing-subsequence-size-n-log-n/
 	public static void main(String[] args) {
 		int[] array = {10, 22, 9, 33, 21, 50, 41, 60, 80};
 		LIS(array);
@@ -37,6 +39,5 @@ public class longestincreasingsubsequence {
 			}
 		}
 		System.out.println("max is " + max);
-
 	}	
 }
