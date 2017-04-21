@@ -9,7 +9,6 @@ The disadvantage of BigDecimal is that it's slower, and it's a bit more difficul
 If you are dealing with money, or precision is a must, use BigDecimal. Otherwise Doubles tend to be good enough.*/
 
 public class roundup {
-
 	public static void main(String[] args) {
 		double f = 76.51445;
 		double g = 76.2266;
@@ -17,11 +16,11 @@ public class roundup {
 		System.out.println();
 		//roundupnum(g,3);
 		
-		round(g,3);// 75.52
-	}
-
-	
-	public static void round(double f, int num){
+		//round(g,3);// 75.52
+		double a = 5.455;
+		roundUpa(a,2);
+	}	
+/*	public static void round(double f, int num){
 		System.out.println(f);
 		
 		int k = 1;int n = num;
@@ -43,5 +42,23 @@ public class roundup {
 		 }
 		 BigDecimal finalNum = new BigDecimal(t.substring(0,i+1+n));
 		 System.out.println(finalNum);
+	}*/
+	
+	//tested//works !!
+	public static void roundUpa(double f, int num){
+		String[] arr = String.valueOf(f).split("\\.");
+		String k = arr[1];
+		boolean isNine = false;
+		String nextHalf = k.substring(0, num+1);
+		Integer lastDigit = nextHalf.charAt(nextHalf.length()-1) - '0';
+		String kk = k.substring(0, num+1);
+		Float decimals = Float.parseFloat(k.substring(0, num+1));
+		if(lastDigit > 5){
+			decimals++;
+		}
+		System.out.println(decimals);
+		StringBuilder res = new StringBuilder();
+		res.append(arr[0]).append(".").append(decimals);
+		System.out.println(res.substring(0,res.length()-2));		
 	}
 }
