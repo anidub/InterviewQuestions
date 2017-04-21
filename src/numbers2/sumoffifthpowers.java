@@ -14,7 +14,7 @@ public class sumoffifthpowers {
 				int d = number %10;
 				number = number/10;
 				int temp = d;
-				for(int j = 1; j < 5;j++){
+				for(int j = 1; j < 5;j++){ //starting from 1 because temp == d in first case 
 					temp *= d;
 				}
 				sumofPowers += temp;
