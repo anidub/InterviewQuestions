@@ -24,9 +24,9 @@ public class largestIsland {
                     sum=0;
                     tempPath="["+i+"]["+j+"]";
                     if(allPath.indexOf(tempPath)==-1){
-                    tempPath="";
-                    find(i,j);
-                    System.out.println("Weight="+sum+":: Path="+tempPath);//Display the weight of each Island
+                    	tempPath="";
+                    	find(i,j);
+                    	System.out.println("Weight="+sum+":: Path="+tempPath);//Display the weight of each Island
                     }
                 }
  
@@ -119,6 +119,64 @@ public class largestIsland {
 		print_components(arr);
 	}*/
     
-    
-    
 } //class
+
+
+/*  working USE THIS !!! STUDIED !!
+public class findLargetsIsland {
+	static boolean[][] visited = new boolean[4][4];
+	int i,j;
+	// variables for the area:
+	static int current_area = 0;
+	static int row = 4; static int col = 4;
+	static int max_area = 0;
+	static int arr[][]={    {1,0,0,0},
+							{1,0,1,1},
+							{1,1,0,1},
+							{0,0,0,1} 
+	};
+	 // functions
+	public static void prepare_visited_map() {
+	    for(int i=0;i<row;i++) {
+	        for(int j=0;j<col;j++) visited[i][j] = false;
+	    }
+	}
+
+	// recursive function to calculate the area around (x,y)
+	public static void calculate_largest_area(int x, int y) {
+		 if(x<0 || y<0 || x>=row || y>=col) return;
+	    if(visited[x][y] == true) return;
+	    // check if out of boundaries
+	   
+	    // check if the cell is 0
+	    if(arr[x][y] == 0) {
+	        visited[x][y] = true;
+	        return;
+	    }
+
+	    // found a propper cell, proceed
+	    current_area++;
+	    visited[x][y] = true;
+	    // call recursive function for the adjacent cells (north, east, south, west)
+	    calculate_largest_area(x,y-1);
+	    calculate_largest_area(x+1,y);
+	    calculate_largest_area(x,y+1);
+	    calculate_largest_area(x-1,y);
+	    // by the end of the recursion current_area will hold the area around the initial    cell
+	}
+
+	public static void main(String[] args) {
+	    // calculate the sorrounding area of each cell, and pick up the largest of all results
+		  prepare_visited_map();
+		for(int i=0;i<row;i++) {
+	        for(int j=0;j<col;j++) {	          
+	            current_area = 0;
+	            calculate_largest_area(i,j);
+	            if(current_area > max_area)   
+	            	max_area = current_area;
+	        }
+	    }
+	    System.out.println("Max area is :" + max_area);
+	}
+	
+}*/
