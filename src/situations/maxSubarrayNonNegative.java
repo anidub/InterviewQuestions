@@ -46,8 +46,7 @@ public class maxSubarrayNonNegative {
 			result[k++] = source[i];
 		}
 		return result;
-	}
-	
+	}	
 	/**
 	 * https://www.interviewbit.com/problems/repeat-and-missing-number-array/
 	 * You are given a read only array of n integers from 1 to n.
@@ -77,8 +76,7 @@ Return A and B.
 	    b =  givenSum - sum;
 	    result.add(aa);result.add(b);
 	    return result;
-	}
-	
+	}	
 	//https://www.interviewbit.com/problems/add-one-to-number/
 	public static void getNext(ArrayList<Integer> arr){
 		int number = 0;
@@ -97,7 +95,7 @@ Return A and B.
 			number = number/10;
 		}
 		
-		for (int i = 0; i < result.size() / 2; i++) {
+		for (int i = 0; i < result.size() / 2; i++) {//in place reverse array ! v imp
 	        int temp = result.get(i);
 	        result.set(i, result.get(result.size() - i - 1));
 	        result.set(result.size() - i - 1, temp);
