@@ -7,7 +7,7 @@ import java.util.Map.Entry;
 import java.util.PriorityQueue;
 
 public class nocharacterrepeatedtwice {
-
+	//no same letters same op : adba
 	private static String rearrangeLetters(String s) {
 		final class CharFreq implements Comparable<CharFreq> {
 			char c;
@@ -67,7 +67,7 @@ public class nocharacterrepeatedtwice {
 		System.out.println(rearrangeLetters(str));
 		System.out.println(reLetters("ababa"));
 	}
-
+//same letter together : aaabb
 	public static String reLetters(String a) {
 		StringBuilder res = new StringBuilder();
 		HashMap<Character, Integer> hmap = new HashMap<Character, Integer>();
@@ -84,14 +84,12 @@ public class nocharacterrepeatedtwice {
 			if (res.toString().length() == a.length())
 				break;
 			char c = entry.getKey();
-			res.append(c);
 			int num = entry.getValue();
-			while (num > 1) {
+			while (num > 0) {
 				res.append(c);
 				num--;
 			}
 		}
 		return res.toString();
 	}
-
 }
