@@ -140,6 +140,8 @@ public static void main (String[] args) throws java.lang.Exception{
 
 //studied//http://code.geeksforgeeks.org/sceIv7
 //http://www.geeksforgeeks.org/find-the-longest-substring-with-k-unique-characters-in-a-given-string/
+//can refer to this also for hashset solution:
+//http://www.programcreek.com/2013/02/leetcode-longest-substring-without-repeating-characters-java/
 public static void getSubString(String s,int k){
     int l=s.length();
     int hasFound[]=new int[26];
