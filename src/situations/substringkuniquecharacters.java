@@ -134,6 +134,43 @@ public static void main (String[] args) throws java.lang.Exception{
 			String s = "abcaadeaaa";
 			int k=3;
 			kUniques(s,k);
+			getSubString(s,k);
 }
 
+
+//studied//http://code.geeksforgeeks.org/sceIv7
+//http://www.geeksforgeeks.org/find-the-longest-substring-with-k-unique-characters-in-a-given-string/
+public static void getSubString(String s,int k){
+    int l=s.length();
+    int hasFound[]=new int[26];
+    int maxWindowSize = Integer.MIN_VALUE, u=0;
+    String str=null;
+    for (int currStart=0,currEnd=0; currEnd < l; currEnd++) {
+        char c = s.charAt(currEnd);
+        if(hasFound[c-'a']==0) u++;
+        hasFound[c-'a']++;
+        if(u>k) {
+            int prevCurrStart = currStart;
+            while (u > k) {
+                while (hasFound[s.charAt(prevCurrStart) - 'a'] != 0) {
+                    hasFound[s.charAt(currStart) - 'a']--;
+                    prevCurrStart = currStart;
+                    currStart++;
+                }
+                u--;
+            }
+        }
+        else if (u==k){
+            int len=currEnd-currStart+1;
+            if(len>maxWindowSize)  {
+                maxWindowSize=len;
+                str=s.substring(currStart,currEnd+1);
+            }
+        }
+    }
+
+    if(u<k)
+        System.out.println("Not enough chars");
+    else System.out.println(str);
+}
 }
