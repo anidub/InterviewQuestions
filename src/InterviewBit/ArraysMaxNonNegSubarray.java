@@ -12,27 +12,32 @@ NOTE 2: If there is still a tie, then return the segment with minimum starting i
 public class ArraysMaxNonNegSubarray {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-	
-	public ArrayList<Integer> maxset(ArrayList<Integer> array) {
-		ArrayList<Integer> maxArray = new ArrayList<Integer>();
-		ArrayList<Integer> newArray = new ArrayList<Integer>();
-		long maxSum = 0; long newSum = 0;
-		for(Integer i:array){
+		ArrayList<Integer> array = new ArrayList<Integer>();
+		array.add(0);array.add(0);array.add(-1);array.add(0);
+		getmax(array);
+	}	
+	public static ArrayList<Integer> getmax(ArrayList<Integer> array){
+		ArrayList<Integer> news = new ArrayList<Integer>();
+		ArrayList<Integer> maxs = new ArrayList<Integer>();
+		long maxsum = Long.MIN_VALUE;
+		long newsum = 0;
+		for(int i: array){
 			if(i >= 0){
-				newSum += i;
-				newArray.add(i);
+				newsum += i;
+				news.add(i);
 			}else{
-				newSum = 0;
-				newArray = new ArrayList<Integer>();
-			}
-			if(maxSum < newSum || maxSum == newSum || maxArray.size() < newArray.size()){
-				maxSum = newSum;
-				maxArray = newArray;
+				if(maxsum < newsum || (maxsum == newsum && maxs.size() <= news.size())) {
+					maxsum = newsum;
+					maxs = news;
+				}
+				newsum = 0;
+				news = new ArrayList<Integer>();
 			}
 		}
-		return maxArray;		
+		if(maxsum < newsum || (maxsum == newsum && maxs.size() <= news.size())) {
+			maxsum = newsum;
+			maxs = news;
+		}		
+		return maxs;
 	}
 }
