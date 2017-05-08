@@ -14,6 +14,7 @@ Given [5, 7, 7, 8, 8, 10] and target value 8, return [3, 4]	*/
 		if(numbers.size() == 0) return null;
 		result.add(-1);result.add(-1);
 		find(numbers, 0, numbers.size(), target, result);
+		//findrange(numbers,target);
 		return result;
 	}
 	
@@ -31,16 +32,54 @@ Given [5, 7, 7, 8, 8, 10] and target value 8, return [3, 4]	*/
 			find(numbers,mid+1,end,target,result);
 		else{
 			result.add(mid);result.add(mid);
-			int t1 = mid;
+			int t1 = mid+1;
 			while(t1 > start && numbers.get(t1 - 1) == numbers.get(mid)){
 				t1--;
 				result.set(0, t1);
 			}
-			int t2 = mid;
+			int t2 = mid-1;
 			while(t2 < end && numbers.get(t2 - 1) == numbers.get(mid)){
 				t2++;
 				result.set(1, t2);
 			}
 		}
+	}
+	
+	public static ArrayList<Integer> findrange(int[] numbers, int k){
+	//Integer[] numbers = (Integer[]) num.toArray();
+		int low = 0;
+		int high = numbers.length-1;
+		
+		ArrayList<Integer> result = new ArrayList<Integer>();
+		result.add(-1);result.add(-1);
+		while(low <= high){
+			int mid = low + (high-low)/2;
+			if(numbers[mid] == k){
+				int t1 = mid;
+				int t2 = mid;
+				while(numbers[t1-1] == numbers[mid] && t1 >= low){
+					t1--;
+				}
+				result.set(0,t1);
+				while(numbers[t2+1] == numbers[mid] && t2 <= high){
+					t2++;
+				}
+				result.set(1,t2);
+				break;
+			}else if(k < numbers[mid]){
+				high = mid-1;
+			}else
+				low = mid+1;
+		}
+		
+		return result;
+	}
+	
+	public static void main(String[] args){
+
+		int[] arr = {5, 7, 7, 8, 8, 10};
+		int target = 8;
+		findrange(arr, target);
+		
 	}
 }
