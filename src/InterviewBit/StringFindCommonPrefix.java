@@ -1,8 +1,10 @@
 package InterviewBit;
 
 import java.util.ArrayList;
-///http://www.geeksforgeeks.org/longest-common-prefix-set-4-binary-search/
+/*///http://www.geeksforgeeks.org/longest-common-prefix-set-4-binary-search/
 //https://www.interviewbit.com/problems/longest-common-prefix/
+Longest common prefix for a pair of strings S1 and S2 is the longest string S which is the prefix of both S1 and S2.
+As an example, longest common prefix of "abcdefgh" and "abcefgh" is "abc".*/
 /*Time Complexity : T(M) = T(M/2) + O(MN) 
 N = Number of strings M = Length of the largest string string*/
 public class StringFindCommonPrefix{
@@ -11,6 +13,8 @@ public class StringFindCommonPrefix{
 		words.add("geeksforgeeks");words.add("geels");
 		words.add("geeks");
 		System.out.println(findCommonPrefix(words));
+		String[] array = {"geeksforgeeks", "geels", "geeks"};
+		System.out.println(longestCommon(array));
 	}
 // A Function to find the string having the minimum length and returns that length
 public static int findMinWord(ArrayList<String>  words){
@@ -51,5 +55,36 @@ public static boolean allContains(ArrayList<String> words, String word, int star
 		}
 	}
 	return true;
+}
+
+/*//use this coz simple
+// time complexity is O(N M) where,
+N = Number of strings
+M = Length of the largest string string 
+Auxiliary Space : To store the longest prefix string we are allocating space which is O(M).
+http://www.geeksforgeeks.org/longest-common-prefix-set-2-character-by-character-matching/
+*/public static String longestCommon(String[] array){
+	int n = array.length;
+	String result = "";
+	char current;
+	int min = findMin(array);
+	for(int i = 0; i < min; i++){
+		current = array[0].charAt(i);
+		for(int j = 1; j < n; j++){
+			if(array[j].charAt(i) != current)
+				return result;
+		}
+		result += current;
+	}
+	return result;
+}
+
+public static int findMin(String[] array){
+	int min = Integer.MAX_VALUE;
+	for(int i = 0; i < array.length;i++){
+		if(array[i].length() < min)
+			min = array[i].length();
+	}
+	return min;
 }
 }
