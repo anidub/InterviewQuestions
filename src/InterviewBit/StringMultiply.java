@@ -2,6 +2,12 @@ package InterviewBit;
 
 public class StringMultiply {
 //https://www.interviewbit.com/problems/multiply-strings/
+/*	
+	Given two numbers represented as strings, return multiplication of the numbers as a string.
+			 Note: The numbers can be arbitrarily large and are non-negative.
+			Note2: Your answer should not have leading zeroes. For example, 00 is not a valid answer. 
+			For example, 
+			given strings "12", "10", your answer should be “120”.*/
 	public static void main(String[] args) {
 		System.out.println(multiplya("12","13"));
 	}
@@ -31,6 +37,7 @@ public class StringMultiply {
 	            sb.append(num3[i++]);
 	        return sb.toString();
 	    }
+		
 	//http://www.programcreek.com/2014/05/leetcode-multiply-strings-java/	
 	public static String multiply(String num1, String num2) {
 	    String n1 = new StringBuilder(num1).reverse().toString();
