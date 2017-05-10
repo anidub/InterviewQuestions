@@ -4,7 +4,10 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 
 public class StringsPalindrome {
-
+/*Minimum Characters required to make a String Palindromic
+thttp://www.geeksforgeeks.org/dynamic-programming-set-28-minimum-insertions-to-form-a-palindrome/
+https://www.youtube.com/watch?v=DOnK40BvazI&feature=youtu.be
+Given a string, find the minimum number of characters to be inserted to convert it to palindrome.*/
 	public static void main(String[] args) {
 		String s = "abc";
 		System.out.println(insertPalindrome(s));
@@ -91,7 +94,7 @@ public static int longestCommonSubstring(char[] c1, char[] c2){
 			else if(c1[i-1] == c2[j-1])
 				lcs[i][j] = lcs[i-1][j-1]+1;
 			else
-				lcs[i][j] = Math.max(lcs[i-1][1], lcs[i][j-1]);
+				lcs[i][j] = Math.max(lcs[i-1][j], lcs[i][j-1]);
 		}
 	}
 	return lcs[m][n];
