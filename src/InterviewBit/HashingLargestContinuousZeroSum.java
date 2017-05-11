@@ -4,7 +4,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class HashingLargestContinuousZeroSum {
-/*Returns length of the maximum length subarray with 0 sum
+/*Find the largest continuous sequence in a array which sums to zero.
+Example:
+Input:  {1 ,2 ,-2 ,4 ,-4}
+Output: {2 ,-2 ,4 ,-4}
+https://www.interviewbit.com/problems/largest-continuous-sequence-zero-sum/
+ * Returns length of the maximum length subarray with 0 sum
 The idea is if you wont come across same sum in the next iteration unless
 there is a value which brings it this sum.Those values which bring it to this sum
 are essentially zero forming vales*///O(n)
@@ -36,7 +41,7 @@ are essentially zero forming vales*///O(n)
     }
         
  
-      // Drive method
+    // Drive method
     public static void main(String arg[]) {
         int arr[] = {1 ,1 ,1 ,4 ,-4};
         ArrayList<Integer> in = new ArrayList<Integer>();
@@ -68,7 +73,7 @@ are essentially zero forming vales*///O(n)
     }
 
     //this is used to print the elements//O(N)
-   //This can be used for any sum not just 0 by changing line 78 to given sum
+   //This can be used for any sum not just 0 by changing line 82 to given sum
     //https://github.com/nagajyothi/InterviewBit/blob/master/Hashing/LSZero.java  
     public static ArrayList<Integer> lszero(ArrayList<Integer> A) {
         ArrayList<Integer> result = new ArrayList<Integer>();
@@ -100,5 +105,4 @@ are essentially zero forming vales*///O(n)
         }
         return result;
     } 
-    
   }
