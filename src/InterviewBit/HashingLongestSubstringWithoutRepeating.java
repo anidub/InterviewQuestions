@@ -1,6 +1,7 @@
 package InterviewBit;
 
 import java.util.HashSet;
+import java.util.TreeSet;
 
 public class HashingLongestSubstringWithoutRepeating {
 /*https://www.interviewbit.com/problems/longest-substring-without-repeat/
@@ -69,7 +70,7 @@ public class HashingLongestSubstringWithoutRepeating {
 				if(maxLen < set.size()){
 					maxLen = set.size();
 					sub = set.toString();//use string builder instead of tostring
-					System.out.println(sub);
+					//System.out.println(sub);
 				}
 					
 				while(start < i && s.charAt(start) != c){
@@ -82,8 +83,11 @@ public class HashingLongestSubstringWithoutRepeating {
 		if(maxLen < set.size()){
 			maxLen = set.size();
 			sub = set.toString();//use string builder instead of tostring
-			System.out.println(sub);
+			if(set.toString().length() > sub.length()){
+				sub = set.toString();
+			}
 		}
+		System.out.println(sub);
 		return Math.max(maxLen, set.size());
 	}
 }
