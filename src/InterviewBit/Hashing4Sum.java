@@ -1,5 +1,6 @@
 package InterviewBit;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -32,8 +33,8 @@ https://www.interviewbit.com/problems/4-sum/
 		HashSet<ArrayList<Integer>> hashSet = new HashSet<ArrayList<Integer>>();
 		ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
 	 
-		for (int i = 0; i < num.length; i++) {
-			for (int j = i + 1; j < num.length; j++) {
+		for (int i = 0; i < num.length-3; i++) {
+			for (int j = i + 1; j < num.length-2; j++) {
 				int k = j + 1;
 				int l = num.length - 1;
 	 
