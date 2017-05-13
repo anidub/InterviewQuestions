@@ -15,7 +15,7 @@ public class LinkedListNodeReverseNToM {
 		n.next.next.next.next = new LinkedListNode(4);
 		n.next.next.next.next.next = new LinkedListNode(5);
 		n.next.next.next.next.next.next = new LinkedListNode(6);
-		LinkedListNode h = reverseNM(n, 2,4);display(h);
+		LinkedListNode h = reverseBetween(n, 2,4);display(h);
 	}
 	
 	
@@ -56,4 +56,32 @@ public class LinkedListNodeReverseNToM {
 			System.out.print("-->" + h.data); h = h.next;
 		}
 	}
+	
+	//http://n00tc0d3r.blogspot.com/2013/05/reverse-linked-list.html
+	public static LinkedListNode reverseBetween(LinkedListNode head, int m, int n) {  
+		LinkedListNode dummy = new LinkedListNode(0);  
+		   dummy.next = head;  
+		   
+		   // first if the first position, begin is the node before first.  
+		   LinkedListNode pre = dummy, cur=head;  
+		   int pos = 1;  
+		   
+		   // find the first  
+		   while (pos < m && cur != null) {  
+		     pre = cur;  
+		     cur = cur.next;  
+		     ++pos;  
+		   }  
+		   
+		   // reverse the list  
+		   while (pos < n && cur != null) {  
+			   LinkedListNode nt = cur.next.next;  
+		     cur.next.next = pre.next;  
+		     pre.next = cur.next;  
+		     cur.next = nt;  
+		     ++pos;  
+		   }  
+		   
+		   return dummy.next;  
+		 }  
 }
