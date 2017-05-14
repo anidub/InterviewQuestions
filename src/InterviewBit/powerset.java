@@ -2,16 +2,20 @@ package InterviewBit;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 import java.util.TreeSet;
 
-public class NumbersAllSubSetsIncremental {
+public class powerset {
 /*Given a number print all of its sub sets
 for Example:  1234 -> 1,2,3,4,12,23,34,234,1234*/ 
 	public static void main(String[] args) {
 		allSubsets(1234);
 		ArrayList<Integer> intList = new ArrayList<Integer>();
 		intList.add(1);intList.add(2);intList.add(3);intList.add(4);
-		powerSet(intList);
+		//powerSet(intList);
+		//allSubsets(3);
 		
 	}
 	
@@ -57,4 +61,23 @@ public static ArrayList<ArrayList<Integer>> powerSet(ArrayList<Integer> intList)
     }
     return result;
 }
+
+	public static Set<Set<Integer>> pow(Set<Integer> set) {
+		Set<Set<Integer>> result = new HashSet<Set<Integer>>();
+		pow(set, result, set.iterator());
+		return result;
+	}
+
+	public static Set<Set<Integer>> pow(Set<Integer> set, Set<Set<Integer>> result, Iterator<Integer> iterator) {
+		if (iterator.hasNext()) {
+			Integer head = iterator.next();
+			Set<Integer> current = new HashSet<Integer>();
+			current.addAll(set);
+			current.remove(head);
+			result.add(current);
+			pow(current, result, current.iterator());
+			pow(set, result, iterator);
+		}
+		return result;
+	}
 }
