@@ -35,14 +35,14 @@ Output : Root of below tree
 	
 	public static TreeNode construct(int[] inorder, int start, int end, int[] postorder, int postindex){
 		  if (start > end)  return null;
-		int nodevalue = inorder[postindex];
+		int nodevalue = postorder[postindex];
 		TreeNode node = new TreeNode(nodevalue);
 		int i;
 		for(i = start; i <= end; i++){
 			if(inorder[i] == nodevalue)
 				break;
 		}
-		node.left = construct(inorder, start,i-1, postorder, postindex - (end - i +1));// since the postindex has to the  element just after the discoverd element i.e nodevalue
+		node.left = construct(inorder, start,i-1, postorder, postindex - (end - i +1));
 		node.right = construct(inorder, i+1, end, postorder, postindex-1);// since the postindex has to the  element just before the last element
 		return node;
 	}

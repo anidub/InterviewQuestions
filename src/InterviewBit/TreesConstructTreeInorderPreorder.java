@@ -1,5 +1,7 @@
 package InterviewBit;
 
+import java.util.HashMap;
+
 public class TreesConstructTreeInorderPreorder {
 //learn how indexing is done
 //https://www.interviewbit.com/problems/construct-binary-tree-from-inorder-and-preorder/	
@@ -17,7 +19,9 @@ O/P:Inorder traversal of constructed tree is :
 D B E A F C
 Worst case occurs when tree is left skewed. Example Preorder and Inorder traversals for worst case are {A, B, C, D} and {D, C, B, A}.*/
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		int[] inorder= {2,1,3};
+		int[] preorder = {1,2,3};
+		constructTree(inorder,preorder);
 
 	}
 
@@ -61,7 +65,7 @@ Worst case occurs when tree is left skewed. Example Preorder and Inorder travers
 		int inorderindex = map.get(preorder[index]);
 		index++;
 		node.left = constructTreeNode(map, inorder, start, inorderindex-1, preorder);
-		node.right = constructTreeNode(map, inorder, start, inorderindex+1, preorder);
+		node.right = constructTreeNode(map, inorder, inorderindex+1,end, preorder);
 		return node;		
 	}
 }
