@@ -3,12 +3,12 @@ package InterviewBit;
 import java.util.Stack;
 //https://www.interviewbit.com/problems/redundant-braces/
 //https://github.com/nagajyothi/InterviewBit/blob/master/StacksAndQueues/Braces.java
-/*path = "/home/", => "/home"
-path = "/a/./b/../../c/", => "/c"*/
-public class StacksandQueuesRedundantbraces {
+/*((a + b)) has redundant braces so answer will be 1
+(a + (a + b)) doesn't have have any redundant braces so answer will be 0
+*/public class StacksandQueuesRedundantbraces {
 
 	public static void main(String[] args) {   
-	String a = "((a + b)) ";
+	String a = "(a + (a + b)) ";
     System.out.println(hasRedundantBraces(a));
 }
 	
