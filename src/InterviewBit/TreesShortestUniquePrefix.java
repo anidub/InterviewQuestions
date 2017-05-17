@@ -1,5 +1,7 @@
 package InterviewBit;
 
+import java.util.ArrayList;
+
 public class TreesShortestUniquePrefix {
 /*	Find shortest unique prefix to represent each word in the list.
 	Input: [zebra, dog, duck, dove]
@@ -10,7 +12,17 @@ public class TreesShortestUniquePrefix {
 			duck = du
 			dove = dov*/
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		ArrayList<String> str =  new ArrayList<String>();
+		str.add("id"); str.add("qscdxrjmow"); str.add("rxsjybldbe");
+		str.add("sarcbyne"); str.add("dyggxxp"); str.add("lorel");
+		str.add("nmpa");
+		for(String s: str){
+			insert(s);
+		}
+		ArrayList<String> result = new ArrayList<String>();
+		for(String s : str){
+			result.add(shortestPrefix(s));
+		}
 
 	}
 	/*works
@@ -18,10 +30,10 @@ public class TreesShortestUniquePrefix {
 	 */
 	public static Node root;
 	public static int R = 256;
-	public static class Node{
+	protected static class Node{
 		int count;
 		boolean isEnd;
-		private Node next[] = new Node[256];
+		private Node next[] = new Node[R];
 		public Node(){
 			this.count = 0;
 			this.isEnd = false;
@@ -37,7 +49,7 @@ public class TreesShortestUniquePrefix {
 		Node curr = root;
 		for(int i = 0; i < str.length(); i++){
 			char c = str.charAt(i);
-			if(curr.next[c] == null){
+			if(null == curr.next[c]){
 				curr.next[c] = new Node(1,false);
 			}else{
 				curr.next[c].count++;
@@ -46,7 +58,7 @@ public class TreesShortestUniquePrefix {
 		}
 		curr.isEnd = true;
 	}
-	public String shortestPrefix(String str){
+	public static String shortestPrefix(String str){
 		Node curr = root;
 		int len = 0;
 		for(int i = 0; i < str.length(); i++){
@@ -126,6 +138,4 @@ public class TreesShortestUniquePrefix {
 		    }		    
 		    return node;
 		}*/
-	
-
 }
