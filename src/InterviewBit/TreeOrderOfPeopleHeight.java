@@ -1,6 +1,5 @@
 package InterviewBit;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -53,8 +52,8 @@ public class TreeOrderOfPeopleHeight {
         });
 
 		for (int i = 0; i < persons.length; i++) {
-		// System.out.println("adding "+persons[i].height+" "+persons[i].count);
-			res.add(persons[i].count, persons[i].height);
+		 System.out.println("adding "+persons[i].height+" "+persons[i].count);
+			res.add(persons[i].count, persons[i].height);//imp
 		}
 		return res;
 	}
