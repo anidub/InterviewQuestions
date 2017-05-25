@@ -86,8 +86,8 @@ public static int insertPalindrome(String s){
 public static int longestCommonSubstring(char[] c1, char[] c2){
 	int m =  c1.length; int n = c2.length;
 	int[][] lcs = new int[c1.length+1][c2.length+1];
-	for(int i = 0; i < m; i++){
-		for(int j = 0; j < n; j++){
+	for(int i = 0; i <= m; i++){
+		for(int j = 0; j <= n; j++){
 			if(i == 0 || j == 0)
 				lcs[i][j] = 0;
 			else if(c1[i-1] == c2[j-1])
@@ -96,6 +96,6 @@ public static int longestCommonSubstring(char[] c1, char[] c2){
 				lcs[i][j] = Math.max(lcs[i-1][j], lcs[i][j-1]);
 		}
 	}
-	return lcs[m][n];	
- }
+	return lcs[m][n];
+  }
 }
