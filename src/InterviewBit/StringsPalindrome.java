@@ -96,7 +96,6 @@ public static int longestCommonSubstring(char[] c1, char[] c2){
 				lcs[i][j] = Math.max(lcs[i-1][j], lcs[i][j-1]);
 		}
 	}
-	return lcs[m][n];
-	
-}
+	return lcs[m][n];	
+ }
 }
