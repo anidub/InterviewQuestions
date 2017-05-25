@@ -11,9 +11,8 @@ Given a string, find the minimum number of characters to be inserted to convert 
 	public static void main(String[] args) {
 		String s = "abc";
 		System.out.println(insertPalindrome(s));
-		
-
 	}
+	
 public static String makePalindrome(String s){
 	if(s == null || s.length() == 0) return "";
 	HashMap<Character, Integer> hm = new HashMap<Character, Integer>();
