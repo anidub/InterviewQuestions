@@ -5,7 +5,7 @@ import java.util.Map.Entry;
 
 public class StringsPalindrome {
 /*Minimum Characters required to make a String Palindromic
-thttp://www.geeksforgeeks.org/dynamic-programming-set-28-minimum-insertions-to-form-a-palindrome/
+http://www.geeksforgeeks.org/dynamic-programming-set-28-minimum-insertions-to-form-a-palindrome/
 https://www.youtube.com/watch?v=DOnK40BvazI&feature=youtu.be
 Given a string, find the minimum number of characters to be inserted to convert it to palindrome.*/
 	public static void main(String[] args) {
