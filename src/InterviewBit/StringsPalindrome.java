@@ -42,24 +42,24 @@ public static int solve(String a) {
     
 }
 
-	public static int bs(char c[], int n) {
-		int first = 0, last = n;
-		int ans = 0;
-		while (first <= last) {
-			int middle = (first + last)/2;
-			if (valid(c, n, middle)) {
-				ans = middle;
-				last = middle - 1;
-			} else {
-				if (middle - 1 >= 0 && valid(c, n, middle - 1)) {
-					ans = middle - 1;
-					last = middle - 2;
-				} else
-					first = middle + 1;
+public static int bs(char c[], int n) {
+	int first = 0, last = n;
+	int ans = 0;
+	while (first <= last) {
+		int middle = (first + last)/2;
+		if (valid(c, n, middle)) {
+			ans = middle;
+			last = middle - 1;
+		} else {
+			if (middle - 1 >= 0 && valid(c, n, middle - 1)) {
+				ans = middle - 1;
+				last = middle - 2;
+			} else
+				first = middle + 1;
 			}
 		}
-		return ans;
-	}
+	return ans;
+}
 public static boolean valid(char c[],int n,int middle){
     int start=0;
     int end=n-middle-1;
@@ -72,9 +72,9 @@ public static boolean valid(char c[],int n,int middle){
     return true;
 }
 
-
-
-
+/*If we find out LCS of string and its reverse, we know how many maximum characters can form a palindrome. We need insert remaining characters. Following are the steps.
+1) Find the length of LCS of input string and its reverse. Let the length be ‘l’.
+2) The minimum number insertions needed is length of input string minus ‘l’.*/
 public static int insertPalindrome(String s){
 	char[] c1 = s.toCharArray();
 	String s2 = new StringBuffer(s).reverse().toString();
