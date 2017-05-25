@@ -3,6 +3,7 @@ package InterviewBit;
 public class ArraysspiralMatrix {
 //Given an integer n, generate a square matrix filled with elements from 1 to n2 in spiral order.
 	//https://www.interviewbit.com/problems/spiral-order-matrix-ii/
+	//http://www.programcreek.com/2014/05/leetcode-spiral-matrix-ii-java/
 	public static void main(String[] args) {
 		getSpiral(4);
 	}
@@ -16,8 +17,8 @@ public class ArraysspiralMatrix {
 		
 		int k = 1;
 		
-		while(k <= n*n){
-			for(int i = top; i <= right; i++){
+		while(k <= n * n){
+			for(int i = left; i <= right; i++){
 				matrix[top][i] = k;
 				k++;
 			}
@@ -35,8 +36,8 @@ public class ArraysspiralMatrix {
 			}
 			down--;
 			
-			for(int j = down; j >= top; j--){
-				matrix[j][left] = k;
+			for(int i = down; i >= top; i--){
+				matrix[i][left] = k;
 				k++;
 			}
 			left++;
