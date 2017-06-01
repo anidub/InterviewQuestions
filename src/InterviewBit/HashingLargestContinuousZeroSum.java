@@ -66,6 +66,7 @@ are essentially zero forming vales*///O(n)
                 curr_sum += arr[j];
 
                 // If curr_sum becomes 0, then update max_len if required
+                if (curr_sum == 0)
                    max_len = Math.max(max_len, j-i+1);
             }
         }
