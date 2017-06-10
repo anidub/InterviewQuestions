@@ -5,10 +5,12 @@ public class rotateNumber {
 	public static void main(String[] args) {
 		int[] num = {1,2,3,4,5};
 		int rotate = 66;
-		int[] res = rotate(num, rotate); // 3 4 5 1 2
+		int[] res = rotate(num, 2); // 3 4 5 1 2
 		for(int k : res){
 			System.out.print(k + " ");
 		}
+		System.out.println();
+		rotateNumber(num,33);
 	}
 	
 	public static int[] rot(int[] num, int rotate){ //1 2 3 4 5 1 2 3 4 5
@@ -31,8 +33,8 @@ public class rotateNumber {
 		}
 		return result;		
 	}
-/*	http://www.programcreek.com/2015/03/rotate-array-in-java/
-		 O(1) space and in O(n) time*/
+	/*	http://www.programcreek.com/2015/03/rotate-array-in-java/
+			 O(1) space and in O(n) time*/
 	public static int[] rotate(int[] arr, int k){
 		int[] result = new int[arr.length];
 		if(k > arr.length)
@@ -53,5 +55,24 @@ public class rotateNumber {
 			result[right] = temp;
 			left++; right--;			
 		}
+	}
+	//use this
+	public static int[] rotateNumber(int[] arr, int k){
+		if(k % arr.length == 0) return arr;
+		k = k % arr.length;
+		System.out.println(k);
+		int[] result= new int[arr.length];
+		int index = 0;
+		for(int i = arr.length - k; i < arr.length; i++){
+			result[index++] = arr[i];
+		}
+		
+		for(int i = 0; i < arr.length-k; i++){
+			result[index++] = arr[i];
+		}
+		for(int i : result){
+			System.out.print(i + " ");
+		}
+		return result;
 	}
 }
