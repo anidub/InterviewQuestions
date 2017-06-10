@@ -18,8 +18,10 @@ public class roundup {
 		
 		//round(g,3);// 75.52
 		double a = 5.455;
-		roundUpa(a,2);
-	}	
+		round(a,2);
+	}
+
+	
 /*	public static void round(double f, int num){
 		System.out.println(f);
 		
@@ -44,21 +46,21 @@ public class roundup {
 		 System.out.println(finalNum);
 	}*/
 	
-	//tested//works !!
-	public static void roundUpa(double f, int num){
-		String[] arr = String.valueOf(f).split("\\.");
-		String k = arr[1];
-		boolean isNine = false;
-		String nextHalf = k.substring(0, num+1);
-		Integer lastDigit = nextHalf.charAt(nextHalf.length()-1) - '0';
-		String kk = k.substring(0, num+1);
-		Float decimals = Float.parseFloat(k.substring(0, num+1));
-		if(lastDigit > 5){
-			decimals++;
-		}
-		System.out.println(decimals);
-		StringBuilder res = new StringBuilder();
-		res.append(arr[0]).append(".").append(decimals);
-		System.out.println(res.substring(0,res.length()-2));		
+	//tested//works !!//ask lot of questions on how many digits and input is less than that etc accordingly add
+	// null and length conditions
+	public static void round(double f, int num){
+		System.out.println(f);
+		String arr[] = String.valueOf(f).split("\\.");
+		String nextHalf = arr[1];
+		Float next = Float.parseFloat(nextHalf.substring(0, num+1));
+		int nextDigit = nextHalf.charAt(nextHalf.length()-1) - '0';
+		Float lastKdigits = Float.parseFloat(nextHalf.substring(0, num)); 
+		if(nextDigit > 5)
+			lastKdigits++;
+		
+		StringBuilder sb = new StringBuilder();
+		sb.append(arr[0]+".").append(lastKdigits);
+		String result = sb.toString();
+		System.out.println(result.substring(0, result.length()-2));
 	}
 }
