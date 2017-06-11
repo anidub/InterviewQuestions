@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashSet;
 /*//http://www.geeksforgeeks.org/check-exist-two-elements-array-whose-sum-equal-sum-rest-array/
 Check if there exist two elements in an array whose sum is equal to the sum of rest of the array
+//Solution : sum of two numbers + rest of sum == Total sum, but sumof two and
+ * rest of sum has to be equal, hence sumoftwonumbers = total sum/2;
 //O(n).
 */public class findTwoNumberInArraySumRest {
 
@@ -22,8 +24,9 @@ Check if there exist two elements in an array whose sum is equal to the sum of r
 		for(int i : arr){
 			sum += i;
 		}
+		// If sum of array is not even than we can not divide it into two part
 		if (sum%2 != 0)
-	        return result;
+	        return result;//return false;
 		sum1 = sum/2;
 		return result = findTwoNum(arr, sum1);
 	}
