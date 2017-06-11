@@ -41,13 +41,12 @@ public class getMedianofTwosortedarrays {
 			else
 				return getMedian2(a1,s1,s1 + len/2,  a2,s2 + len/2,e2);
 		}
-	}
- 
+	} 
 	private static float getM(int[] arr,int s,int e){
 		int len = e-s+1;
 		int i=len/2;
 		if(len%2 == 0){
-			return (arr[i]+arr[i+1])/2.0f;
+			return (arr[i]+arr[i-1])/2.0f;
 		}
 		return arr[i];
 	}
