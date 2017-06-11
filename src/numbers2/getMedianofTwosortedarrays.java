@@ -31,7 +31,7 @@ public class getMedianofTwosortedarrays {
  
 		if(m1 < m2){
 			if(len%2 == 0)
-				return getMedian2(a1, s1 + len/2, e1,  a2, s2, s2 + len/2 - 1);
+				return getMedian2(a1, s1 + len/2, e1,  a2, s2, s2 + len/2 - 1);// pulling someone in first half = len/2 -1
 			else
 				return getMedian2(a1, s1 + len/2, e1,  a2, s2, s2 +len/2);
 		}
