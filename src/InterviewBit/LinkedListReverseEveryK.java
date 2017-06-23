@@ -92,5 +92,4 @@ public static LinkedListNode getReverseByK(LinkedListNode head, int k){
 		}
 		return newHead;
 	}
-
 }
