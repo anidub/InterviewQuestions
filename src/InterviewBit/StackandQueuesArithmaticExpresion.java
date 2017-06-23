@@ -99,6 +99,5 @@ public class StackandQueuesArithmaticExpresion {
 			}
 		}
 		return sum;
-	}
-	
+	}	
 }
