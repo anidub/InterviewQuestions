@@ -34,6 +34,4 @@ public class LinkedListRemoveNthNodeEnd {
 		temp.next = temp.next.next;
 		return n;
 	}
-
-
 }
