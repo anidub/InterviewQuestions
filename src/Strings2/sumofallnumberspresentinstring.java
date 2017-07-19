@@ -11,12 +11,12 @@ public class sumofallnumberspresentinstring {
 	Output: 24*/
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		calsum("");
 		cal("");
 	}
 	
 	public static int calsum(String s){
 		s = "1abc23";
-		s = s.replaceAll("\\D", "");
 		int result = 0;
 		StringBuilder temp = new StringBuilder();
 		for(int i = 0; i < s.length(); i++){
@@ -30,6 +30,7 @@ public class sumofallnumberspresentinstring {
 		}
 		if(temp.length() != 0)
 		result += Integer.parseInt(temp.toString());;
+		System.out.println(result);
 		return result;		
 	}
 	
