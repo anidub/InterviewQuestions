@@ -21,6 +21,7 @@ Soln : Just use a boolean array to keep track of what is used in dict.
 		boolean[] visited = new boolean[dict.length];
 		
 		for(int i = 0; i < dict.length; i++){
+			if(!used[i]){
 			if(word.length() != 0){
 				int index = word.indexOf(dict[i]);
 				if(index >= 0){ //creates the new string minus the found word from dictionary
@@ -29,6 +30,7 @@ Soln : Just use a boolean array to keep track of what is used in dict.
 					word = new String(temp);
 					visited[i] = true;
 				}
+			   }
 			}else{
 				break;
 			}
