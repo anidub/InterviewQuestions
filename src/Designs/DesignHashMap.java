@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class DesignHashMap {
     /* The initial size of the bucket array */
+	//http://robl.co/implement-your-own-hashmap/
 	private int bucket_array_size = 16;
 	private Node[] bucketArray = new Node[bucket_array_size];
 	
