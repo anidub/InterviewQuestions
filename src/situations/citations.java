@@ -37,8 +37,7 @@ public class citations {
 	    for(int i=0; i<citations.length; i++){
 	        int smaller = Math.min(citations[i], citations.length-i);
 	        result = Math.max(result, smaller);
-	    }
-	 
+	    }	 
 	    return result;
 	}
 }

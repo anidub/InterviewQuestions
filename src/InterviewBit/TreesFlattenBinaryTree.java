@@ -43,17 +43,19 @@ public class TreesFlattenBinaryTree {
 		return root;
 	}
 	
-	public static void flatenIterative(TreeNode root){
-		if(root == null) return;
+	public static void flatenIterative(TreeNode root) {
+		if (root == null)
+			return;
 		Stack<TreeNode> rightTreeStack = new Stack<TreeNode>();
 		TreeNode current = root;
-		while(current != null){
-			if(current.left != null){
-				if(current.right != null) rightTreeStack.push(current.right);
-					current.right = current.left;
-					current.left = null;
+		while (current != null) {
+			if (current.left != null) {
+				if (current.right != null)
+					rightTreeStack.push(current.right);
+				current.right = current.left;
+				current.left = null;
 			}
-			if(current.right == null && !rightTreeStack.isEmpty()){
+			if (current.right == null && !rightTreeStack.isEmpty()) {
 				current.right = rightTreeStack.pop();
 			}
 			current = current.right;
@@ -76,6 +78,4 @@ public class TreesFlattenBinaryTree {
 			current = current.right;
 		}
 	}
-	
-	
 }

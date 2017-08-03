@@ -9,7 +9,6 @@ import java.util.ArrayList;
 public class Splittext {
 
 	public static ArrayList<String> splitText(String message, int charLimit) {
-
         return splitTextAuxUsingSplit(message, charLimit);
     }
 
@@ -30,7 +29,6 @@ public class Splittext {
                 i++;
             }
             result.add(temp);
-
         }
         //Take care of the last element
         //Add the last element from splitted to the last element of result if their combined length is less than charLimit
@@ -44,11 +42,9 @@ public class Splittext {
 
         //append message chunk number for ex (1/3)
         int resultSize = result.size();
-        for(int i = 0; i < resultSize; i++) {
-        	
+        for(int i = 0; i < resultSize; i++) {        	
             result.set(i, result.get(i) +"("+ (i+1) + "/" + resultSize + ")" );
         }
-
         return result;
     }
     public static void main(String[] args) {

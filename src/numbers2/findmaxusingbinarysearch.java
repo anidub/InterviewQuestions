@@ -27,12 +27,8 @@ public class findmaxusingbinarysearch {
 		return -1;
 	}
 	
-	
-	
 	public static void main(String[] args) {
 		int[] arr = {1, 3, 50, 10, 9, 7, 6};
 		System.out.println(findmax(arr,0,arr.length-1));
-
 	}
-
 }

@@ -6,7 +6,6 @@ import java.util.Stack;
 /*((a + b)) has redundant braces so answer will be 1
 (a + (a + b)) doesn't have have any redundant braces so answer will be 0
 */public class StacksandQueuesRedundantbraces {
-
 	public static void main(String[] args) {   
 	String a = "(a + (a + b)) ";
     System.out.println(hasRedundantBraces(a));

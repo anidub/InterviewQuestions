@@ -6,7 +6,7 @@ public class BinarySearchFindSqRoot {
 		If x is not a perfect square, return floor(sqrt(x))
 			Input : 11	Output : 3*/
 	public static void main(String[] args) {
-		System.out.println(sqrt(16));
+		System.out.println(sqrt(11));
 	}
 	
 	public static int sqrt(int num) {

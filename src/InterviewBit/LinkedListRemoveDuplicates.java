@@ -26,7 +26,6 @@ public class LinkedListRemoveDuplicates {
 		n.next.next.next.next.next = new LinkedListNode(3);
 		n.next.next.next.next.next.next = new LinkedListNode(4);
 		LinkedListNode result = removdDupSorted(n);
-
 	}
 	
 
@@ -93,7 +92,6 @@ public static LinkedListNode delDup(LinkedListNode head){
 			current = current.next;
 		}
 	}
-	return head;
-	
+	return head;	
 }
 }

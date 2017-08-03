@@ -1,4 +1,4 @@
-package InterviewBit;
+ package InterviewBit;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -104,7 +104,7 @@ public class TreesRootToLeafPathSum {
 	         }
 	         return l;
 	    }
-	}
+	}	
 	
 	//Binary Tree
 	private static int minLenSumPathBT(final TreeNode root, final int sum, final int len) {
@@ -119,6 +119,4 @@ public class TreesRootToLeafPathSum {
 	        return Math.min(minLenSumPathBT(root.left, diff, len + 1), minLenSumPathBT(root.right, diff, len + 1));
 	    }
 	}
-	
-
 }

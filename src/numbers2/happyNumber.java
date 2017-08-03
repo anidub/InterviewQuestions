@@ -15,7 +15,6 @@ public class happyNumber {
 		System.out.println(calculatePower(10,-1));
 
 	}
-	
 	public static int convertstringtoint(String a){
 		if(a.length() == 0) return -1;
 		int[] numarray = new int[a.length()];

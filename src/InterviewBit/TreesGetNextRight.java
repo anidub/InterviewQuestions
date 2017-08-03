@@ -125,7 +125,18 @@ protected class TreeLinkNode{
 			}
 		}
 	}
-		/*If complete binary tree*/
+	
+	public static TreeLinkNode getnext(TreeLinkNode node){
+		node = node.next;
+		while(node != null){
+			if(node.left != null) return node.left;
+			if(node.right != null) return node.right;
+			node = node.next;
+		}
+		return null;
+	}
+	
+	/*If complete binary tree*/
 	public void connectTree(TreeLinkNode root){
 	    while(root != null) {
 	    	TreeLinkNode ptr = root;

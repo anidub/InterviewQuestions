@@ -20,13 +20,12 @@ b
  */	
 	
 	public static void main(String[] args) {		
-		String s = "geek";		
+		final String s = "aabaa";		
 		HashSet<String> distinct_palin = getPal(s);		
 		for(String string : distinct_palin){
 			System.out.println(string);
 		}
 	}
-
 	//studied
 	public static HashSet<String> getPal(String s) {
 		HashSet<String> set = new HashSet<String>();
@@ -55,8 +54,8 @@ b
 	}
 	
 	//another method
-	 public Set<String> palindromes(final String input) {
-	     final Set<String> result = new HashSet<String>();
+	 public static HashSet<String> palindromes(final String input) {
+	     final HashSet<String> result = new HashSet<String>();
 	     for (int i = 0; i < input.length(); i++) {
 	         // expanding even length palindromes:
 	         expandPalindromes(result,input,i,i+1);
@@ -66,7 +65,7 @@ b
 	     return result;
 	  }
 
-	  public void expandPalindromes(final Set<String> result, final String s, int i, int j) {
+	  public static void expandPalindromes(final Set<String> result, final String s, int i, int j) {
 	      while (i >= 0 && j < s.length() && s.charAt(i) == s.charAt(j)) {
 	            result.add(s.substring(i,j+1));
 	            i--; j++;

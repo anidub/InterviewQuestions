@@ -1,6 +1,5 @@
 package InterviewBit;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class ArraysMaximumUnsortedSubarray {
@@ -13,8 +12,9 @@ Input 1:A = [1, 3, 2, 4, 5]	Return: [1, 2]
 Input 2:A = [1, 2, 3, 4, 5]	Return: [-1] O(n)*/
 	public static void main(String[] args) {
 		ArrayList<Integer> array = new ArrayList<Integer>();
-		array.add(1);array.add(3);array.add(2);array.add(4);
-		array.add(5);
+		array.add(1);array.add(3);array.add(2);array.add(5);array.add(4);
+		array.add(6);
+		
 		subUnsort(array);
 	}
 	//very easy
@@ -30,7 +30,7 @@ Input 2:A = [1, 2, 3, 4, 5]	Return: [-1] O(n)*/
 		if(s == size-1){
 			return new ArrayList<Integer>();
 		}
-		//find 1st element which breaks sorting order from behind
+		//find 1st element which breaks reverse sorting order from behind
 		for(e = size-1; e > 0; e--){
 			if(array.get(e) < array.get(e-1) )
 				break;
@@ -61,5 +61,5 @@ Input 2:A = [1, 2, 3, 4, 5]	Return: [-1] O(n)*/
 		ArrayList<Integer> result = new ArrayList<Integer>();
 		result.add(s);result.add(e);
 		return result;		
-    }
+    }	
 }

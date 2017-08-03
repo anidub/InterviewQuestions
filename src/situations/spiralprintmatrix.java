@@ -5,7 +5,6 @@ public class spiralprintmatrix {
 	public static void main(String[] args) {
 		int[][] matrix = {{1,2,3},{4,5,6},{7,8,9}};
 		print(matrix);
-
 	}
 	
 	public static void print(int[][] matrix){
@@ -34,5 +33,5 @@ public class spiralprintmatrix {
 			if(top > down || left > right) break;
 			
 		}
-	}	
+	}
 }

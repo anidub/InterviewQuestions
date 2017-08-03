@@ -27,7 +27,7 @@ public class comparingtwohashmaps {
 		}
 	
 	public static boolean areMapsEqual(HashMap hm1, HashMap hm2){
-		
+		if(hm1.size() != hm2.size()) return false;
 		  for (Object k : hm2.keySet()) {
 			  if (hm1.get(k) != hm2.get(k)) {
 	                return false;

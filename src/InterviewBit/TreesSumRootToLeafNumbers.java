@@ -36,6 +36,8 @@ public class TreesSumRootToLeafNumbers {
 
 		return (leftSum + rightSum) % MOD;
 	}
+	
+
 	//http://www.programcreek.com/2014/05/leetcode-sum-root-to-leaf-numbers-java/
 	public static int RootToLeafNumbers(TreeNode root){
 		int sum = 0;
@@ -61,7 +63,6 @@ public class TreesSumRootToLeafNumbers {
 		}
 		return sum%MOD;
 	}
-
 	
 	/*This method does the above work but more importantly it is for
 	 * understanding how dfs would work if we have to go through every
@@ -108,4 +109,5 @@ public class TreesSumRootToLeafNumbers {
 	        l.remove(l.size()-1);
 	    }	 
 	}
+	
 }

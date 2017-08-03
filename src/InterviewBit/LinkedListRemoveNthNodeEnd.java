@@ -14,6 +14,7 @@ public class LinkedListRemoveNthNodeEnd {
 		n.next.next.next.next.next.next = new LinkedListNode(12);
 		n.next.next.next.next.next.next.next = new LinkedListNode(14);
 		LinkedListNode result = removeNth(n,2);
+		display(result);
 
 	}
 	public static LinkedListNode removeNth(LinkedListNode n, int k){
@@ -34,4 +35,10 @@ public class LinkedListRemoveNthNodeEnd {
 		temp.next = temp.next.next;
 		return n;
 	}
+	
+	 public static void display(LinkedListNode h){
+			while(h != null){
+				System.out.print("-->" + h.data); h = h.next;
+			}
+		}
 }

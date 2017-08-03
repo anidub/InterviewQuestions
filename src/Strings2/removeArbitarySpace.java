@@ -25,5 +25,4 @@ public class removeArbitarySpace {
 		}		
 		System.out.println(sb.toString());
 	}
-
 }

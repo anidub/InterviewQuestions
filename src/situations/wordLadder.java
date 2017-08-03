@@ -17,6 +17,14 @@ Time Complexity of the above code is O(n²m) where n is the number of entries ori
 http://www.geeksforgeeks.org/word-ladder-length-of-shortest-chain-to-reach-a-target-word/
 	http://www.programcreek.com/2012/12/leetcode-word-ladder/
 		http://javabypatel.blogspot.in/2015/10/word-ladder-doublets-word-links-word-golf.html
+		Example:
+
+Input:  Dictionary = {POON, PLEE, SAME, POIE, PLEA, PLIE, POIN}
+             start = TOON
+             target = PLEA
+Output: 7
+Explanation: TOON - POON - POIN - POIE - PLIE - PLEE - PLEA
+		
 */
 public class wordLadder {
 

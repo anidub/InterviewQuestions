@@ -47,6 +47,7 @@ public class maxPointsonsameLine {
 		for (int i = 0; i < points.length; i++) {
 			Map<Double, Integer> line = new HashMap<Double, Integer>();
 			Point a = points[i];
+			int localmax = 1;
 			int same = 1;
 			// System.out.println(a);
 			for (int j = i + 1; j < points.length; j++) {
@@ -84,5 +85,4 @@ public class maxPointsonsameLine {
 		}
 		return result;
 	}
-
 }

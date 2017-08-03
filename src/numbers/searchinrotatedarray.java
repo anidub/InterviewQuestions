@@ -5,6 +5,9 @@ public class searchinrotatedarray {
 	//How do you find an element in the rotated array efficiently? You may assume no duplicate exists in the array
 	public static void main(String[] args) {
 		int[] numbers = {3,4,5,0,1,2};
+		int[] n1 = {3,4,1,2};
+		System.out.println(findMin(n1));
+		
 		int key = 2;
 		int index = search(numbers,0,numbers.length -1 ,key);
 		if(index != -1)

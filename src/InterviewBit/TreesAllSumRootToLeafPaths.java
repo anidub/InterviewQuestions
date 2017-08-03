@@ -48,5 +48,4 @@ public class TreesAllSumRootToLeafPaths {
 		find(node.right, currentSum, target, result, path);
 		path.remove(path.size()-1);
 	}
-
 }

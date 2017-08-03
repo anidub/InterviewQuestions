@@ -1,8 +1,5 @@
 package numbers2;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class minJumps {
 
 	//min jumps req to reach end of array
@@ -31,10 +28,8 @@ public class minJumps {
 				stairs = ladder - level;
 			}
 		}
-		return jump;
-	
-}
-	
+		return jump;	
+}	
 	public static  int min(int x, int y) { return (x < y)? x: y; }
 	 
 	// Returns minimum number of jumps to reach arr[n-1] from arr[0] ...Time Complexity: O(n^2)

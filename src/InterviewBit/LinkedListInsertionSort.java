@@ -1,9 +1,10 @@
 package InterviewBit;
 
 import InterviewBit.LinkedListRemoveDuplicates.LinkedListNode;
-///https://github.com/shawnfan/LintCode/blob/master/Java/Insertion%20Sort%20List.java
+/*///https://github.com/shawnfan/LintCode/blob/master/Java/Insertion%20Sort%20List.java
+Sort a linked list using insertion sort.
 //https://www.interviewbit.com/problems/insertion-sort-list/
-public class LinkedListInsertionSort {
+*/public class LinkedListInsertionSort {
 
 	public static void main(String[] args) {
 		LinkedListNode n = new LinkedListNode(-1);
@@ -32,6 +33,7 @@ public class LinkedListInsertionSort {
 		}
 		return dummy.next;
 	}
+	
 	  public static void display(LinkedListNode h){
 			while(h != null){
 				System.out.print("-->" + h.data); h = h.next;

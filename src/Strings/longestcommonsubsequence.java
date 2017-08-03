@@ -49,34 +49,4 @@ public class longestcommonsubsequence {
 		}
 		System.out.println(lcs);
 }
-	
-	public static void findLC(String s1, String s2, int m, int n, int[][] table){
-		if(m == 0 || n == 0) return ;
-		for(int i = m-1; i >= 0; i--){
-			for(int j = n-1; j >= 0; j--){
-				if(s1.charAt(i) == s2.charAt(j)){
-					table[i][j] = 1 + table[i+1][j+1];
-				}else{
-					table[i][j] = Math.max(table[i+1][j], table[i][j+1]);
-				}
-			}
-		}
-		
-		int result = table[0][0];
-		int i = m; int j = n;
-		char[] lc = new char[result+1];
-		while(i > 0 && j > 0){
-
-			if(s1.charAt(i-1) == s2.charAt(j-1)){
-				lc[result-1] = s1.charAt(i-1);
-				result--;
-				i--;
-				j--;
-			}else if(table[i-1][j] > table[i][j-1]) 
-				i--;
-			else
-				j--;
-		}
-		System.out.println(lc);
-	}
 }

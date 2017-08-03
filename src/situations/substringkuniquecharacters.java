@@ -143,26 +143,26 @@ public static void main (String[] args) throws java.lang.Exception{
 //can refer to this also for hashset solution:
 //http://www.programcreek.com/2013/02/leetcode-longest-substring-without-repeating-characters-java/
 public static void getSubString(String s,int k){
-    int l=s.length();
+    int length=s.length();
     int hasFound[]=new int[26];
-    int maxWindowSize = Integer.MIN_VALUE, u=0;
+    int maxWindowSize = Integer.MIN_VALUE, unique=0;
     String str=null;
-    for (int currStart=0,currEnd=0; currEnd < l; currEnd++) {
+    for (int currStart=0,currEnd=0; currEnd < length; currEnd++) {
         char c = s.charAt(currEnd);
-        if(hasFound[c-'a']==0) u++;
+        if(hasFound[c-'a']==0) unique++;
         hasFound[c-'a']++;
-        if(u>k) {
+        if(unique>k) {
             int prevCurrStart = currStart;
-            while (u > k) {
+            while (unique > k) {
                 while (hasFound[s.charAt(prevCurrStart) - 'a'] != 0) {
                     hasFound[s.charAt(currStart) - 'a']--;
                     prevCurrStart = currStart;
                     currStart++;
                 }
-                u--;
+                unique--;
             }
         }
-        else if (u==k){
+        else if (unique==k){
             int len=currEnd-currStart+1;
             if(len>maxWindowSize)  {
                 maxWindowSize=len;
@@ -171,7 +171,7 @@ public static void getSubString(String s,int k){
         }
     }
 
-    if(u<k)
+    if(unique<k)
         System.out.println("Not enough chars");
     else System.out.println(str);
 }

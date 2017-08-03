@@ -8,6 +8,9 @@ public class segregateZerosAndOnes {
 		for(int i = 0; i < a.length; i++){
 			System.out.print(a[i] + " ");
 		}
+		System.out.println();
+		segregate1(a);
+		
 	}
 	
 	public static void segregate(int[] a){
@@ -24,7 +27,22 @@ public class segregateZerosAndOnes {
 				a[right] = 1;
 				left++;right--;
 			}
-		}
-		
+		}		
+	}
+	//use this
+	public static void segregate1(int[] a){
+		int l = a.length;
+		int left = 0; int right = l-1;
+		while(left < right){			
+			if(a[left] == 1){
+				int temp = a[left];
+				a[left] = a[right];
+				a[right] = temp;
+				right--;
+			}else{
+				left++;
+			}
+		}	
+		for(int i : a) System.out.print(i+" ");
 	}
 }

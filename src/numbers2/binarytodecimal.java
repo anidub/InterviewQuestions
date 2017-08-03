@@ -32,7 +32,7 @@ public class binarytodecimal {
     decimalToBinaryUsingBitManipulation(value >>> 1);
     System.out.print(value & 1);    
 }
-	
+
 	public static void binarytodecimalconvert(int binarynum){
 			binarynum = 1010;
 			int[] arrar = inttoarray(binarynum);
@@ -72,22 +72,5 @@ public class binarytodecimal {
 			System.out.print(i + " ");
 		}
 		return intarr;
-	}
-	
-	public void binarytodecimal(int n){
-
-		int p = 1;
-		int decimal = 0;
-		while(n > 0){
-			int temp = n%10;
-			int c = 1;
-			for(int i = 1; i <= p; i++){
-				c = c*2;
-			}
-			p++;
-			temp = temp * c;
-			n = n/10;
-			decimal = decimal+temp;
-		}
 	}
 }

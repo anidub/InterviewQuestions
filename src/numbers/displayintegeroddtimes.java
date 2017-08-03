@@ -12,20 +12,20 @@ public class displayintegeroddtimes {
 		int[] array = {1,2,1};
 		
 		int num = 0;
-		for(int i = 0; i < array.length; i++){
+		for (int i = 0; i < array.length; i++) {
 			num = num ^ array[i];
-	}
+		}
 		
 		
 		
 		//find interger even number of times
 		HashMap<Integer, Integer> nummap = new HashMap<Integer,Integer>();
-		for(int i = 0; i < array.length; i++){
-			if(nummap.containsKey(array[i]))
+		for (int i = 0; i < array.length; i++) {
+			if (nummap.containsKey(array[i]))
 				nummap.put(array[i], nummap.get(array[i]) + 1);
-		else
-			nummap.put(array[i], 1);
-	}
+			else
+				nummap.put(array[i], 1);
+		}
 	
 		
 		Iterator<Entry<Integer,Integer>> it = nummap.entrySet().iterator();
@@ -35,9 +35,9 @@ public class displayintegeroddtimes {
 			if(pair.getValue() % 2 == 0){
 				System.out.println(pair.getKey());
 			}
+			it.remove();
 		}
 		
 		//System.out.println(num);
 	}
-
 }

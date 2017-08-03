@@ -29,6 +29,9 @@ A = 3, B = 4*/
 			}else{
 				repeated = temp;
 			}
+			if(temp > largestNum){
+				largestNum = temp;
+		    }
 		}
 		
 		int total = largestNum * (largestNum+1)/2;

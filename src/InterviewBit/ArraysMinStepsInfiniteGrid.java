@@ -25,5 +25,4 @@ public static int minSteps(ArrayList<Integer> x, ArrayList<Integer> y){
 	}
 	return numOfSteps;
 }
-
 }

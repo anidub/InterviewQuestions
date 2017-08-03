@@ -5,7 +5,8 @@ public class coinstwoplayers {
 	//n is even
 	//O(n2)
 	//F(i, j)  represents the maximum value the user can collect from  i'th coin to j'th coin.
-	/* The user chooses the ith coin with value Vi: The opponent either chooses (i+1)th coin or jth coin. The opponent intends to choose the coin which leaves the user with minimum value.
+	/* The user chooses the ith coin with value Vi: The opponent either chooses (i+1)th coin or jth coin. 
+	 * The opponent intends to choose the coin which leaves the user with minimum value.
 	i.e. The user can collect the value Vi + min(F(i+2, j), F(i+1, j-1) )*/
 
 	//F(i, j)  = Max(Vi + min(F(i+2, j), F(i+1, j-1) ),   
@@ -57,5 +58,4 @@ public class coinstwoplayers {
 	// Utility functions to get maximum and minimum of two intgers
 	public static int max(int a, int b)  {    return a > b ? a : b;  }
 	public static int min(int a, int b)  {    return a < b ? a : b;  }
-	 
 }

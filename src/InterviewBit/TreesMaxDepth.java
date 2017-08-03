@@ -11,7 +11,7 @@ public class TreesMaxDepth {
         root.right = new TreeNode(3);
         root.left.left = new TreeNode(4);
         root.left.right = new TreeNode(5);
-        System.out.println("Height of tree is " + maxDepth(root));
+        System.out.println("Height of tree is " + shortestPathFromRootToLeaf(root));
 }
 //	http://www.geeksforgeeks.org/iterative-method-to-find-height-of-binary-tree/
 	public static int maxDepth(TreeNode node) {		  
@@ -39,13 +39,38 @@ public class TreesMaxDepth {
 	            }
 		}
 }
+	
 	//recursive
 	public int heightandsize(TreeNode root){
 		if(root == null) return 0;
 		int l = heightandsize(root.left);
 		int r = heightandsize(root.right);
 		return l > r ? l+1:r+1;
-	}	
+	}
+	
+	public static int shortestPathFromRootToLeaf(TreeNode node){
+		if(node == null) return 0;
+		Queue<TreeNode> queue = new LinkedList<TreeNode>();
+		queue.add(node);
+		int height = 0;
+		while(true){
+			int nodecount = queue.size();
+			if(nodecount == 0) return height;
+			height++;
+			while(nodecount > 0){
+				TreeNode temp = queue.poll();
+				//where no more next levels
+				if(temp.left == null && temp.right == null)
+					return height;
+				if(temp.left != null)
+					queue.add(temp.left);
+				if(temp.right != null) 
+					queue.add(temp.right);
+				nodecount--;
+			}
+		}
+	}
+	
 	
 	//http://www.programcreek.com/2013/02/leetcode-minimum-depth-of-binary-tree-java/
 	public int shortestpatroottolead(TreeNode root){
@@ -76,6 +101,7 @@ public class TreesMaxDepth {
 		return height;
 	}
 	
+	
 	//http://www.programcreek.com/2013/02/leetcode-minimum-depth-of-binary-tree-java/
 	public static int shortestPathRootToLeafRecursive(TreeNode root){
 		return shortestPathRootToLeafRecursive(root, 0);
@@ -88,5 +114,5 @@ public class TreesMaxDepth {
 		int depth2 = shortestPathRootToLeafRecursive(root.right, depth + 1);
 
 		return Math.min(depth1, depth2) + depth;
-	}
+	}	
 }

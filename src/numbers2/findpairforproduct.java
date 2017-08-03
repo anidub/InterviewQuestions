@@ -40,7 +40,6 @@ public class findpairforproduct {
 			}
 		}
 		return false;
-	
 	}
 	
 	// given a list of integers print odd first then even
@@ -73,6 +72,4 @@ public class findpairforproduct {
 			System.out.println(" " + i);
 		}*/
 	}
-	
-
 }

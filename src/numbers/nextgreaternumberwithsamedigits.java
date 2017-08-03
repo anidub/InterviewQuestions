@@ -55,7 +55,4 @@ public class nextgreaternumberwithsamedigits {
 	            System.out.print(number[i]);
 	        }
 	    }
-	}
-	        
-
-
+	}   

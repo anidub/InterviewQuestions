@@ -11,7 +11,6 @@ as 123 + 1 = 124.*/
 		array.add(2);array.add(5);array.add(6);array.add(8);array.add(6);array.add(1);
 		array.add(2);array.add(4);array.add(5);
 		plusOne(array);
-
 	}
 	public static ArrayList<Integer> plusOne(ArrayList<Integer> array) {
 		if(array.isEmpty()) return array;

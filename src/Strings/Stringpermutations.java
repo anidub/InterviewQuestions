@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class Stringpermutations {
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		String s = "ABC";
 		String s1 = "AAC";
 		//System.out.println("\nPermutations for " + s + " are: \n" + permutation(s));
@@ -13,7 +13,7 @@ public class Stringpermutations {
 		//recursionpermutation("", s);
 		combString(s);
 
-	}
+	}*/
 			public static Set<String> permutation(String str){
 				Set<String> words = new HashSet<String>();
 				if(str == null){
@@ -49,8 +49,7 @@ public class Stringpermutations {
 				for(int i = 0; i < n; i++){
 					recursionpermutation(prefix + str.charAt(i) , str.substring(0,i) + str.substring(i+1,n));
 				}
-			}
-			
+			}			
 			
 			//iterative works
 			public static void combString(String s) {
@@ -86,5 +85,34 @@ public class Stringpermutations {
 			    char temp = a[i];
 			    a[i] = a[j];
 			    a[j] = temp;
-			}	
+			}
+			
+		//works !!	https://www.quora.com/How-do-I-write-permutation-of-a-string-in-Java
+		    public static HashSet<String> getAllPermutations(String str) {
+		        // Create a hash set to prevent any duplicate entries
+		        HashSet<String> permutations = new HashSet<String>();
+		         
+		        if(str == null || str.length() == 0) {
+		            permutations.add("");
+		            return permutations;
+		        }
+		         
+		        char first = str.charAt(0);
+		        String remainingString = str.substring(1);
+		        HashSet<String> words = getAllPermutations(remainingString);
+		        for(String word: words) {
+		            for(int i = 0; i <= word.length(); i++) {
+		                String prefix = word.substring(0, i);
+		                String suffix = word.substring(i);
+		                permutations.add(prefix + first + suffix);
+		            }
+		        }
+		        return permutations;
+		    }
+		     
+		    public static void main(String[] args) {
+		        String str = "abc";
+		        HashSet<String> permutations = getAllPermutations(str);
+		        System.out.println(permutations.toString());
+		    }
 }

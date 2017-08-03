@@ -13,10 +13,7 @@ public class duplicatenumber {
 				System.out.println(num[i]);
 			}else{
 				numset.add(num[i]);
-			}
-			
+			}			
 		}
-
 	}
-
 }

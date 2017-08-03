@@ -1,7 +1,5 @@
 package situations;
 
-import java.util.HashMap;
-
 public class minwindown {
 //Find the smallest window in a string containing all characters of another string	
 	//Both the begin and end pointers can advance at most N steps (where N is S‘s size) in the worst case, adding to a total of 2N times. 
@@ -118,13 +116,13 @@ public class minwindown {
 		int min = Integer.MAX_VALUE;
 		int min_start = -1;
 		for (i = 0; i < f.length(); i++) {
-			if (count[f.charAt(i)] == 0)cnt++;
+			if(count[f.charAt(i)] == 0)cnt++;
 			count[f.charAt(i)]++;
 		}
 
 		for (i = 0; i < s.length(); i++) {
-			if (count[s.charAt(i)] != 0) {
-				if (start == -1)
+			if(count[s.charAt(i)] != 0) {
+				if(start == -1)
 					start = i;
 				actual[s.charAt(i)]++;
 				if ((actual[s.charAt(i)] == count[s.charAt(i)])) cnt--;
@@ -151,6 +149,5 @@ public class minwindown {
 			for (i = min_start; i < min + min_start; i++)
 				System.out.print(" " + s.charAt(i));
 
-	}	  	
+	}
 }
-

@@ -3,17 +3,18 @@ package InterviewBit;
 import java.util.Arrays;
 
 public class numberNbyKtimes {
-//	/https://www.interviewbit.com/problems/n3-repeat-number/
-	//You’re given a read only array of n integers. Find out if any integer occurs more than n/3 times in the array in linear time and constant additional space.
-	//http://www.geeksforgeeks.org/given-an-array-of-of-size-n-finds-all-the-elements-that-appear-more-than-nk-times/ O(nlogn)
-	
+/*	https://www.interviewbit.com/problems/n3-repeat-number/
+	You’re given a read only array of n integers. Find out if any integer occurs 
+	more than n/3 times in the array in linear time and constant additional space.
+	http://www.geeksforgeeks.org/given-an-array-of-of-size-n-finds-all-the-elements-that-appear-more-than-nk-times/ O(nlogn)
+*/	
 
 public static class eleCount{
-    int e;  // Element
-    int c;  // Count
+    int element;  // Element
+    int count;  // Count
     public eleCount(int e, int c) {
-		this.e = e;
-		this.c = c;
+		this.element = e;
+		this.count = c;
 	}
 }
 
@@ -63,8 +64,8 @@ public static void moreThanNdK(int arr[], int n, int k){
      int j;
      /* If arr[i] is already present in the element count array, then increment its count */
      for (j=0; j<k-1; j++) {
-         if (temp[j].e == arr[i]){
-              temp[j].c += 1;
+         if (temp[j].element == arr[i]){
+              temp[j].count += 1;
               break;
          }
      }
@@ -73,9 +74,9 @@ public static void moreThanNdK(int arr[], int n, int k){
          int l;    
     /* If there is position available in temp[], then place  arr[i] in the first available position and set count as 1*/
          for (l=0; l<k-1; l++)  {
-             if (temp[l].c == 0) {
-                 temp[l].e = arr[i];
-                 temp[l].c = 1;
+             if (temp[l].count == 0) {
+                 temp[l].element = arr[i];
+                 temp[l].count = 1;
                  break;
              }
          }
@@ -83,7 +84,7 @@ public static void moreThanNdK(int arr[], int n, int k){
    /* If all the position in the temp[] are filled, then decrease count of every element by 1 */
          if (l == k-1)
              for (l=0; l<k; l++)
-                 temp[l].c -= 1;
+                 temp[l].count -= 1;
      }
  }
 
@@ -93,13 +94,13 @@ public static void moreThanNdK(int arr[], int n, int k){
      // Calculate actual count of elements 
      int ac = 0;  // actual count
      for (int j=0; j<n; j++){
-         if (arr[j] == temp[i].e)
+         if (arr[j] == temp[i].element)
              ac++;
      }
 
      // If actual count is more than n/k, then print it
      if (ac > n/k)
-    	 System.out.println("Number: " + temp[i].e + " count: " + temp[i].c);
+    	 System.out.println("Number: " + temp[i].element + " count: " + temp[i].count);
  }
 }
 

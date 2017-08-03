@@ -19,7 +19,6 @@ for Example:  1234 -> 1,2,3,4,12,23,34,234,1234*/
 		
 	}
 	
-	//gives only ascending subsets
 	public static TreeSet<Integer> allSubsets(int a) {
 		TreeSet<Integer> hs = new TreeSet<Integer>();
 		ArrayList<Integer> numbers = new ArrayList<Integer>();
@@ -62,7 +61,7 @@ public static ArrayList<ArrayList<Integer>> powerSet(ArrayList<Integer> intList)
     }
     return result;
 }
-//use this //gives all subsets
+
 	public static Set<Set<Integer>> pow(Set<Integer> set) {
 		Set<Set<Integer>> result = new HashSet<Set<Integer>>();
 		pow(set, result, set.iterator());

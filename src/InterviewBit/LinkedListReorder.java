@@ -94,6 +94,7 @@ public static void reorderLista(LinkedListNode head) {//Time : O(N) ; Space: O(1
     display(ss.next); // if you want return value return ss;
     System.out.println();
 }
+
 public static void display(LinkedListNode h){
 	while(h != null){
 		System.out.print("-->" + h.data); h = h.next;

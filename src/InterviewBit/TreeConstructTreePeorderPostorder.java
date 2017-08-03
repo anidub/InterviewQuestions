@@ -1,7 +1,5 @@
 package InterviewBit;
 
-import org.w3c.dom.Node;
-
 public class TreeConstructTreePeorderPostorder {
 /*	Construct Full Binary Tree from given preorder and postorder traversal
 	Given two arrays that represent preorder and postorder traversals of a full binary tree, construct the binary tree.

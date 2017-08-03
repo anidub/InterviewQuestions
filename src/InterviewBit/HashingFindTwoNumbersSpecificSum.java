@@ -42,7 +42,7 @@ public class HashingFindTwoNumbersSpecificSum {
 	     int num;
 	     int index;
 	     ArrayList<Integer> res = new ArrayList<Integer>();
-	        ArrayList<Node> node = new ArrayList<Node>();	     
+	     ArrayList<Node> node = new ArrayList<Node>();	     
 	     for (int i = size - 1; i >= 0; i--) {
 	         num = A.get(i);
 	         diff = sum - num;	         

@@ -10,7 +10,7 @@ public class TreesKthSmallestElement {
 		http://stackoverflow.com/questions/2329171/find-kth-smallest-element-in-a-binary-search-tree-in-optimum-way
 		read the one with 142 likes
 */    public static int kthsmallest(TreeNode root, int k) {//O(n)
-			Stack<TreeNode> stack = new Stack<TreeNode>();
+		Stack<TreeNode> stack = new Stack<TreeNode>();
 		TreeNode p = root;
 		int result = -1;
 		while (p != null) {
@@ -68,13 +68,13 @@ public static int kth(TreeNode root, int k){
 	}
 	return kthsmall;
 }
-	
-	public static void main(String[] args){
+
+public static void main(String[] args){
 		TreeNode root = new TreeNode(1);
 		root.left = new TreeNode(2);
 		root.left.left = new TreeNode(4);
 		root.left.right = new TreeNode(5);
 		root.right = new TreeNode(3);
 		kthsmallest(root,2);
-	}
+	}	
 }

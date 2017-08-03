@@ -1,19 +1,16 @@
 package situations;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
-import java.util.TreeSet;
 
-public class trails {
-
-	
+public class trails {	
 	public static void main(String[] args){
 		int[] A =  {1,2,3};			//{4,2,5,7,9};	
 		ArrayList<Integer> intList = new ArrayList<Integer>();
 		intList.add(1);intList.add(2);intList.add(3);intList.add(4);
-		powerSet(intList);
-		colorful(123);
+		buildDictionary();
+		//powerSet(intList);
 	}
 	
 	public static ArrayList<ArrayList<Integer>> powerSet(ArrayList<Integer> intList) {
@@ -31,37 +28,47 @@ public class trails {
 	        }
 	        result.addAll(temp);
 	    }
-
 	    return result;
+	}	 
+	
+	public static void buildDictionary(){
+		HashMap<Character, ArrayList<String>> map = new HashMap<Character, ArrayList<String>>();
+		ArrayList<String> arr = new ArrayList<String>();
+		arr.add("hello");arr.add("dello");arr.add("yello");arr.add("ye");
+		
+		for(String s : arr){
+			for(Character c : s.toCharArray()){
+				ArrayList<String> temp;
+				if(map.containsKey(c)){
+					temp = map.get(c);
+				}else{
+					 temp = new ArrayList<String>();
+				}
+				temp.add(s);
+				map.put(c, temp);
+			}
+		}
+		
+		String chars = "del";
+		ArrayList<String> result = new ArrayList<String>();
+		HashSet<String> res1 = new HashSet<String>();
+		for(Character c : chars.toCharArray()){
+			if(map.containsKey(c)){
+				ArrayList<String> arr1 = map.get(c);
+				for(String s1 : arr1){
+					if(s1.indexOf(chars) != -1){
+						result.add(s1);
+						res1.add(s1);
+					}
+				}
+			}
+		}
+		
+		for(String s : res1){
+			System.out.println(s);
+		}
+		
 	}
 	
-	public static int colorful(int A) {
-	    HashSet<Integer> hashSet = new HashSet<Integer>();
-	    ArrayList<Integer> numbers = new ArrayList<Integer>();
-	    
-	    while (A != 0) {
-	        int num = A % 10;
-	        numbers.add(num);
-	        A /= 10;
-	    }
-	    
-	    Collections.reverse(numbers);
-	    int n = numbers.size();
-	    
-	    for (int i = 0; i < n; i++) {
-	        for (int j = i; j < n; j++) {
-	            int prod = 1;
-	            StringBuilder ss = new StringBuilder();
-	            for (int k = i; k <= j; k++) {
-	            	
-	            	 ss.append(numbers.get(k)+"");
-	                prod *= numbers.get(k);
-	            }            
-	            hashSet.add(Integer.parseInt(ss.toString()));
-	        }
-	    }
-	    
-	    return 1;
-	    
-	}
+	
 }

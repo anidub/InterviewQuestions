@@ -1,6 +1,6 @@
 package InterviewBit;
 
- class TreeNode {
+class TreeNode {
 	 int data;
 	 TreeNode left;
 	 TreeNode right;
@@ -15,3 +15,4 @@ package InterviewBit;
 		 this.right = right;
 	 }
 }
+ 

@@ -59,7 +59,6 @@ public class HashingLongestSubstringWithoutRepeating {
 		TreeSet<Character> set = new TreeSet<Character>();
 		int start = 0;
 		String sub = "";
-		int a = 0; int b = 0;
 		int maxLen = 0;
 		for(int i = 0; i < s.length(); i++){
 			Character c = s.charAt(i);

@@ -26,7 +26,7 @@ public class maxwithnoadjacent {
   public static void main(String[] args){
 	  maxwithnoadjacent sum = new maxwithnoadjacent();
       int arr1[] = new int[]{5, 5, 10, 100, 10, 5};
-	  int arr2[] = new int[]{-3,-6,-1,-10};
+	  int arr2[] = new int[]{3,-6,1,-10};
      System.out.println(sum.FindMaxSum(arr1, arr1.length));
 	  System.out.println(MaxSumNonContiguousWithNegative(arr2));
   }

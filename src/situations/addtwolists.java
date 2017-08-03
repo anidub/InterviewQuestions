@@ -78,14 +78,12 @@ public class addtwolists {
 		for(int o : aa){
 			System.out.print(o);
 		}
+		System.out.println();
 		for(int x = 0; x < numarray.length; x++){
 			System.out.print(numarray[x]);
 		}
 		//IT STORES RESULT IN BOTH ARRAY AND ARRAYLIST
 		//THIS EXCLUDES NEGATIVE NUMBERS;
-		return aa;
-		
+		return aa;		
 	}
-
-
 }

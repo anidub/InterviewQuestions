@@ -40,8 +40,7 @@ public class HashingMaxPointsStraightLine {
 	                    slope = (double) Integer.MAX_VALUE;
 	                } else {
 	                    slope = (double) (points[j].y - points[i].y) / (points[j].x - points[i].x);
-	                }
-	                 
+	                }	                 
 	                 
 	                if (map.containsKey(slope)) {
 	                    map.put(slope, map.get(slope) + 1);
@@ -56,5 +55,5 @@ public class HashingMaxPointsStraightLine {
 	            max = Math.max(max, localMax);
 	        }
 	        return max;
-	    }
+	    }		 
 }

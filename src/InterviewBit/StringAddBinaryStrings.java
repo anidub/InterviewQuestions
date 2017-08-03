@@ -3,8 +3,12 @@ package InterviewBit;
 public class StringAddBinaryStrings {
 //http://www.programcreek.com/2014/05/leetcode-add-binary-java/
 //https://www.interviewbit.com/problems/add-binary-strings/	
+/*	Given two binary strings, return their sum (also a binary string)
+			a = "100"
+			b = "11"
+			Return a + b = “111”.*/		
 	public static void main(String[] args) {
-		System.out.println(addBinary("100","11"));
+		System.out.println(addBinary("1001","11"));
 
 	}
 	public static String addBinary(String a, String b) {

@@ -10,14 +10,13 @@ public class StringCountAndSay {
 11 is read off as two 1s or 21.
 21 is read off as one 2, then one 1 or 1211.*/
 	public static void main(String[] args) {
-		System.out.println(countandSay(3));
+		System.out.println(countandSay(4));
 	}
 	
 	public static String countandSay(int n){
 	    // Base cases
 	    if (n == 1)      return "1";
 	    if (n == 2)      return "11";
-	    
 		String result = "1";
 		int i = 1;
 		while(i < n){
@@ -36,5 +35,5 @@ public class StringCountAndSay {
 			i++;
 		}
 		return result;
-	}
+	}	
 }

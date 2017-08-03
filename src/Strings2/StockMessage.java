@@ -58,8 +58,7 @@ Space: O(MN)
 	public class MsgTimeComparator implements Comparator<Message> {
 		  public int compare(Message m1, Message m2) {
 		    return ((m1.timestamp() - m2.timestamp()) > 0) ? -1 : 1;
-		  }
-		  
+		  }		  
 		}
 
 		public class StockAverager {

@@ -3,6 +3,7 @@ package InterviewBit;
 public class BinarySearchpowerAndMod {
 //https://www.interviewbit.com/problems/implement-power-function/ O(logn)//Binary search
 	//https://www.careercup.com/question?id=22767685
+	//calculate (x^y)%z without pow()
 	public static void main(String[] args) {
 		System.out.println(mod(2,3,3));
 	}
@@ -19,7 +20,7 @@ public class BinarySearchpowerAndMod {
 		}
 		return result;
 	}
-	
+		
 	public static int calPower(int x, int y){
 		if(y == 0) return 1;
 		int temp;

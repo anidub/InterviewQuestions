@@ -5,11 +5,9 @@ import java.util.HashMap;
 public class StringhasanagramofanotherString {
 
 	public static void main(String[] args) {
-		String s1 = "Hello"; //parent
-		String s2 = "oleHwfl"; //child
-		
+		String s1 = "oleHwfl"; //parent	
+		String s2 = "Hello"; //child		
 		System.out.println(checkifstringcontainsanagram(s1,s2));
-		
 	}
 	
 	public static boolean checkifstringcontainsanagram(String s1, String s2){

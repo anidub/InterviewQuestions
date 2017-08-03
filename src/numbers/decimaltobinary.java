@@ -56,7 +56,6 @@ public class decimaltobinary {
 
 	    return binary;
 	}
-
 	public static void inttoarray(int num){
 		String temp = Integer.toString(num);
 		int[] intarr = new int[temp.length()];

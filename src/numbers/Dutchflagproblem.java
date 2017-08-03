@@ -9,9 +9,6 @@ public class Dutchflagproblem {
 		for(int i = 0; i < size; i++){
 			System.out.print(array[i]);
 		}
-		System.out.println();
-		int[] num = {1,2,3,4,2};
-		System.out.println(binarysearch(num,2));
 	}
 	
 	public static void sort012(int[] array, int l){

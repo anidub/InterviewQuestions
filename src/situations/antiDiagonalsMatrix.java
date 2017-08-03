@@ -15,7 +15,7 @@ Return the following :
   [6, 8],
   [9]
 ]*/	//https://angshukutu.wordpress.com/2016/02/08/interviewbit-arrays/
-//O(n2)
+//O(n2)//remember the reverse L Shape for the answer
 public class antiDiagonalsMatrix {
 	public static ArrayList<ArrayList<Integer>> antiDiagonal(ArrayList<ArrayList<Integer>> a) {
 		ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
@@ -62,5 +62,5 @@ public class antiDiagonalsMatrix {
 		three.add(7);three.add(8);three.add(9);
 		t.add(one);	t.add(two);	t.add(three);
 		antiDiagonal(t);
-	}
+	}	
 }

@@ -5,7 +5,6 @@ public class sumofnumberpowerton {
 	public static void main(String[] args) {
 		int[] num = {1,-2,3,4,5};
 		System.out.println(result(num,4));
-
 	}
 	
 	public static int result(int[] num, int k){

@@ -16,11 +16,9 @@ You may assume that all costs are positive integers.*/
                 {4, 8, 2},
                 {1, 5, 3} };
 		System.out.println(minCost(cost,2,2));
-
 	}
 	
-	public static int minCost(int cost[][], int m, int n)
-	{
+	public static int minCost(int cost[][], int m, int n){
 	     int i, j;
 	 
 	     // Instead of following line, we can use int tc[m+1][n+1] or 
@@ -46,8 +44,7 @@ You may assume that all costs are positive integers.*/
 	     return tc[m][n];
 	}
 	
-	public static int min(int x, int y, int z)
-	{
+	public static int min(int x, int y, int z){
 	   if (x < y)
 	      return (x < z)? x : z;
 	   else

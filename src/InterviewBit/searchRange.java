@@ -1,5 +1,7 @@
 package InterviewBit;
 
+import java.util.ArrayList;
+
 public class searchRange {
 	//Binary Search
 	//https://www.interviewbit.com/problems/search-for-a-range/ O(logn)

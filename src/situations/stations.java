@@ -34,6 +34,5 @@ public class stations {
 				}
 			}
 		return dest[N-1];
-	};
-
+	}
 }

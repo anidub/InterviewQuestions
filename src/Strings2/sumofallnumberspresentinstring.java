@@ -1,8 +1,5 @@
 package Strings2;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
 public class sumofallnumberspresentinstring {
 /*//http://www.geeksforgeeks.org/calculate-sum-of-all-numbers-present-in-a-string/
 //O(n)

@@ -7,7 +7,7 @@ public class StringMultiply {
 			 Note: The numbers can be arbitrarily large and are non-negative.
 			Note2: Your answer should not have leading zeroes. For example, 00 is not a valid answer. 
 			For example, 
-			given strings "12", "10", your answer should be ‚Äú120‚Äù.*/
+			given strings "12", "10", your answer should be ì120î.*/
 	public static void main(String[] args) {
 		System.out.println(multiplya("12","13"));
 	}

@@ -56,8 +56,6 @@ public class maxoccuringcharacter {
 				System.out.println(entry.getKey());
 			}
 		}
-		System.out.println(result);
-		
+		System.out.println(result);		
 	}
-
 }

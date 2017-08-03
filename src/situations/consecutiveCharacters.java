@@ -27,7 +27,6 @@ public class consecutiveCharacters {
 				}
 			}
 		}
-		//return lst;
         for(String k : lst) System.out.println(k);
         return lst;
     }

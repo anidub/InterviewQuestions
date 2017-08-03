@@ -28,6 +28,6 @@ public class binarysearch {
 	+ " Coding the calculation this way ensures that the number divided is always positive and hence always rounds as we want it to."
 	+ " Although the bug doesn't surface when the search space consists only of positive integers or real numbers, "
 	for (low+high)/2 ->
-	* It fails for large values of l and r. Specifically, it fails if the sum of low and high is greater than the maximum positive int value (231 â€“ 1). 
+	* It fails for large values of l and r. Specifically, it fails if the sum of low and high is greater than the maximum positive int value (231 – 1). 
 	* The sum overflows to a negative value, and the value stays negative when divided by two. */
 }

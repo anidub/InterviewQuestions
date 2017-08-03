@@ -101,5 +101,5 @@ public class StringJustification {
 	    }
 	    result.add(sb.toString());	 
 	    return result;
-	}	 
+	}
 }

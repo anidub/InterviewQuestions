@@ -74,5 +74,5 @@ public class Boggle {
  
 		System.out.println("\nWords:");
 		printWords(boggle);
-	}
+	}	
 }

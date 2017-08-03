@@ -1,11 +1,12 @@
 package Strings2;
 
 import java.util.LinkedHashMap;
-import java.util.Map.Entry;import numbers2.getMedianofTwosortedarrays;
+import java.util.Map.Entry;
 
 public class duplicatecharsinorder {
 	// Print the count of duplicate char in a given string in same order.
-	// O(n) //LinkedHashMap: The order of the iteration is determined by the insertion order, so you will get the key/values back in the order that they were added to this Map.
+	// O(n) //LinkedHashMap: The order of the iteration is determined by the insertion order, 
+	//so you will get the key/values back in the order that they were added to this Map.
 	public static void main(String[] args) {
 		String a = "abllahabadl";
 		LinkedHashMap<Character, Integer> hm = new LinkedHashMap<Character, Integer>();
@@ -19,6 +20,5 @@ public class duplicatecharsinorder {
 				System.out.println(entry.getKey() + " " + entry.getValue());
 			}
 		}
-	}
-
+	}	
 }

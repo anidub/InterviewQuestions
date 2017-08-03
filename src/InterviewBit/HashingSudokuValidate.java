@@ -45,7 +45,6 @@ Determine if a Sudoku is valid, according to: http://sudoku.com.au/TheRules.aspx
 				hashSet.add(c);
 			}
 		}
-
 //total 9 subgrids
 		for (int k = 0; k < 9; k++) {//all sub grids
 			int x = k / 3;

@@ -6,8 +6,10 @@ import java.util.Set;
 public class StringfindIfPowerOf2 {
 //http://javarevisited.blogspot.com/2013/05/how-to-check-if-integer-number-is-power-of-two-example.html
 //https://www.interviewbit.com/problems/power-of-2/	
+/*	Find if Given number is power of 2 or not. 
+	More specifically, find if given number can be expressed as 2^k where k >= 1.*/
 	public static void main(String[] args) {
-		System.out.println(power("2"));
+		System.out.println(power("32"));
 	}
 	
 	public static Integer power(String s){//my solution
@@ -29,5 +31,5 @@ public class StringfindIfPowerOf2 {
 			}
 		}
 		return 1;
-	} 
+	}
 }

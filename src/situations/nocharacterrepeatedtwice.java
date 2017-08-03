@@ -30,7 +30,7 @@ public class nocharacterrepeatedtwice {
 		}
 
 		PriorityQueue<CharFreq> PQ = new PriorityQueue<CharFreq>(new Comparator<CharFreq>()	{
-			public int compare(CharFreq arg0, CharFreq arg1) {
+			public int compare(CharFreq arg0, CharFreq arg1) {//high freq chars above others
 				if (arg0.freq > arg1.freq)
 					return -1;
 				else if (arg0.freq < arg1.freq)
@@ -66,6 +66,7 @@ public class nocharacterrepeatedtwice {
 		String str = "baad"; // no same letters together
 		System.out.println(rearrangeLetters(str));
 		System.out.println(reLetters("ababa"));
+		System.out.println(reaLetters("aababa"));
 	}
 //same letter together : aaabb
 	public static String reLetters(String a) {
@@ -92,4 +93,24 @@ public class nocharacterrepeatedtwice {
 		}
 		return res.toString();
 	}
+	
+	
+	//same letter together : aaabb
+		public static String reaLetters(String a) {
+			StringBuilder res = new StringBuilder();
+			int[] chars = new int[26];
+			for(int i = 0; i < a.length(); i++){
+				chars[a.charAt(i) - 97]++;
+			}
+			
+			for(int i = 0; i < chars.length; i++){
+				int index = chars[i];
+				while(index != 0){
+					char c = (char)(i+97);
+					res.append(c);
+					index--;
+				}
+			}			
+			return res.toString();
+		}
 }

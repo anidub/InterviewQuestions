@@ -37,6 +37,8 @@ public class LinkedListUniqueOnly {
 		n2.next.next.next.next.next.next.next = new LinkedListNode(13);*/
 		LinkedListNode result = unique(n);
 		display(result);
+		
+
 	}
 	
 	public static LinkedListNode unique(LinkedListNode head){
@@ -67,4 +69,6 @@ public class LinkedListUniqueOnly {
 				h = h.next;
 			}
 		}
+	 
+
 }

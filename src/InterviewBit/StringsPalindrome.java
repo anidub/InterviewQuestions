@@ -5,13 +5,13 @@ import java.util.Map.Entry;
 
 public class StringsPalindrome {
 /*Minimum Characters required to make a String Palindromic
-http://www.geeksforgeeks.org/dynamic-programming-set-28-minimum-insertions-to-form-a-palindrome/
+thttp://www.geeksforgeeks.org/dynamic-programming-set-28-minimum-insertions-to-form-a-palindrome/
 https://www.youtube.com/watch?v=DOnK40BvazI&feature=youtu.be
 Given a string, find the minimum number of characters to be inserted to convert it to palindrome.*/
 	public static void main(String[] args) {
 		String s = "abc";
 		System.out.println(insertPalindrome(s));
-	}
+	} 
 	
 public static String makePalindrome(String s){
 	if(s == null || s.length() == 0) return "";
@@ -31,9 +31,9 @@ public static String makePalindrome(String s){
 		Entry<Character,Integer> pair = (Entry<Character, Integer>) hm.entrySet();
 		sb.append(pair.getKey());
 	}
-	return sb.toString();
-	
+	return sb.toString();	
 }
+
 public static int solve(String a) {
     int n = a.length();
     char c[]=a.toCharArray();
@@ -42,24 +42,24 @@ public static int solve(String a) {
     
 }
 
-public static int bs(char c[], int n) {
-	int first = 0, last = n;
-	int ans = 0;
-	while (first <= last) {
-		int middle = (first + last)/2;
-		if (valid(c, n, middle)) {
-			ans = middle;
-			last = middle - 1;
-		} else {
-			if (middle - 1 >= 0 && valid(c, n, middle - 1)) {
-				ans = middle - 1;
-				last = middle - 2;
-			} else
-				first = middle + 1;
+	public static int bs(char c[], int n) {
+		int first = 0, last = n;
+		int ans = 0;
+		while (first <= last) {
+			int middle = (first + last)/2;
+			if (valid(c, n, middle)) {
+				ans = middle;
+				last = middle - 1;
+			} else {
+				if (middle - 1 >= 0 && valid(c, n, middle - 1)) {
+					ans = middle - 1;
+					last = middle - 2;
+				} else
+					first = middle + 1;
 			}
 		}
-	return ans;
-}
+		return ans;
+	}
 public static boolean valid(char c[],int n,int middle){
     int start=0;
     int end=n-middle-1;
@@ -72,9 +72,12 @@ public static boolean valid(char c[],int n,int middle){
     return true;
 }
 
-/*If we find out LCS of string and its reverse, we know how many maximum characters can form a palindrome. We need insert remaining characters. Following are the steps.
-1) Find the length of LCS of input string and its reverse. Let the length be ‘l’.
-2) The minimum number insertions needed is length of input string minus ‘l’.*/
+
+
+/*
+ * minimum number of insertions required
+ * in front to have palindrome 
+ */
 public static int insertPalindrome(String s){
 	char[] c1 = s.toCharArray();
 	String s2 = new StringBuffer(s).reverse().toString();
@@ -86,8 +89,8 @@ public static int insertPalindrome(String s){
 public static int longestCommonSubstring(char[] c1, char[] c2){
 	int m =  c1.length; int n = c2.length;
 	int[][] lcs = new int[c1.length+1][c2.length+1];
-	for(int i = 0; i <= m; i++){
-		for(int j = 0; j <= n; j++){
+	for(int i = 0; i < m; i++){
+		for(int j = 0; j < n; j++){
 			if(i == 0 || j == 0)
 				lcs[i][j] = 0;
 			else if(c1[i-1] == c2[j-1])
@@ -96,6 +99,7 @@ public static int longestCommonSubstring(char[] c1, char[] c2){
 				lcs[i][j] = Math.max(lcs[i-1][j], lcs[i][j-1]);
 		}
 	}
-	return lcs[m][n];
-  }
+	return lcs[m][n];	
+}
+
 }

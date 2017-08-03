@@ -30,7 +30,8 @@ public class numbersAndSumInArray {
 		getElements(array, map, 0, array.length-1, 0,pair, data);
 	}
 	
-	public static void getElements(int[] array, HashMap<Integer, Integer> map, int index, int length, int i, int pair, int[] data){		if(i >= length) return;
+	public static void getElements(int[] array, HashMap<Integer, Integer> map, int index, int length, int i, int pair, int[] data){		
+		if(i >= length) return;
 		count++;
 		if(index == pair){
 			int sum = 0;

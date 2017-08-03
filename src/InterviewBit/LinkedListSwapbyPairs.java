@@ -31,6 +31,7 @@ public class LinkedListSwapbyPairs {
 		}
 		return dummy.next;
 	}
+
 public static void display(LinkedListNode h){
 	while(h != null){
 		System.out.print("-->" + h.data); h = h.next;

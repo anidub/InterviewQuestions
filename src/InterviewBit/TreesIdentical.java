@@ -26,7 +26,6 @@ public class TreesIdentical {
 		n2.right = n3;
 		n1.right = n4;
 		n2.left = n5;
-		
 		TreeNode m1 = new TreeNode(1);
 		m1.left = n2;
 		n2.right = n3;
@@ -69,7 +68,6 @@ public boolean sameTree(TreeNode A, TreeNode B) {//O(n)
 	    if (A.value != B.value) return false;	    
 	    boolean isLeftSame = sameTree(A.left, B.left);
         boolean isRightSame = sameTree(A.right, B.right);
-        return A.value==B.value && isLeftSame && isRightSame;
-   
+        return A.value==B.value && isLeftSame && isRightSame;   
 	}
 }

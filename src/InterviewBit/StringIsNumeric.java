@@ -1,7 +1,5 @@
 package InterviewBit;
 
-import java.util.HashSet;
-
 public class StringIsNumeric {
 //http://stackoverflow.com/questions/1102891/how-to-check-if-a-string-is-numeric-in-java
 //	https://www.interviewbit.com/problems/valid-number/ 

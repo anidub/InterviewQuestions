@@ -69,7 +69,6 @@ public class TreesShortestUniquePrefix {
 		}
 		return str.substring(0,len);
 	}
-	
 	//works
 	/*public class Node {
 	    char c;

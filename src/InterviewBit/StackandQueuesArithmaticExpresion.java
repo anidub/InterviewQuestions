@@ -99,5 +99,12 @@ public class StackandQueuesArithmaticExpresion {
 			}
 		}
 		return sum;
-	}	
+	}
+	
+	public static boolean isoper(Character c){
+		if(c == '+' || c == '-' || c == '/' || c == '*'){
+			return true;
+		}
+		return false;
+	}
 }

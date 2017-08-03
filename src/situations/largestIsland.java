@@ -154,7 +154,7 @@ public class findLargetsIsland {
 	        return;
 	    }
 
-	    // found a propper cell, proceed
+	    // found a proper cell, proceed
 	    current_area++;
 	    visited[x][y] = true;
 	    // call recursive function for the adjacent cells (north, east, south, west)
@@ -177,6 +177,5 @@ public class findLargetsIsland {
 	        }
 	    }
 	    System.out.println("Max area is :" + max_area);
-	}
-	
+	}	
 }*/

@@ -7,8 +7,7 @@ public class RatMaze
 {
  final int N = 4;
 
- /* A utility function to print solution matrix
-    sol[N][N] */
+ /* A utility function to print solution matrix sol[N][N] */
  void printSolution(int sol[][])
  {
      for (int i = 0; i < N; i++)
@@ -91,8 +90,7 @@ public class RatMaze
      return false;
  }
 
- public static void main(String args[])
- {
+ public static void main(String args[]) {
      RatMaze rat = new RatMaze();
      int maze[][] = {{1, 0, 0, 0},
          {1, 1, 0, 1},

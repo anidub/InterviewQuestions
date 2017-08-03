@@ -33,32 +33,5 @@ public class oneditfromeachother {
 		}else{
 			System.out.println("It isnt");
 		}
-		
-		/*String first="bac";
-		String second="abd";
-		int c=0;
-		boolean flag=true;
-		int lengthdiffer=first.length()>second.length()?first.length()-second.length():second.length()-first.length();
-		if(lengthdiffer < 1){
-			int length=first.length()>second.length()?second.length():first.length();
-				for(int i=0;i<length;i++){
-					if(second.charAt(i)==first.charAt(i));
-					else{
-						c++;
-						}
-						if(c>1){
-							flag=false;
-							break;
-						}
-				}
-				if (flag)
-					System.out.println("it is correct");
-				else
-					System.out.println("it isn't");
-				}
-			else
-				System.out.println("it isn't");
-			}*/
-
 }
 }

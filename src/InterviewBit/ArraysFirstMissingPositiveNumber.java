@@ -36,32 +36,38 @@ public class ArraysFirstMissingPositiveNumber {
 		   return i+1;  
 		 }
 	 //http://www.programcreek.com/2014/05/leetcode-first-missing-positive-java/
+/*	 Your algorithm should run in O(n) time and uses constant space.
+	 Analysis
+	 This problem can solve by using a bucket-sort like algorithm.
+	 Let's consider finding first missing positive and 0 first.
+	 The key fact is that the ith element should be i, so we have:
+	 i==A[i]
+	 A[i]==A[A[i]]*/
 	 public static int firstMissingPositiveInt(int[] A) {
 		 for(Integer k : A){
 			   System.out.print(k+ " ");
 		   }
 	        int n = A.length;
 	 
-	    	for (int i = 0; i < n; i++) {
-	    		while (A[i] != i + 1) {
-	    			if (A[i] <= 0 || A[i] >= n)
-	    				break;
+		for (int i = 0; i < n; i++) {
+			while (A[i] != i + 1) {
+				if (A[i] <= 0 || A[i] >= n)
+					break;
+
+				if (A[i] == A[A[i] - 1])
+					break;
+
+				int temp = A[i];
+				A[i] = A[temp - 1];
+				A[temp - 1] = temp;
+			}
+		}
 	 
-	                	if(A[i]==A[A[i]-1])
-	                    		break;
-	 
-	    			int temp = A[i];
-	    			A[i] = A[temp - 1];
-	    			A[temp - 1] = temp;
-	    		}
-	    	}
-	 
-	    	for (int i = 0; i < n; i++){
-	    		if (A[i] != i + 1){
-	    			return i + 1;
-	    		}
-	    	}	
-	 
+		for (int i = 0; i < n; i++) {
+			if (A[i] != i + 1) {
+				return i + 1;
+			}
+		}		 
 	    	return n + 1;
 	}
 }

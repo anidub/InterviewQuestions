@@ -1,7 +1,5 @@
 package numbers2;
 
-import java.util.ArrayList;
-
 public class missingNumber {
 /*	Given an array of size N, filled with numbers from 1 to N+1 and no duplicates. Find out the missing number*/
 
@@ -20,7 +18,6 @@ public class missingNumber {
 			sum1 += number++;
 		}
 		sum1 += number;
-		return sum1-sum;
-		
+		return sum1-sum;		
 	}
 }

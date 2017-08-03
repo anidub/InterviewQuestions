@@ -54,9 +54,7 @@ public class ArraysSortSubArray {
 			}
 		}
 	}
-	public static void main(String[] args) {
-		
+	public static void main(String[] args) {		
 
 	}
-
 }

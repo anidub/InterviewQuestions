@@ -5,7 +5,13 @@ import java.util.HashMap;
 import java.util.List;
 
 public class HashingSubStringConcatenation {
-/*The idea is first store all words in a hashmap.Then iterate along string.Copy original hashmap to a new one hm.
+/*You are given a string, S, and a list of words, L, that are all of the same length.
+Find all starting indices of substring(s) in S that is a concatenation of each word in L exactly once and without any intervening characters.
+Example :
+S: "barfoothefoobarman"
+L: ["foo", "bar"]
+You should return the indices: [0,9].
+The idea is first store all words in a hashmap.Then iterate along string.Copy original hashmap to a new one hm.
 The check for every word in the words and see if it is there in hashmap. If not break,if yes then reduce its value by
 1, so that we clear duplicates.if empty mean that all words are covered in substring and add the index to result
 https://www.interviewbit.com/problems/substring-concatenation/
@@ -13,15 +19,7 @@ What is the complexity of this algorithm?
 The time of checking a concatenation is O(k*m) = O(m) and we check it (n - k*m) times, 
 so the total running time is O((n - k*m)*m). The space complexity is the size of list L,
  which is O(k*m) = O(m),  since we create a hash table of list L.
-http://n00tc0d3r.blogspot.com/2013/06/substring-with-concatenation-of-all.html
-You are given a string, S, and a list of words, L, that are all of the same length.
-
-Find all starting indices of substring(s) in S that is a concatenation of each word in L exactly once
-and without any intervening characters.
-Example :
-S: "barfoothefoobarman"
-L: ["foo", "bar"]
-You should return the indices: [0,9].
+	http://n00tc0d3r.blogspot.com/2013/06/substring-with-concatenation-of-all.html
 S: "barfoothefoobarman"
 L: ["foo", "bar"]	*/
 	public static void main(String[] args) {

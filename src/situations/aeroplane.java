@@ -24,7 +24,6 @@ public class aeroplane {
 			if (!st.contains(c))
 			return null;
 		}
-		String tod = null;
 		StringBuilder sb = new StringBuilder();
 		int numdigit = 0;
 		int x = 0;
@@ -139,5 +138,4 @@ public class aeroplane {
 		System.out.println("y : " + y );
 		return null;
 	}*/
-
 }

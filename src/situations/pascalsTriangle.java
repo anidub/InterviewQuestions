@@ -21,12 +21,13 @@ public class pascalsTriangle {
 			}
 			System.out.println();
 		}
+		generate(5);
 	}
 
 
 //to store in arraylist
 	//http://www.programcreek.com/2014/03/leetcode-pascals-triangle-java/
-public ArrayList<ArrayList<Integer>> generate(int numRows) {
+public static ArrayList<ArrayList<Integer>> generate(int numRows) {
 	ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
 	if (numRows <= 0)
 		return result;
@@ -46,8 +47,7 @@ public ArrayList<ArrayList<Integer>> generate(int numRows) {
  
 		result.add(cur);
 		pre = cur;
-	}
- 
+	} 
 	return result;
 }
 }

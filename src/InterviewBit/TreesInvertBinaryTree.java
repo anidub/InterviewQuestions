@@ -36,9 +36,7 @@ public class TreesInvertBinaryTree {
 	
 	//http://www.programcreek.com/2014/06/leetcode-invert-binary-tree-java/
 	public static TreeNode invertTree(TreeNode root) {
-
-		LinkedList<TreeNode> queue = new LinkedList<TreeNode>();
-	 
+		LinkedList<TreeNode> queue = new LinkedList<TreeNode>();	 
 	    if(root!=null){
 	        queue.add(root);
 	    }

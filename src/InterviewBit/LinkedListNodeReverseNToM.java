@@ -75,13 +75,12 @@ public class LinkedListNodeReverseNToM {
 		   
 		   // reverse the list  
 		   while (pos < n && cur != null) {  
-			   LinkedListNode nt = cur.next.next;  
+			 LinkedListNode nt = cur.next.next;  
 		     cur.next.next = pre.next;  
 		     pre.next = cur.next;  
 		     cur.next = nt;  
 		     ++pos;  
-		   }  
-		   
+		   }  		   
 		   return dummy.next;  
-		 }  
+	}
 }

@@ -15,7 +15,8 @@ public class ArrayFindNextGreaterPermutation {
 	20, 50, 113 -> 20, 113, 50*/
 	public static void main(String[] args) {
 		ArrayList<Integer> array = new ArrayList<Integer>();
-		array.add(769);array.add(533);
+	//	array.add(769);array.add(533);
+		array.add(3);array.add(2);array.add(1);
 		nextPermutation(array);
 	}
 
@@ -54,5 +55,4 @@ public class ArrayFindNextGreaterPermutation {
 		array.set(i, array.get(j));
 		array.set(j, temp);
 	}
-
 }

@@ -1,13 +1,8 @@
 package InterviewBit;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
 
 public class Hashing4Sum {
 /*Given an array S of n integers, are there elements a, b, c, and d in S such that a + b + c + d = target? 
@@ -62,5 +57,5 @@ https://www.interviewbit.com/problems/4-sum/
 			}
 		}	 
 		return result;
-	}
+	}	
 }

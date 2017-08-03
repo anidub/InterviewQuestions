@@ -1,17 +1,19 @@
 package InterviewBit;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 /*https://www.interviewbit.com/problems/equal/
+ * Given an array A of integers, find the index of values that satisfy A + B = C + D, 
+ * where A,B,C & D are integers values in the array
  * Input: [3, 4, 7, 1, 2, 9, 8]
 Output: [0, 2, 3, 5] (O index)
 A + B = C + D, where A,B,C & D
 	http://www.geeksforgeeks.org/find-four-elements-a-b-c-and-d-in-an-array-such-that-ab-cd/	
 */public class HashingFindFourNumbers {//O(n2)
-
 	public static void main(String[] args) {
 		int arr[] = {3, 4, 7, 1, 2, 9, 8};
 		HashingFindFourNumbers a = new HashingFindFourNumbers();
-        a.findPairs(arr);
+        equal(arr);
 	}
 	
 	 // Class to represent a pair
@@ -109,5 +111,4 @@ class Node {
         this.j = j;
     }
 }
-
 }

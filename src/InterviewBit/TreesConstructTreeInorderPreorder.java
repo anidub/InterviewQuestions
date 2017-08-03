@@ -45,7 +45,7 @@ Worst case occurs when tree is left skewed. Example Preorder and Inorder travers
 		node.left = construct(inorder, start, i-1,preorder, preorderindex + 1);// since the index has to the  element just after the discovered element i.e nodevalue
 		node.right = construct(inorder, i+1,end, preorder, preorderindex+i-start+1);// since the index has to the  element just after the last element
 		return node;		
-	}
+	}	
 	
 	public static TreeNode constructTree(int[] inorder, int[] preorder){
 		if(inorder == null && preorder == null) return null;
@@ -59,7 +59,7 @@ Worst case occurs when tree is left skewed. Example Preorder and Inorder travers
 	
 	static int index = 0;
 	public static TreeNode constructTreeNode(HashMap<Integer, Integer> map, int[] inorder, int start, int end, int[] preorder){
-		if(index == inorder.length|| start > end) return null;
+		if(index == inorder.length || start > end) return null;
 		TreeNode node = new TreeNode(preorder[index]);
 
 		int inorderindex = map.get(preorder[index]);

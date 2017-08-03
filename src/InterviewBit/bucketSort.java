@@ -15,7 +15,7 @@ public class bucketSort {
 			if(num[i] > high) high = num[i];
 		}
 		
-		Double interval = (double) ((high - low)/num.length-1);
+		Double interval = (double) ((high - low)/(num.length-1));
 		int bucketCount = (int) ((high - low) / interval + 1);
 		ArrayList<Integer> buckets [] =  new ArrayList[bucketCount];
 		for(int i=0;i<bucketCount;i++){

@@ -21,8 +21,7 @@ public class sortZeroOnes {
 				arr[right] = temp;
 				right--;
 			}else
-				left++;
-			
+				left++;			
 		}
 		
 		for (int i = 0; i < n; i++) {

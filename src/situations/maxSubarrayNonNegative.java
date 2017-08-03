@@ -46,7 +46,7 @@ public class maxSubarrayNonNegative {
 			result[k++] = source[i];
 		}
 		return result;
-	}	
+	}
 	/**
 	 * https://www.interviewbit.com/problems/repeat-and-missing-number-array/
 	 * You are given a read only array of n integers from 1 to n.
