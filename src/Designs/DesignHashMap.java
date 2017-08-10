@@ -87,8 +87,8 @@ public class DesignHashMap {
     				n.value = n.next.getValue();
     				n.next = n.next.next;
     			}
-    			n = n.next;    			
     		}
+    		n = n.next;    			
     	}    	
     }
    
