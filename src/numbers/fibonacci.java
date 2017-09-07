@@ -3,18 +3,16 @@ package numbers;
 public class fibonacci {
 
 	public static void main(String[] args) {
+		System.out.print(0 + " " + 1 + " " );
 		int first = 0;
 		int second = 1;
-		int fibonacci = 0;
-		for(int i = 2; i <= 10; i++){
-			if(i <= 1){
-				fibonacci = i;
-			}else{
-			fibonacci = first + second;
+		int fib = 0;
+		int num = 6;
+		for(int i = 2; i < num; i++){
+			fib = first + second;
 			first = second;
-			second = fibonacci;
-		}
-			System.out.println(fibonacci);
+			second = fib;
+			System.out.print(fib + " ");
 		}	
 	}
 }
