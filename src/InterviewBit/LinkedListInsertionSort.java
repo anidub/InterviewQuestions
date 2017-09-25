@@ -15,8 +15,7 @@ Sort a linked list using insertion sort.
 		n.next.next.next.next.next = new LinkedListNode(6);
 		n.next.next.next.next.next.next = new LinkedListNode(-22);
 		LinkedListNode result = insertionSortList(n);display(result);
-	}
-	
+	}	
 	
 	public static LinkedListNode insertionSortList(LinkedListNode head) {
 		if (head == null) return null;

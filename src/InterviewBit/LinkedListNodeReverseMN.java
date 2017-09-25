@@ -36,18 +36,18 @@ public class LinkedListNodeReverseMN {
 	}
 	
     public static LinkedListNode reverseList(LinkedListNode A, int count) {	    
-    	LinkedListNode node, prev, temp, last;	    
-	    node = A; last = A;	    
-	    if (node == null)  return null;	    
+    	LinkedListNode current, prev, next, last;	    
+	    current = A; last = A;	    
+	    if (current == null)  return null;	    
 	    prev = null;
-	    while (node != null && count > 0) {	        
-	        temp = node.next;
-	        node.next = prev;
-	        prev = node;
-	        node = temp;
+	    while (current != null && count > 0) {	        
+	        next = current.next;
+	        current.next = prev;
+	        prev = current;
+	        current = next;
 	        count--;
 	    }	    
-	    last.next = node;	    
+	    last.next = current;	    
 	    return prev;
 	}
     public static void display(LinkedListNode h){

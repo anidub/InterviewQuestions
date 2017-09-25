@@ -51,10 +51,10 @@ public class findSubsetsThatSumToATarget {
         return sum;
     }
 
+   
     public static void main(String[] args) {
         int [] n =  {24, 1, 15, 3, 4, 15, 3};
-        int counter = 1;
-        
+        int counter = 1;        
         findSubsetsThatSumToATarget.findTargetSumSubsets(n, 25, "", 0);
         for (String str: allSubsets) {
             System.out.println(counter + ") " + str);

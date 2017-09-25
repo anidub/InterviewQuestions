@@ -61,6 +61,7 @@ public class TreesIdentical {
 			}
 			return 1;
 	}
+	
 	//recursive
 public boolean sameTree(TreeNode A, TreeNode B) {//O(n)	    
 	    if (A == null && B == null) return true;	        

@@ -27,8 +27,7 @@ If the last word does not exist, return 0.Given s = "Hello World",return 5 as le
 			i--;
 		}
 		if(sb.length() > 0)		
-		return sb.toString().length();
-		
+		return sb.toString().length();		
 		return 0;
 	}
 }

@@ -35,7 +35,7 @@ public class BinarySearchinMatrix {
 	public static int search(int[][] matrix , int target){
 		int rowNumber = 0;
 		int rowLength = matrix[0].length-1; int colLength = matrix.length-1;
-		if(target > matrix[rowLength][colLength] || target < matrix[rowLength][colLength] ) return -1;
+		if(target > matrix[rowLength][colLength] || target < matrix[0][0] ) return -1;
 		for(int i = matrix[0].length-1; i >= 0; i--){
 			if(target <=  matrix[i][rowLength]){
 				rowNumber = i;

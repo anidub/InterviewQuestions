@@ -40,7 +40,7 @@ protected class TreeLinkNode{
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-	}
+	} 
 	
 	public void connectAnyTreeNonRec(TreeLinkNode root) {
 		if (root == null) return;

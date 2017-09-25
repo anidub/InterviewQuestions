@@ -50,40 +50,4 @@ public class getMedianofTwosortedarrays {
 		}
 		return arr[i];
 	}
-	
-	public static float GetMedian(int[] arr1, int[] arr2){
-		int end = arr1.length;
-		return getmed(arr1, 0, end-1, arr2, 0, end-1);
-	}
-	public static float getmed(int[] arr1, int start1, int end1, int[] arr2, int start2, int end2){
-		int len = end1-start1 + 1;
-		if(len == 0) return -1;
-		if(len == 1) return (arr1[start1] + arr2[start2])/2;
-		if(len == 2) return (Math.max(arr1[start1], arr2[start2]) + Math.min(arr1[end1], arr2[end2]))/2;
-		
-		float m1 = getm(arr1, start1, end1);
-		float m2 = getm(arr2, start2, end2);
-		
-		if(m1 > m2){
-			if(len % 2 == 0){
-				return getmed(arr1, start1+len/2, end1, arr2, start2, start2 + len/2 - 1);
-			}else
-				return getmed(arr1, start1+len/2, end1, arr2, start2, start2+len/2);
-		}else{
-			if(len % 2 == 0){
-				return getmed(arr1, start1+len/2-1, end1,  arr2, start2, start2+len/2);
-			}else{
-				return getmed(arr1, start1+len/2, end1, arr2, start2, start2 + len/2);
-			}
-		}
-	}
-	
-	public static float getm(int[] arr, int start, int end){
-		int len = end-start+1;
-		int i = len/2;
-		if(len % 2 == 0){
-			return (arr[i] + arr[i-1])/2;
-		}
-		return arr[i]/2;
-	}
 }

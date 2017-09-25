@@ -47,7 +47,7 @@ Given an array arr[], find the maximum j – i such that arr[j] > arr[i].Time Comp
 		}
 		return maxDiff;			
 	}
-	
+		
 	public static void main(String[] args) {
 		int[] arr= {34, 8, 10, 3, 2, 80, 30, 33, 1};
 		System.out.println(findMaxGap(arr));

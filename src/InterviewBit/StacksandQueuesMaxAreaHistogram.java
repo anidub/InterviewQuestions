@@ -37,7 +37,7 @@ public class StacksandQueuesMaxAreaHistogram {
 //if stack is not empty then everythin from i-1 to input.peek() + 1 has to be greater or equal to input[top] so area = input[top]*(i - stack.peek() - 1);
                 else{
                 	   System.out.println(i - stack.peek() - 1);
-                    area = input[top] * (i - stack.peek() - 1);
+                	   area = input[top] * (i - stack.peek() - 1);
                 }
                 if(area > maxArea){
                     maxArea = area;
@@ -63,4 +63,5 @@ public class StacksandQueuesMaxAreaHistogram {
         }
         return maxArea;
     }
+    
 }

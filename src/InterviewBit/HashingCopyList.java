@@ -30,6 +30,7 @@ public class HashingCopyList {
 		node4.random = node2;
 		node4.next = null;
 		RandomListNode head = node1;
+		updateRandomList(head);
 		copyRandomList(head);
 
 	}
@@ -57,6 +58,33 @@ public class HashingCopyList {
 			if (node.random != null) {
 				newNode.random = hashMap.get(node.random);
 			}
+		}
+		return newHead;
+	}
+	
+	public static RandomListNode updateRandomList(RandomListNode head) {
+		RandomListNode node, newHead, newNode;
+		HashMap<RandomListNode, RandomListNode> hashMap = new HashMap<RandomListNode,RandomListNode>();
+		node = head;
+		newHead = null;
+		while (node != null) {
+			newNode = new RandomListNode(node.label);
+			if(newHead == null) newHead = newNode;
+			hashMap.put(node, newNode);//key->node value->node.label
+			node = node.next;
+		}
+
+		for (Map.Entry<RandomListNode, RandomListNode> entry : hashMap.entrySet()) {
+			node = entry.getKey();
+			newNode = entry.getValue();
+			
+			if(node.random != null){
+				newNode.next = hashMap.get(node.random);
+			}
+			
+			if(node.next != null){
+				newNode.random = hashMap.get(node.next);
+			}			
 		}
 		return newHead;
 	}

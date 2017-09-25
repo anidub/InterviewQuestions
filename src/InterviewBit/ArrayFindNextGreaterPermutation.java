@@ -27,7 +27,7 @@ public class ArrayFindNextGreaterPermutation {
 		int j = 0;
 		int lastDigit = array.get(array.size() - 1);
 		for (i = array.size() - 2; i >= 0; i--) {
-			if (array.get(i) < lastDigit) {
+			if (lastDigit > array.get(i)) {
 				break;
 			}
 			lastDigit = array.get(i);

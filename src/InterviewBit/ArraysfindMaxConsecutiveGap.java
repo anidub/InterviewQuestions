@@ -59,5 +59,5 @@ public class ArraysfindMaxConsecutiveGap {
 	public static void main(String[] args) {
 		int[] arr = {1, 10, 5};
 		System.out.println(maximumGap(arr));
-	}
+	}	
 }

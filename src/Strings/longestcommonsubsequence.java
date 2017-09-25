@@ -34,7 +34,7 @@ public class longestcommonsubsequence {
 		int result = table[0][0];
 		System.out.println(result);
 		
-		char[] lcs = new char[result+1];
+		char[] lcs = new char[result];
 		int i = m, j = n;
 		while(i > 0 && j > 0){
 			char a1 = a[i-1];

@@ -49,7 +49,7 @@ public class Stringpermutations {
 				for(int i = 0; i < n; i++){
 					recursionpermutation(prefix + str.charAt(i) , str.substring(0,i) + str.substring(i+1,n));
 				}
-			}			
+			}	
 			
 			//iterative works
 			public static void combString(String s) {
@@ -101,7 +101,7 @@ public class Stringpermutations {
 		        String remainingString = str.substring(1);
 		        HashSet<String> words = getAllPermutations(remainingString);
 		        for(String word: words) {
-		            for(int i = 0; i <= word.length(); i++) {
+		            for(int i = 0; i < word.length(); i++) {
 		                String prefix = word.substring(0, i);
 		                String suffix = word.substring(i);
 		                permutations.add(prefix + first + suffix);

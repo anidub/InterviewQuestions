@@ -33,5 +33,4 @@ public class preserveSpaces {
 		}
 		return sb.toString();
 	}
-
 }

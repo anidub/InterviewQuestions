@@ -30,6 +30,7 @@ public class minJumps {
 		}
 		return jump;	
 }	
+	
 	public static  int min(int x, int y) { return (x < y)? x: y; }
 	 
 	// Returns minimum number of jumps to reach arr[n-1] from arr[0] ...Time Complexity: O(n^2)

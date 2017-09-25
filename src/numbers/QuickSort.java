@@ -1,12 +1,11 @@
 package numbers;
 
 public class QuickSort {
-
+//study from numbers 2
 	public static void main(String[] args) {
 		int[] num = {3,2,1,4,5,6};
 		quickSort(num);
 		for(int i : num) System.out.print(i+" ");
-
 	}
 	
 	public static void quickSort(int[] arr){

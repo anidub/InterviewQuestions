@@ -13,14 +13,11 @@ public class StackandQueuesArithmaticExpresion {
 	public static void main(String[] args) {
 		// 2", "1", "+", "3", "*"
 		ArrayList<String> exp = new ArrayList<String>();
-		exp.add("2");
-		exp.add("1");
-		exp.add("+");
-		exp.add("3");
-		exp.add("*");
-		System.out.println(evaluateRPN(exp));
+		exp.add("2");exp.add("1");exp.add("+");exp.add("3");exp.add("*");
+		//System.out.println(evaluateRPN(exp));
 		// System.out.println(exp("1*2+3*4"));
-		System.out.println(exp("3*5+5*9+2*0"));
+		//System.out.println(exp("3*5+5*9+2*0"));
+		getexp("");
 
 	}
 
@@ -79,7 +76,7 @@ public class StackandQueuesArithmaticExpresion {
         }
         System.out.println(sum);
         return sum;
-	}	
+	}
 	////https://www.careercup.com/question?id=4911380140392448
 	//method 2 //Input: 3*5+8 (as String) 
 	//Output: 23 (as int)
@@ -106,5 +103,40 @@ public class StackandQueuesArithmaticExpresion {
 			return true;
 		}
 		return false;
+	}
+	
+	public static void getexp(String exp){
+		int result = 0;
+		exp = "1+2+3-4-5-6+6";
+		StringBuilder sb;
+		for(int i = 0; i < exp.length(); i++){
+			char c = exp.charAt(i);
+			if(c == '+'){
+				i++;
+				int endIndex = getNum(exp,i);
+				String s = exp.substring(i, endIndex);
+				result = result + Integer.parseInt(s);
+				i = endIndex-1;
+			}else if(c == '-'){
+				i++;
+				int endIndex = getNum(exp,i);
+				String s = exp.substring(i, endIndex);
+				result = result - Integer.parseInt(s);
+				i = endIndex-1;
+			}else{				
+				int endIndex = getNum(exp,i);
+				String s = exp.substring(i, endIndex);
+				result = Integer.parseInt(s);
+				i = endIndex-1;
+			}
+		}
+		System.out.println(result);
+	}
+	
+	public static int getNum(String exp, int i){
+		while(i < exp.length() && (exp.charAt(i) != '+' && exp.charAt(i) != '-')){
+			i++;
+		}
+		return i;
 	}
 }

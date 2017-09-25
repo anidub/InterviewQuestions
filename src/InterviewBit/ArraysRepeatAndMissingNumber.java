@@ -39,5 +39,5 @@ A = 3, B = 4*/
 		ArrayList<Integer> result = new ArrayList<Integer>();
 		result.add(repeated,missing);
 		return result;
-	}
+	}	
 }

@@ -27,8 +27,7 @@ http://stackoverflow.com/questions/4632322/finding-all-possible-combinations-of-
               partial_rec.add(n);
               sum_up_recursive(remaining,target,partial_rec);
         }
-     }
-    
+     }    
      static void sum_up(ArrayList<Integer> numbers, int target) {
          sum_up_recursive(numbers,target,new ArrayList<Integer>());
      }

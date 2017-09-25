@@ -98,15 +98,11 @@ public class StringValidIPAddress {
   public static List<String> restoreIpAddressesIterative(String s) {
     	List<String> ans = new ArrayList<String>();
     	int len = s.length();
-    	int count = 0;
     	for (int i = 1; i <=3; ++i){  // first cut
-    		count++;
     		if (len-i > 9) continue;    		
     		for (int j = i+1; j<=i+3; ++j){  //second cut
-    			count++;
     			if (len-j > 6) continue;    			
     			for (int k = j+1; k<=j+3 && k<len; ++k){  // third cut
-    				count++;
     				int a,b,c,d;                // the four int's seperated by "."
     				a = Integer.parseInt(s.substring(0,i));  
     				b = Integer.parseInt(s.substring(i,j)); // notice that "01" can be parsed into 1. Need to deal with that later.
@@ -119,7 +115,6 @@ public class StringValidIPAddress {
     			}
     		}
     	}
-    	System.out.println("count " + count);
     	return ans;
     }
 }

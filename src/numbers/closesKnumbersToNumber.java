@@ -34,7 +34,50 @@ O(K) space
           for(int i : result){
         	  System.out.print(i + " ");
           }
+          System.out.println("my");
+          getClosesttK(arr,K,X);
 	}
+	
+	//use this//my solution
+	public static class ArrCont implements Comparable<ArrCont>{
+		int i;
+		boolean isnegative;
+		
+		public ArrCont(int i, boolean isnegative){
+			this.i = i;
+			this.isnegative = isnegative;
+		}
+		
+		public int compareTo(ArrCont o){
+			if(this.i > o.i) return -1;
+			return 1;
+		}		
+	}
+	
+	//use this//my solution//the idea is if the number is more than x then set isneg to false else true
+	public static void getClosesttK(int[] num, int k, int x){
+		PriorityQueue<ArrCont> pq = new PriorityQueue<ArrCont>(k+1);
+		for(int i : num){
+			if(i == x) continue;
+			int diff = Math.abs(i - x);
+			boolean isneg = false;
+			if(i < x) isneg = true;
+			pq.add(new ArrCont(diff,isneg));
+			if(pq.size() > k) 
+				pq.poll();
+		}
+
+		while(!pq.isEmpty()){
+			ArrCont arr = pq.poll();
+			int number = arr.i;
+			if(arr.isnegative == true){
+				System.out.println(x - number);
+			}else{
+				System.out.println(x + number);
+			}
+		}
+	}
+	
 	
 	public static ArrayList<Integer> getClosestK(int[] num, int k, int x){
 		ArrayList<Integer> result = new ArrayList<Integer>();

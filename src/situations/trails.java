@@ -1,18 +1,22 @@
 package situations;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.PriorityQueue;
+import java.util.Queue;
 
 public class trails {	
 	public static void main(String[] args){
 		int[] A =  {1,2,3};			//{4,2,5,7,9};	
 		ArrayList<Integer> intList = new ArrayList<Integer>();
 		intList.add(1);intList.add(2);intList.add(3);intList.add(4);
-		buildDictionary();
+		//buildDictionary();
 		//powerSet(intList);
-	}
-	
+	}	
+		
 	public static ArrayList<ArrayList<Integer>> powerSet(ArrayList<Integer> intList) {
 
 	    ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();

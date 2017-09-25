@@ -55,5 +55,5 @@ public class HashingMaxPointsStraightLine {
 	            max = Math.max(max, localMax);
 	        }
 	        return max;
-	    }		 
+	    }	
 }

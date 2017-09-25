@@ -26,10 +26,9 @@ public class citations {
               
         }  
         return 0;  
-    }
+    }	
 	
-	//greater than O(n)
-	
+	//greater than O(n)	
 	public int hhIndex(int[] citations) {
 	    Arrays.sort(citations);
 	 

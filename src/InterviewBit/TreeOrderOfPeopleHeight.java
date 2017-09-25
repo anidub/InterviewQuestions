@@ -50,7 +50,6 @@ public class TreeOrderOfPeopleHeight {
 			        return o2.height.compareTo(o1.height);
 			    }
         });
-
 		for (int i = 0; i < persons.length; i++) {
 		 System.out.println("adding "+persons[i].height+" "+persons[i].count);
 			res.add(persons[i].count, persons[i].height);//imp

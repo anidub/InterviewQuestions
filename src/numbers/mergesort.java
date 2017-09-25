@@ -23,15 +23,13 @@ public class mergesort {
 		doMerge(0, array.length - 1);
 	}
 	
-	public  void doMerge(int lowindex, int highindex){
-	
+	public  void doMerge(int lowindex, int highindex){	
 		if(lowindex < highindex){
 			int middleindex = lowindex + (highindex - lowindex) /2;
 			doMerge(lowindex,middleindex);
 			doMerge(middleindex + 1, highindex);
 			mergeparts(lowindex,middleindex,highindex);
-		}
-		
+		}		
  	}
 	
 	public void mergeparts(int low, int middle, int high){
@@ -42,7 +40,7 @@ public class mergesort {
 		for(i =low; i <= high; i++){
 			temp[i] = result[i];
 		}
-	
+		i=low;
 		while(i <= middle &&  j <= high){
 			if(temp[i] < temp[j]){
 				result[m++] = temp[i++];

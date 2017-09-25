@@ -109,5 +109,4 @@ public class TreesSumRootToLeafNumbers {
 	        l.remove(l.size()-1);
 	    }	 
 	}
-	
 }

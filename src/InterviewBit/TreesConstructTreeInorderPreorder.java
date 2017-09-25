@@ -2,6 +2,8 @@ package InterviewBit;
 
 import java.util.HashMap;
 
+import org.w3c.dom.Node;
+
 public class TreesConstructTreeInorderPreorder {
 //learn how indexing is done
 //https://www.interviewbit.com/problems/construct-binary-tree-from-inorder-and-preorder/	
@@ -45,8 +47,7 @@ Worst case occurs when tree is left skewed. Example Preorder and Inorder travers
 		node.left = construct(inorder, start, i-1,preorder, preorderindex + 1);// since the index has to the  element just after the discovered element i.e nodevalue
 		node.right = construct(inorder, i+1,end, preorder, preorderindex+i-start+1);// since the index has to the  element just after the last element
 		return node;		
-	}	
-	
+	}
 	public static TreeNode constructTree(int[] inorder, int[] preorder){
 		if(inorder == null && preorder == null) return null;
 		if(inorder == null || preorder == null || inorder.length != preorder.length) return null;

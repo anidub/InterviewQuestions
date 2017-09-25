@@ -51,8 +51,7 @@ public class HashingMinWindow {
 	                    map.put(sc, map.get(sc) - 1);
 	                left++;
 	                sc = s.charAt(left);
-	            }
-	 
+	            }	 
 	            if (i - left + 1 < minLen) {
 	                result = s.substring(left, i + 1);
 	                minLen = i - left + 1;

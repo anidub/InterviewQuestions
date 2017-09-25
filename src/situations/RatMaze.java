@@ -19,14 +19,7 @@ public class RatMaze
      }
  }
 
- /* A utility function to check if x,y is valid
-     index for N*N maze */
- boolean isSafe(int maze[][], int x, int y)
- {
-     // if (x,y outside maze) return false
-     return (x >= 0 && x < N && y >= 0 &&
-             y < N && maze[x][y] == 1);
- }
+ 
 
  /* This function solves the Maze problem using
     Backtracking. It mainly uses solveMazeUtil()
@@ -101,6 +94,13 @@ public class RatMaze
      System.out.println(rat.check(maze,0,0));
  }
  
+ /* A utility function to check if x,y is valid
+ index for N*N maze */
+boolean isSafe(int maze[][], int x, int y){
+ // if (x,y outside maze) return false
+ return (x >= 0 && x < N && y >= 0 &&
+         y < N && maze[x][y] == 1);
+}
  
  public  boolean check(int[][] matrix,int x, int y){
 if(x == N-1 && y == N-1 && matrix[N-1][N-1] == 1){

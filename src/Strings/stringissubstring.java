@@ -18,8 +18,5 @@ public class stringissubstring {
 		}else{
 			System.out.println("s2 is not a substring of s1");
 		}
-
-	}
-	
-	
+	}	
 }

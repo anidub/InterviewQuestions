@@ -18,7 +18,7 @@ Output :
 62 63 
  */
 	public static void main(String[] args) {
-		addforN(125);
+		addforN(15);
 	}
 	public static void addforN(int N){
 		int start = 1; int end = 1;
@@ -32,8 +32,9 @@ Output :
 				start++;
 			}else{
 				for(int i = start; i <= end; i++){
-					System.out.print(i+" ");
+					System.out.print(i+" ");					
 				}
+				System.out.println();
 				sum = sum - start;
 				start++;
 			}

@@ -10,7 +10,7 @@ as 123 + 1 = 124.*/
 		ArrayList<Integer> array = new ArrayList<Integer>();
 		array.add(2);array.add(5);array.add(6);array.add(8);array.add(6);array.add(1);
 		array.add(2);array.add(4);array.add(5);
-		plusOne(array);
+		plusOne(array);addone(array);
 	}
 	public static ArrayList<Integer> plusOne(ArrayList<Integer> array) {
 		if(array.isEmpty()) return array;
@@ -30,5 +30,24 @@ as 123 + 1 = 124.*/
 			result.add(0,Integer.parseInt(num.charAt(i)+""));
 		}
 		return result;
+	}
+	
+	public static ArrayList<Integer> addone(ArrayList<Integer> arr){
+		int num = 0;
+		int factor = 1;
+		for(int k = arr.size() - 1; k >=0; k--){
+			int i = arr.get(k);
+			i = i * factor;
+			num += i;
+			factor = factor * 10;
+		}
+		System.out.println(num);
+		num++;
+		String n = String.valueOf(num);
+		ArrayList<Integer> res = new ArrayList<Integer>();
+		for(int i = 0; i < n.length(); i++){
+			res.add(0,n.charAt(i)-'0');
+		}
+		return res;
 	}
 }

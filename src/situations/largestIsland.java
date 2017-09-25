@@ -179,3 +179,37 @@ public class findLargetsIsland {
 	    System.out.println("Max area is :" + max_area);
 	}	
 }*/
+
+//works
+static int m = 3;
+static int n  = 3;
+static boolean[][] visited = new boolean[3][3];
+static int currentArea = 0;
+static int maxarea = 0;
+
+public static int calMax(int[][] matrix){
+	for(int i = 0; i < m; i++){
+		for(int j = 0; j < n; j++){
+			currentArea = 0;
+			cal(matrix,i,j);
+			if(currentArea > maxarea) maxarea = currentArea;
+		}
+	}
+	return maxarea;
+}
+public static void cal(int[][] mat, int i, int j){
+	 if(i<0 || j<0 || i>=m || j>=n) return;
+	if(visited[i][j] == true) return;
+	if(mat[i][j] == 0){
+		visited[i][j] = false;
+		return;
+	}
+	currentArea++;
+	mat[i][j] = 0;
+	cal(mat, i+1, j);
+	cal(mat, i, j+1);
+	cal(mat, i-1, j);
+	cal(mat, i, j-1);
+}
+	
+}

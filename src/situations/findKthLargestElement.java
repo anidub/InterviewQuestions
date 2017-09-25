@@ -22,12 +22,12 @@ public class findKthLargestElement {
 	
 	public static void main(String[] args) {
 		int[] arr = {3,2,1,5,6,4};
-		System.out.println(findKthLargestMinHeap(arr,2));
+		System.out.println(findKthLargest(arr,2));
 
 	}
 	
 	public static int findKthLargestMinHeap(int[] nums, int k) {
-	    PriorityQueue<ArrayContainer> q = new PriorityQueue<ArrayContainer>(k);
+	    PriorityQueue<ArrayContainer> q = new PriorityQueue<ArrayContainer>(k);//lowest first
 	    for(int i: nums){
 	        q.offer((new ArrayContainer(i)));
 	 	 
@@ -38,7 +38,7 @@ public class findKthLargestElement {
 	    return q.peek().i;
 	}
 	
-	public int findKthLargest(int[] nums, int k) {
+	public  static int findKthLargest(int[] nums, int k) {
 		if (k < 1 || nums == null) {
 			return 0;
 		}	 
@@ -47,7 +47,7 @@ public class findKthLargestElement {
 
 //http://www.programcreek.com/2014/05/leetcode-kth-largest-element-in-an-array-java/
 	//Average case time is O(n), worst case time is O(n^2)
-	public int getKth(int k, int[] nums, int start, int end) {	 
+	public static  int getKth(int k, int[] nums, int start, int end) {	 
 		int pivot = nums[end];	 
 		int left = start;
 		int right = end;
@@ -76,7 +76,7 @@ public class findKthLargestElement {
 		}
 	}
 	 
-	public void swap(int[] nums, int n1, int n2) {
+	public static void swap(int[] nums, int n1, int n2) {
 		int tmp = nums[n1];
 		nums[n1] = nums[n2];
 		nums[n2] = tmp;

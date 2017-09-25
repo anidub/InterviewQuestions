@@ -1,8 +1,7 @@
 package InterviewBit;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.Stack;
+import java.util.Queue;
 /*https://www.interviewbit.com/problems/sliding-window-max/
 http://www.programcreek.com/2014/05/leetcode-sliding-window-maximum-java/
 https://github.com/ankit249/Algorithms/blob/master/src/com/ds/heap/SlidingWindowMaximum.java	

@@ -35,5 +35,5 @@ public class StringCountAndSay {
 			i++;
 		}
 		return result;
-	}	
+	}
 }

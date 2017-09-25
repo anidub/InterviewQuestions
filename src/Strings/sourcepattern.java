@@ -33,7 +33,7 @@ public class sourcepattern {
 		}
 		return false;
 	}
-	
+		
 	// if you want all matches
 	public static void allmatches(){
 	  String pattern = "abc";

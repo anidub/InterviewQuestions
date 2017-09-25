@@ -9,8 +9,8 @@ public class StringAddBinaryStrings {
 			Return a + b = “111”.*/		
 	public static void main(String[] args) {
 		System.out.println(addBinary("1001","11"));
-
 	}
+	
 	public static String addBinary(String a, String b) {
 		StringBuilder sb = new StringBuilder();	 
 	    int i=a.length()-1; int j=b.length()-1;	 

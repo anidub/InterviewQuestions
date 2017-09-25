@@ -14,7 +14,7 @@ public class addtwolists {
 		//a.add(9);a.add(9);a.add(9);a.add(9);
 		//b.add(9); b.add(9);b.add(9);
 		b.add(2);b.add(3);b.add(9);b.add(2);
-		
+		addTwoArrayLists(a,b);
 		for(int k : a){
 			System.out.print(k);
 		}
@@ -85,5 +85,38 @@ public class addtwolists {
 		//IT STORES RESULT IN BOTH ARRAY AND ARRAYLIST
 		//THIS EXCLUDES NEGATIVE NUMBERS;
 		return aa;		
+	}
+	
+	//use this//better
+	public static ArrayList<Integer> addTwoArrayLists(ArrayList<Integer> a1, ArrayList<Integer> a2){
+		int l1 = a1.size(); int l2 = a2.size();
+		
+		if(l1 > l2){
+			int diff = l1-l2;
+			while(diff > 0){
+				a2.add(0, 0);
+				diff--;
+			}
+		}else if(l2 > l1){
+			int diff = l2-l1;
+			while(diff > 0){
+				a1.add(0,0);
+				diff--;
+			}
+		}
+		int sum = 0; int carry = 0;
+		ArrayList<Integer> result = new ArrayList<Integer>();
+		for(int i = a1.size() - 1; i >= 0; i--){
+			int n1 = a1.get(i); 
+			int n2 = a2.get(i);
+			sum = n1 + n2 + carry;
+			carry = 0;
+			if(sum > 9){
+				carry = 1;
+			}
+			result.add(0,sum % 10);
+		}		
+		return result;
+		
 	}
 }

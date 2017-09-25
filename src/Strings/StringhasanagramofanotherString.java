@@ -6,7 +6,7 @@ public class StringhasanagramofanotherString {
 
 	public static void main(String[] args) {
 		String s1 = "oleHwfl"; //parent	
-		String s2 = "Hello"; //child		
+		String s2 = "Helloo"; //child		
 		System.out.println(checkifstringcontainsanagram(s1,s2));
 	}
 	
@@ -18,11 +18,23 @@ public class StringhasanagramofanotherString {
 				hm1.put(c, hm1.get(c) + 1);
 			}else{
 				hm1.put(c,1);
-			}
-			
+			}			
 		}
 		
-		HashMap<Character, Integer> hm2 = new HashMap<Character, Integer>();
+		for(int i = 0; i < s2.length(); i++){
+			char c = s2.charAt(i);
+			if(!hm1.containsKey(c))
+				return false;
+			else{
+				if(hm1.get(c) > 1)
+					hm1.put(c, hm1.get(c)-1);
+				else
+					hm1.remove(c);
+			}
+		}
+		return true;
+		
+		/*HashMap<Character, Integer> hm2 = new HashMap<Character, Integer>();
 		for(int i = 0; i < s2.length(); i++){
 			char c = s2.charAt(i);
 			if(hm2.containsKey(c)){
@@ -45,6 +57,6 @@ public class StringhasanagramofanotherString {
 	                found = false; return found;
 	            }
 		}
-		return found;
+		return found;*/
 	}
 }
