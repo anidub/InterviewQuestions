@@ -46,13 +46,13 @@ public class floodfill {
 		
 		int a = matrix[x][y]; //2, 
 		if(matrix[x][y] != prevC) return;
-		if(a == prevC){
-		matrix[x][y] = newC;
-		
-		floodfillutil(matrix, x+1, y, newC, prevC);
-		floodfillutil(matrix, x-1, y, newC, prevC);
-		floodfillutil(matrix, x, y+1, newC, prevC);
-		floodfillutil(matrix, x, y-1, newC, prevC);
+		if (a == prevC) {
+			matrix[x][y] = newC;
+
+			floodfillutil(matrix, x + 1, y, newC, prevC);
+			floodfillutil(matrix, x - 1, y, newC, prevC);
+			floodfillutil(matrix, x, y + 1, newC, prevC);
+			floodfillutil(matrix, x, y - 1, newC, prevC);
 		}
 	}
 }

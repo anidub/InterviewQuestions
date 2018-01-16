@@ -43,6 +43,7 @@ public class quickSortArray {
 		arr[high] = temp;		
 		return i+1;
 	}
+
 	
 	public void sortIterative(int[] arr, int low, int high){
 		int[] stack = new int[high - low + 1];

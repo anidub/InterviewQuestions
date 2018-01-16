@@ -36,7 +36,6 @@ http://stackoverflow.com/questions/4632322/finding-all-possible-combinations-of-
 			Integer[] numbers = {3,9,8,4,5,7,10};
 	        int target = 15;
 	        sum_up(new ArrayList<Integer>(Arrays.asList(numbers)),target);
-
 	}
 	
 	// Dynamic Programmining. Algo complexity is O(Sum * N) and use O(Sum) memory.
