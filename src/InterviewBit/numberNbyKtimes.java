@@ -1,6 +1,8 @@
 package InterviewBit;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class numberNbyKtimes {
 /*	https://www.interviewbit.com/problems/n3-repeat-number/
@@ -9,6 +11,52 @@ public class numberNbyKtimes {
 	http://www.geeksforgeeks.org/given-an-array-of-of-size-n-finds-all-the-elements-that-appear-more-than-nk-times/ O(nlogn)
 */	
 
+//USE THIS// TIME COMPLEXITY : o(n) Space complexity : O(1)	
+public static List<Integer> getNByK(int[] nums, int k){
+	List<Integer> result = new ArrayList<Integer>();
+	if(nums == null || nums.length == 0) return result;
+	
+	int number1 = nums[0]; int number2 = nums[0]; int count1 = 0; int count2 = 0;
+	
+	for(int i = 0; i < nums.length; i++){
+		int n = nums[i];
+		if(n == number1){
+			count1++;
+		}else if(n == number2){
+			count2++;
+		}else if(count1 == 0){
+			number1 = n;
+			count1 = 1;
+		}else if(count2 == 0){
+			number2 = n;
+			count2 = 1;
+		}else{
+			count1--;
+			count2--;
+		}
+	}
+	count1 = 0;
+	count2 = 0;
+	for(int i = 0; i < nums.length; i++){
+		int n = nums[i];
+		if(n == number1)
+			count1++;
+		else if(n == number2)
+			count2++;
+	}
+	
+	if(count1 > nums.length/k){
+		result.add(number1);
+	}
+	if(count2 > nums.length/k){
+		result.add(number2);
+	}
+	
+	return result;			
+}
+	
+	
+	
 public static class eleCount{
     int element;  // Element
     int count;  // Count
