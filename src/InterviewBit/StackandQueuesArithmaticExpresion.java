@@ -50,6 +50,7 @@ public class StackandQueuesArithmaticExpresion {
 		}
 		return Integer.parseInt(st.pop());
 	}
+	
 
 	public static boolean isOperator(String op) {
 		if (op.equals("+") || op.equals("*") || op.equals("-") || op.equals("/"))
@@ -77,6 +78,7 @@ public class StackandQueuesArithmaticExpresion {
         System.out.println(sum);
         return sum;
 	}
+	
 	////https://www.careercup.com/question?id=4911380140392448
 	//method 2 //Input: 3*5+8 (as String) 
 	//Output: 23 (as int)

@@ -18,7 +18,7 @@ Given an array arr[], find the maximum j – i such that arr[j] > arr[i].Time Comp
 		}
 		return maxDiff;
 	}
-	
+		
 	public static int findMaxGap(int[] arr){ //O(N) //can ask nilesh
 		int maxDiff,i,j;
 		int l = arr.length;

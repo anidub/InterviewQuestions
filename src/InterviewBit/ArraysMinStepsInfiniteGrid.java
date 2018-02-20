@@ -17,12 +17,14 @@ public class ArraysMinStepsInfiniteGrid {
 		System.out.println(minSteps(x, y));
 
 	}
-public static int minSteps(ArrayList<Integer> x, ArrayList<Integer> y){
-	if(x == null || y == null || x.size() != y.size()) return -1;
-	int numOfSteps = 0;
-	for(int i = 1; i < x.size(); i++){
-		numOfSteps += Math.max(x.get(i) - x.get(i-1), y.get(i) - y.get(i-1));
+
+	public static int minSteps(ArrayList<Integer> x, ArrayList<Integer> y) {
+		if (x == null || y == null || x.size() != y.size())
+			return -1;
+		int numOfSteps = 0;
+		for (int i = 1; i < x.size(); i++) {
+			numOfSteps += Math.max(x.get(i) - x.get(i - 1), y.get(i) - y.get(i - 1));
+		}
+		return numOfSteps;
 	}
-	return numOfSteps;
-}
 }

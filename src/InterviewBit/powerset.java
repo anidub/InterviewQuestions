@@ -80,4 +80,5 @@ public static ArrayList<ArrayList<Integer>> powerSet(ArrayList<Integer> intList)
 		}
 		return result;
 	}
+	
 }

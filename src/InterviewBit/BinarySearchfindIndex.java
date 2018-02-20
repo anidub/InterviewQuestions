@@ -10,20 +10,25 @@ public static void main(String[] args) {
 		System.out.println(search(arr, t));
 	}
 	
-	public static int search(int[] num, int target){
-		if(num.length == 0) return -1;
+	public static int search(int[] num, int target) {
+		if (num.length == 0)
+			return -1;
 		int low = 0;
 		int result = -1;
-		int high = num.length-1;
-		while(low <= high){
-			int mid = (low + high)/2;
-			if(target == num[mid]){
-				result = mid;break;
+		int high = num.length - 1;
+		while (low <= high) {
+			int mid = (low + high) / 2;
+			if (target == num[mid]) {
+				result = mid;
+				break;
 			}
-			if(target > num[mid]) low = mid+1;
-			else if(target < num[mid]) high = mid-1;
+			if (target > num[mid])
+				low = mid + 1;
+			else if (target < num[mid])
+				high = mid - 1;
 		}
-		if(result == -1) result = low;
+		if (result == -1)
+			result = low;
 		return result;
-}
+	}
 }

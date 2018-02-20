@@ -9,7 +9,8 @@ You are given an array (zero indexed) of N non-negative integers, A0, A1 ,…, AN-
 Find the minimum sub array Al, Al+1 ,…, Ar so if we sort(in ascending order) that sub array, then the whole array should get sorted.
 If A is already sorted, output -1.
 Input 1:A = [1, 3, 2, 4, 5]	Return: [1, 2]
-Input 2:A = [1, 2, 3, 4, 5]	Return: [-1] O(n)*/
+Input 2:A = [1, 2, 3, 4, 5]	Return: [-1] 
+O(n)*/
 	public static void main(String[] args) {
 		ArrayList<Integer> array = new ArrayList<Integer>();
 		array.add(1);array.add(3);array.add(2);array.add(5);array.add(4);
@@ -62,4 +63,5 @@ Input 2:A = [1, 2, 3, 4, 5]	Return: [-1] O(n)*/
 		result.add(s);result.add(e);
 		return result;		
     }	
+	
 }

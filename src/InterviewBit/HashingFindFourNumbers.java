@@ -47,7 +47,7 @@ public class pair{
 		return false;
 	}*/
 //works//extension of same problem for no duplicates in given array//studied
-public ArrayList<Integer> equal(ArrayList<Integer> A) {    
+public static  ArrayList<Integer> equal(ArrayList<Integer> A) {    
  //https://www.interviewbit.com/problems/equal/
     ArrayList<Integer> res = new ArrayList<Integer>();
     HashMap<Integer, ArrayList<Node>> hashMap = new HashMap<Integer, ArrayList<Node>>();
@@ -98,7 +98,7 @@ public ArrayList<Integer> equal(ArrayList<Integer> A) {
     return res;    
 }
 
-public boolean overlaps(Node n1, Node n2) {    
+public static boolean overlaps(Node n1, Node n2) {    
     if (n1.i == n2.i || n1.i == n2.j || n1.j == n2.i || n1.j == n2.j)
         return true;    
     return false;

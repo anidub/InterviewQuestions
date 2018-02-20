@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 public class HashingAnagrams {
@@ -53,7 +54,6 @@ Output : [[1, 4], [2, 3]]*/
 	        }	         
 	        return result;
 	    }
-	
   //if you want indices//works
 /*	  public ArrayList<ArrayList<Integer>> anagrams(final List<String> A) {		    
 		    ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();

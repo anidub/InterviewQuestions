@@ -105,7 +105,7 @@ public class TreesRootToLeafPathSum {
 	         return l;
 	    }
 	}	
-	
+		
 	//Binary Tree
 	private static int minLenSumPathBT(final TreeNode root, final int sum, final int len) {
 	    if (root == null) {

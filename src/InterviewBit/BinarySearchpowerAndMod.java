@@ -20,7 +20,7 @@ public class BinarySearchpowerAndMod {
 		}
 		return result;
 	}
-		
+	
 	public static int calPower(int x, int y){
 		if(y == 0) return 1;
 		int temp;

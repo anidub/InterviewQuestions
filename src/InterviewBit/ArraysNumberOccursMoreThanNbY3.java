@@ -3,8 +3,8 @@ package InterviewBit;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 public class ArraysNumberOccursMoreThanNbY3 {
 /*	You’re given a read only array of n integers. Find out if any integer 
@@ -62,5 +62,54 @@ public class ArraysNumberOccursMoreThanNbY3 {
 				return entry.getKey();
 		}
 		return -1;
+	}
+	
+	
+	//USE THIS!!!
+	/*
+	 * Given an integer array of size n, find all elements that appear more than  n/3  times. The algorithm should run in linear time and in O(1) space.
+	 * https://leetcode.com/problems/majority-element-ii/description/
+	 * https://leetcode.com/problems/majority-element-ii/discuss/63500/JAVA-Easy-Version-To-Understand!!!!!!!!!!!!
+	 */
+	public static List<Integer>  findNumber(int[] nums){
+		List<Integer> result = new ArrayList<Integer>();
+		if(nums == null || nums.length == 0) return result;
+		int number1 = nums[0]; int count1 = 0;
+		int number2 = nums[0]; int count2 = 0;
+		
+		for(int i = 0; i < nums.length; i++){
+			if(nums[i] == number1){
+				count1++;
+			}else if(nums[i] == number2){
+				count2++;
+			}else if(count1 == 0){
+				number1 = nums[i];
+				count1 = 1;
+			}else if(count2 == 0){
+				number2 = nums[i];
+				count2 = 1;
+			}else{
+				count1--;
+				count2--;
+			}
+		}
+		
+		count1 = 0;
+		count2 = 0;
+		
+		for(int i = 0; i < nums.length; i++){
+			if(nums[i] == number1){
+				count1++;
+			}
+			if(nums[i] == number2){
+				count2++;
+			}			
+		}
+		if(count1 > nums.length/3)
+			result.add(number1);
+		if(count2 > nums.length/3)
+			result.add(number2);
+		
+		return result;
 	}
 }

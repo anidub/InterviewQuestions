@@ -2,6 +2,7 @@ package InterviewBit;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 /*Clone a two pointer linkedlist where one is next and other is random
 https://www.interviewbit.com/problems/copy-list/
 A linked list is given such that each node contains an additional random pointer which could point to any node in the list or NULL.

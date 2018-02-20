@@ -67,11 +67,13 @@ public class TreesFlattenBinaryTree {
 		TreeNode current = root;
 		while(current != null){
 			if(current.left != null){
+				
 				if(current.right != null){
 					TreeNode next = current.left;
 					while(next.right != null)next = next.right;
 					next.right = current.right;
 				}
+				
 				current.right = current.left;
 				current.left = null;
 			}

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import Tree.TreeNode;
+
 public class TreesSumRootToLeafNumbers {
 /*	Given a binary tree containing digits from 0-9 only, each root-to-leaf path could represent a number.
 	An example is the root-to-leaf path 1->2->3 which represents the number 123.
@@ -62,6 +64,20 @@ public class TreesSumRootToLeafNumbers {
 			}
 		}
 		return sum%MOD;
+	}
+		
+	/*
+	 * Recursive
+	 * https://leetcode.com/problems/sum-root-to-leaf-numbers/discuss/
+	 */
+	public static int getSumNumbers(TreeNode root) {
+		return getSum(root, 0);
+	}
+	
+	public static int getSum(TreeNode root, int sum){
+		if(root == null) return 0;
+		if(root.left == null && root.right == null) return sum * 10 + root.data;
+		return getSum(root.left, sum * 10 + root.data) + getSum(root.right, sum * 10 + root.data);
 	}
 	
 	/*This method does the above work but more importantly it is for

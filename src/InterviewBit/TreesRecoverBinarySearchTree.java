@@ -52,7 +52,7 @@ public class TreesRecoverBinarySearchTree {
 	  if(node.right != null) return isBSTUtil(node.right, node.data+1, max, x);  // Allow only distinct values
 	  return 1;
 	}	
-	 
+	
 //2nd method//works  time O(n) and uses O(h) spaces, where n is the number of nodes in the tree and h is the height of the tree	   
 //http://n00tc0d3r.blogspot.com/2013/05/recover-binary-search-tree.html	
 	public void recoverTree(TreeNode root) {

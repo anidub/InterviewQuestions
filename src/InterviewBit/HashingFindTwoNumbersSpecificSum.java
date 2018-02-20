@@ -51,8 +51,7 @@ public class HashingFindTwoNumbersSpecificSum {
 	             node.add(new Node(i + 1, index + 1));
 	         }	         
 	         hashMap.put(num, i);	         
-	     }
-	     
+	     }	     
 	     if (node.size() > 0) {
 	         Collections.sort(node);
 	            res.add(node.get(0).left);

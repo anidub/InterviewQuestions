@@ -62,6 +62,5 @@ public class StacksandQueuesMaxAreaHistogram {
             }
         }
         return maxArea;
-    }
-    
+    } 
 }

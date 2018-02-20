@@ -54,4 +54,15 @@ A = 6 5
 		}
 		return result;
 	}
+	
+	private static class ArrCont implements Comparable<ArrCont>{
+		int i;
+		public ArrCont(int i){
+			this.i = i;
+		}
+		public int compareTo(ArrCont o){
+			if(i < o.i) return -1;
+			else return 1;
+		}
+	}
 }

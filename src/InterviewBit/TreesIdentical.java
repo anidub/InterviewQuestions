@@ -70,5 +70,6 @@ public boolean sameTree(TreeNode A, TreeNode B) {//O(n)
 	    boolean isLeftSame = sameTree(A.left, B.left);
         boolean isRightSame = sameTree(A.right, B.right);
         return A.value==B.value && isLeftSame && isRightSame;   
-	}
+}
+
 }

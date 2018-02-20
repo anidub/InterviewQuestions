@@ -19,7 +19,8 @@ public class LinkedListReorder {
 		n.next.next.next.next.next = new LinkedListNode(5);
 		n.next.next.next.next.next.next = new LinkedListNode(6);
 		//LinkedListNode node = 
-		reorderLista(n); display(n);
+		//reorderLista(n); display(n);
+		reor(n);//display(n);
 	}
 public static LinkedListNode reorderList(LinkedListNode A) {	    
 	    if (A == null)  return null;	    
@@ -99,5 +100,46 @@ public static void display(LinkedListNode h){
 	while(h != null){
 		System.out.print("-->" + h.data); h = h.next;
 	}
+}
+
+//works
+public static void reor(LinkedListNode head){
+	LinkedListNode result = null;
+	if(head == null) return;
+	LinkedListNode current = head;
+	LinkedListNode slow = current; LinkedListNode fast = current;
+	while(fast.next != null && fast.next.next != null){
+		fast = fast.next.next;
+		slow = slow.next;
+	}
+	LinkedListNode rightNode = slow.next;
+	slow.next = null;
+	LinkedListNode rightRev = rev(rightNode);
+	LinkedListNode lefthead = head;
+	result = new LinkedListNode(0);
+	LinkedListNode node = result;
+	while(rightRev != null){
+		node.next = lefthead;
+		lefthead = lefthead.next;
+		node = node.next;
+		node.next = rightRev;
+		rightRev = rightRev.next;
+		node = node.next;
+	}
+	node.next = lefthead;
+	 display(result.next);
+	//return result.next;	
+}
+
+public static LinkedListNode rev(LinkedListNode head){
+	LinkedListNode prev = null; LinkedListNode current = head;
+	LinkedListNode node;
+	while(current != null){
+		node = current.next;
+		current.next = prev;
+		prev = current;
+		current = node;
+	}
+	return prev;
 }
 }

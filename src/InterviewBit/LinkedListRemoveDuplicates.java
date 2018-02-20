@@ -28,7 +28,7 @@ public class LinkedListRemoveDuplicates {
 		LinkedListNode result = removdDupSorted(n);
 	}
 	
-
+/*
 public static LinkedListNode removdDup(LinkedListNode n){
 	LinkedListNode head = n;
 	Hashtable ht = new Hashtable();
@@ -48,7 +48,7 @@ public static LinkedListNode removdDup(LinkedListNode n){
 		
 	}
 	return head;
-}
+}*/
 //when given linkedlist is sorted
 public static LinkedListNode removdDupSorted(LinkedListNode n){
 	TreeMap<Integer,Integer> ht = new TreeMap<Integer,Integer>();

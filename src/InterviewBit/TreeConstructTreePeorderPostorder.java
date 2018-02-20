@@ -48,5 +48,5 @@ Postorder and Level-order.*/
 		node.left = construct(preorder, postorder, start,i);
 		node.right = construct(preorder, postorder, i+1,end);
 		return node;
-	}
+	}	
 }

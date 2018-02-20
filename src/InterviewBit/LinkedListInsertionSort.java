@@ -32,7 +32,6 @@ Sort a linked list using insertion sort.
 		}
 		return dummy.next;
 	}
-	
 	  public static void display(LinkedListNode h){
 			while(h != null){
 				System.out.print("-->" + h.data); h = h.next;
