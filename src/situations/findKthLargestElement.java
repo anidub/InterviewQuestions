@@ -23,11 +23,10 @@ public class findKthLargestElement {
 	public static void main(String[] args) {
 		int[] arr = {3,2,1,5,6,4};
 		System.out.println(findKthLargest(arr,2));
-
 	}
 	
 	public static int findKthLargestMinHeap(int[] nums, int k) {
-	    PriorityQueue<ArrayContainer> q = new PriorityQueue<ArrayContainer>(k);//lowest first
+	    PriorityQueue<ArrayContainer> q = new PriorityQueue<ArrayContainer>(k+1);//lowest first
 	    for(int i: nums){
 	        q.offer((new ArrayContainer(i)));
 	 	 

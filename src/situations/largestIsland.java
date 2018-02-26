@@ -197,14 +197,16 @@ public static int calMax(int[][] matrix){
 	}
 	return maxarea;
 }
+
 public static void cal(int[][] mat, int i, int j){
-	 if(i<0 || j<0 || i>=m || j>=n) return;
+	if(i<0 || j<0 || i>=m || j>=n) return;
 	if(visited[i][j] == true) return;
 	if(mat[i][j] == 0){
-		visited[i][j] = false;
+		visited[i][j] = true;
 		return;
 	}
 	currentArea++;
+	visited[i][j] = true;
 	mat[i][j] = 0;
 	cal(mat, i+1, j);
 	cal(mat, i, j+1);

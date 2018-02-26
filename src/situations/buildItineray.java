@@ -39,8 +39,7 @@ public class buildItineray {
 		while(to != null){
 			System.out.println(start + "->" + to);
 			start = to;
-			to = tickets.get(to);
-			
+			to = tickets.get(to);			
 		}		
 	}
 

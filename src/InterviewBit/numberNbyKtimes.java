@@ -9,6 +9,12 @@ public class numberNbyKtimes {
 	You’re given a read only array of n integers. Find out if any integer occurs 
 	more than n/3 times in the array in linear time and constant additional space.
 	http://www.geeksforgeeks.org/given-an-array-of-of-size-n-finds-all-the-elements-that-appear-more-than-nk-times/ O(nlogn)
+	
+	
+	The basic idea is based on Moore’s Voting Algorithm, we need two candidates with top 2 frequency.
+	 If meeting different number from the candidate, then decrease 1 from its count, or increase 1 on the opposite condition.
+	  Once count equals 0, then switch the candidate to the current number.
+	 The trick is that we need to count again for the two candidates after the first loop. Finally, output the numbers appearing more than n/3 times.
 */	
 
 //USE THIS// TIME COMPLEXITY : o(n) Space complexity : O(1)	

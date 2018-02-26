@@ -50,4 +50,5 @@ public static ArrayList<ArrayList<Integer>> generate(int numRows) {
 	} 
 	return result;
 }
+
 }

@@ -38,8 +38,8 @@ index = 8
 				System.out.println("No solution exists.");
 			}
 		}
-		
-		public static int find(int[] array, int startArray, int[] subArray, int startSubArray){
+	 
+	public static int find(int[] array, int startArray, int[] subArray, int startSubArray){
 			if(startSubArray == subArray.length)return startArray-1;
 			if(subArray.length - startSubArray > array.length - startArray )return -1;
 			if(array[startArray] == subArray[startSubArray]){
@@ -47,5 +47,5 @@ index = 8
 			}else{
 				return find(array,startArray+1,subArray,startSubArray);
 			}
-		}
+	}
 }

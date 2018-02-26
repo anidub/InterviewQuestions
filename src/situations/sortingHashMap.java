@@ -34,8 +34,6 @@ public class sortingHashMap {
 		
 		for(String s : lm.keySet()){
 			System.out.println(s);
-		}
-		
+		}		
 	}
-
 }

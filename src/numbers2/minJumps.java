@@ -12,24 +12,52 @@ public class minJumps {
 		 System.out.println(jump(arr));
 	}
 
-	public static int jump(int[] A){ //O(n)
-		if(A.length  <= 1) return 0;
+	public static int jump(int[] A) { // O(n)
+		if (A.length <= 1)
+			return 0;
 		int ladder = A[0];
 		int stairs = A[0];
 		int jump = 1;
-		for(int level = 1; level < A.length; level++){
-			if(level == A.length -1) return jump;
+		for (int level = 1; level < A.length; level++) {
+			if (level == A.length - 1)
+				return jump;
 			int k = A[level];
-			if(level + A[level] > ladder) 
+			if (level + A[level] > ladder)
 				ladder = level + A[level];
 			stairs--;
-			if(stairs == 0){
+			if (stairs == 0) {
 				jump++;
 				stairs = ladder - level;
 			}
 		}
-		return jump;	
-}	
+		return jump;
+	}	
+	
+	// use this O(n)
+	public static int minJumps(int[] arr){
+		if(arr == null || arr.length == 0) return -1;
+		int maxReach = arr[0];
+		int steps = maxReach; 
+		int jump = 1;
+		
+		for(int i = 1; i < arr.length; i++){
+			if(i == arr.length - 1) return jump;
+			
+			maxReach = Math.max(maxReach, i+arr[i]);
+			steps--;
+			
+			if(steps == 0){
+				jump++;
+				
+				//Check if the current index/position  or lesser index is the maximum reach point from the previous indexes
+				if(i >= maxReach) return -1;	
+				
+				// re-initialize the steps to the amount of steps to reach maxReach from position i.
+				steps = maxReach - 1;
+			}
+		}
+		return -1;
+	}
 	
 	public static  int min(int x, int y) { return (x < y)? x: y; }
 	 

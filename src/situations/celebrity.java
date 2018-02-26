@@ -10,15 +10,13 @@ public class celebrity {
             System.out.println("Celebrity found: " + celeb);
         } else
             System.out.println("Celebrity not found");
-
 	}
 	
 	static int findCandidate() {
         int celeb = 0;
         for (int i = 1; i < SIZE; i++) {
             // if celeb knows i, celeb can't be the candidate.
-            if (haveAcquaintance(celeb, i)) { // if true then set to i
-               
+            if (haveAcquaintance(celeb, i)) { // if true then set to i               
             	celeb = i;
             }
         }
