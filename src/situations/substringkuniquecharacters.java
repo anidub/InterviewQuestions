@@ -1,6 +1,8 @@
 package situations;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 //Find the longest substring with k unique characters in a given string
 //O(N)
 public class substringkuniquecharacters {
@@ -175,4 +177,5 @@ public static void getSubString(String s,int k){
         System.out.println("Not enough chars");
     else System.out.println(str);
 }
+
 }

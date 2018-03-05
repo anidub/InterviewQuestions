@@ -10,6 +10,9 @@ public class validparenthesis {
         System.out.println(balancedParenthensies("{)(a,b}"));
 
 	}
+	/*
+	 * in order to scale and make it extensible.use hashmap and set
+	 */
 		public static boolean balancedParenthensies(String s){
 				Stack<Character> stack = new Stack<Character>();
 				

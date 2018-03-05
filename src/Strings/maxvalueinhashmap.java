@@ -6,8 +6,7 @@ import java.util.Map.Entry;
 
 public class maxvalueinhashmap {
 	
-	    public static void main(String[] args)
-	    {
+	    public static void main(String[] args) {
 	        HashMap<Integer,Integer>map=new HashMap<Integer, Integer>();
 	        map.put(1, 50);
 	        map.put(2, 60);

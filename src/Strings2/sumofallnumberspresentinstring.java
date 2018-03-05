@@ -53,7 +53,7 @@ public class sumofallnumberspresentinstring {
 			if (inputStr.charAt(i) >= '0' && inputStr.charAt(i) <= '9' || inputStr.charAt(i) == '-') {
 				currString = currString + inputStr.charAt(i);
 				i++;
-			} else {
+			}else {
 				if (currString != "") {
 					sum = sum + Integer.parseInt(currString);
 					currString = "";

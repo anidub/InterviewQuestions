@@ -15,7 +15,7 @@ public class sourcepattern {
 	}
 	
 	public static boolean find(String source, String pattern){
-		for(int i = 0; i < source.length() - pattern.length(); i++){
+		for(int i = 0; i < source.length(); i++){
 			boolean found = true;
 			for(int f = 0; f < pattern.length(); f++){
 				char s = source.charAt(i+f);

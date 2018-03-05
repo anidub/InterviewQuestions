@@ -14,5 +14,4 @@ public class stringpalindrome {
 		}else
 			System.out.println("Not palindrome");
 	}
-
 }

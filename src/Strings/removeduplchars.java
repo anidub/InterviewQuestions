@@ -24,5 +24,4 @@ public class removeduplchars {
 		System.out.println(sb.toString());
 		//System.out.print(c);
 	}
-
 }

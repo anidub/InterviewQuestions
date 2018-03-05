@@ -33,8 +33,6 @@ public class reverseorderofwords {
 		sb.append(array[0]);
 		if(hasperiod)
 			sb.append(".");
-			return sb.toString();	
-						
-	}
-	
+			return sb.toString();							
+	}	
 }
