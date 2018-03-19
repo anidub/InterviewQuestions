@@ -31,7 +31,7 @@ public class LongestContinguous {
 				if(set.contains(arr[j]))
 					break;
 				
-				// Else add curremt element to hash set and update min, max if required.
+				// Else add current element to hash set and update min, max if required.
 				set.add(arr[j]);
 				max = Math.max(max, arr[j]);
 				min = Math.min(min, arr[j]);

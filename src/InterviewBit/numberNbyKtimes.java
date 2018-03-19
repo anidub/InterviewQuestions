@@ -16,7 +16,12 @@ public class numberNbyKtimes {
 	  Once count equals 0, then switch the candidate to the current number.
 	 The trick is that we need to count again for the two candidates after the first loop. Finally, output the numbers appearing more than n/3 times.
 */	
-
+public static void main (String[] args){
+		int[] arr = {4, 2, 2, 7};
+		System.out.println(getNByK(arr,arr.length));
+		//int[] num = new int[2];
+		//moreThanNdK(arr,arr.length,3);
+}
 //USE THIS// TIME COMPLEXITY : o(n) Space complexity : O(1)	
 public static List<Integer> getNByK(int[] nums, int k){
 	List<Integer> result = new ArrayList<Integer>();
@@ -72,12 +77,7 @@ public static class eleCount{
 	}
 }
 
-	public static void main (String[] args){
-		int[] arr = {0,1,4,1,4,1,4,2,5,8,9};
-		//System.out.println(find(arr));
-		int[] num = new int[2];
-		moreThanNdK(arr,arr.length,3);
-	}
+	
 	
 public static  int find(int[] arr){
 	int l = arr.length;

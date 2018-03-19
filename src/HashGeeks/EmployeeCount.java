@@ -1,11 +1,14 @@
 package HashGeeks;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 /*
+ * https://www.geeksforgeeks.org/find-number-of-employees-under-every-manager/
  * Find number of Employees Under every Employee
 3.7
 Given a dictionary that contains mapping of employee and his manager as a number of (employee, manager) pairs like below.
@@ -44,7 +47,7 @@ of C and so on.
  */
 public class EmployeeCount {
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		Map<String, String> dataSet = new HashMap<String, String>();
         dataSet.put("A", "C");
         dataSet.put("B", "C");
@@ -55,10 +58,11 @@ public class EmployeeCount {
         getCount(dataSet);
         System.out.println("result = " + result);
 
-	}
+	}*/
 	static HashMap<String, Integer> result = new HashMap<String, Integer>();
 	
 	public static void getCount(Map<String, String> dataSet){
+		//key -> manager, value -> list of employees
 		HashMap<String, List<String>> managerEmpMap = new HashMap<String, List<String>>();
 		
 		for(Entry<String, String> entry : dataSet.entrySet()){
@@ -99,4 +103,63 @@ public class EmployeeCount {
 		}
 		return count;		
 	}
+	
+
+    
+
+    public static void main (String[] args) throws java.lang.Exception {
+        packages = new HashMap<String, String[]>();
+        packages.put("X", new String[] {"A", "E", "C"});
+        packages.put("A", new String[] {"E", "H", "Y"});
+        packages.put("E", new String[] {"B", "Z", "Y"});
+        packages.put("C", new String[] {});
+        packages.put("H", new String[] {});
+        packages.put("B", new String[] {"A"});
+        packages.put("Y", new String[] {});
+        System.out.println(Arrays.toString(requiredPackages("X")));
+    }
+    
+   // private static HashMap<String, String[]> packages;
+
+    //private static HashSet<String> result = new HashSet<String>();  
+/*    public static String[] requiredPackages(String p) {
+      if(p == null || p.length() == 0 || !packages.containsKey(p))
+        return null;
+      String[] child = packages.get(p);
+      HashSet<String> ancestors = new HashSet<String>();;
+      for(int i = 0; i < child.length; i++){
+    	result.add(child[i]);
+    	 String s = child[i];
+        ancestors.add(child[i]);
+        getDependency(ancestors, child[i]);
+      }
+      String[] resultArray = new String[result.size()];   
+      int index = 0;
+      for(String s : result){
+        resultArray[index] = s;
+        index++;
+      }
+      return resultArray;
+    }*/
+  
+  //AE//E
+   /* public static void getDependency(HashSet<String> ancestors,String letter) {//Set//A
+      if(letter == null)
+        return;
+      if(!packages.containsKey(letter)) return;
+        //throw "Error";
+      ancestors.add(letter);
+      String[] child = packages.get(letter);//EHY//BZY
+      for(int i = 0; i < child.length; i++){
+    	  String s = child[i];
+    	  if(!result.contains(child[i]) && !ancestors.contains(child[i])){
+         result.add(child[i]);//E
+          //ancestors.add(child[i]);//E
+          getDependency(ancestors,child[i]);
+        }else if(ancestors.contains(child[i])){
+          return;
+          //throw "Circular dependecny error";
+        }
+      }
+    }*/
 }

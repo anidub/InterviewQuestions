@@ -24,22 +24,20 @@ public class searchinrotatedarray {
 		
 		/* If arr[l...mid] is sorted */
 		if(numbers[low] <= numbers[mid]){
-			 /* As this subarray is sorted, we can quickly
-	           check if key lies in half or other half */
+			 /* As this subarray is sorted, we can quickly  check if key lies in half or other half */
 			if(key >= numbers[low] && key <= numbers[mid])
 				return search(numbers, low, mid - 1, key);
 				
 				return search(numbers,mid+1,high,key); 				
 		}
-		 /* If arr[l..mid] is not sorted, then arr[mid... r]
-	       must be sorted*/
+		 /* If arr[l..mid] is not sorted, then arr[mid... r]  must be sorted*/
 		if(key >= numbers[mid] && key <= numbers[high])
 			return search(numbers,mid+1, high,key);
 			
 			return search(numbers,low,mid-1,key);		
 	}
-/*	http://www.programcreek.com/2014/06/leetcode-search-in-rotated-sorted-array-java/
-*/	public static int getIndexIterative(int[] num, int key){
+/*	http://www.programcreek.com/2014/06/leetcode-search-in-rotated-sorted-array-java/*/
+	public static int getIndexIterative(int[] num, int key){
 		int low = 0; int high = num.length-1;
 		
 		while(low <= high){
