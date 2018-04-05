@@ -41,7 +41,7 @@ public class TreesIdentical {
 			Queue<TreeNode> queue1 = new LinkedList<TreeNode>();
 			Queue<TreeNode> queue2 = new LinkedList<TreeNode>();			
 			queue1.add(root1);queue2.add(root2);			
-			while(!queue1.isEmpty()&& !queue1.isEmpty()){				
+			while(!queue1.isEmpty()&& !queue2.isEmpty()){				
 				TreeNode tempNode1 = queue1.poll();
 				TreeNode tempNode2 = queue2.poll();					
 					if(tempNode1.value==tempNode2.value){

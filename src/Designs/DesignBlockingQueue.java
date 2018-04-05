@@ -38,7 +38,6 @@ public class DesignBlockingQueue {
 				notifyAll();
 			}
 			return this.queue.remove(0);
-		}
-		
+		}		
 	}
 }

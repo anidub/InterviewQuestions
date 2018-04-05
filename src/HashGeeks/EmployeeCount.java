@@ -108,7 +108,7 @@ public class EmployeeCount {
     
 
     public static void main (String[] args) throws java.lang.Exception {
-        packages = new HashMap<String, String[]>();
+    	HashMap packages = new HashMap<String, String[]>();
         packages.put("X", new String[] {"A", "E", "C"});
         packages.put("A", new String[] {"E", "H", "Y"});
         packages.put("E", new String[] {"B", "Z", "Y"});
@@ -116,12 +116,28 @@ public class EmployeeCount {
         packages.put("H", new String[] {});
         packages.put("B", new String[] {"A"});
         packages.put("Y", new String[] {});
-        System.out.println(Arrays.toString(requiredPackages("X")));
+        requiredPackages1("X",packages);
+        System.out.println(result1);
+        //System.out.println(Arrays.toString(requiredPackages("X")));
+    }   	
+    private static HashSet<String> result1 = new HashSet<String>();  
+    public static void requiredPackages1(String x,HashMap<String, String[]> packages){
+    	if(!packages.containsKey(x)) {System.out.println("does not contain");return;}
+    	String[] elements = packages.get(x);
+    	for(String s : elements){
+    		if(!packages.containsKey(x)) System.out.println("does not contain");
+    		if(!result1.contains(s)){
+    			result1.add(s);
+    			requiredPackages1(s, packages);
+    		}else{
+    			System.out.println("cyclic dependency error");
+    		}
+    	}    	
     }
     
    // private static HashMap<String, String[]> packages;
 
-    //private static HashSet<String> result = new HashSet<String>();  
+  
 /*    public static String[] requiredPackages(String p) {
       if(p == null || p.length() == 0 || !packages.containsKey(p))
         return null;

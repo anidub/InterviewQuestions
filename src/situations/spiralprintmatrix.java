@@ -8,7 +8,6 @@ public class spiralprintmatrix {
 		System.out.println();
 		int[][] matrix = {{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
 		printInsideOut(matrix);
-
 	}
 	
 	public static void print(int[][] matrix){
@@ -89,6 +88,5 @@ public class spiralprintmatrix {
 			right = right + 2;
 			up = up - 2;
 		}
-
 	}
 }

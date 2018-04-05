@@ -39,7 +39,7 @@ Auxiliary Space: O(1)
 				if(arr[j] == 0)
 					sum += -1;  
 				else
-						sum += 1;
+					sum += 1;
 				
 				if(sum == 0 && maxsize < j-i+1){
 					maxsize = j-i+1;
