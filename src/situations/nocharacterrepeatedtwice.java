@@ -24,9 +24,7 @@ public class nocharacterrepeatedtwice {
 		StringBuilder res = new StringBuilder();
 		for (int i = 0; i < s.length(); i++) {
 			char c = s.charAt(i);
-			if (!map.containsKey(c))
-				map.put(c, 0);
-			map.put(c, map.get(c) + 1);
+			map.put(c, map.getOrDefault(map.get(c), 0) + 1);
 		}
 
 		PriorityQueue<CharFreq> PQ = new PriorityQueue<CharFreq>(new Comparator<CharFreq>()	{
@@ -74,11 +72,7 @@ public class nocharacterrepeatedtwice {
 		HashMap<Character, Integer> hmap = new HashMap<Character, Integer>();
 		for (int i = 0; i < a.length(); i++) {
 			char c = a.charAt(i);
-			if (hmap.containsKey(c)) {
-				hmap.put(c, hmap.get(c) + 1);
-			} else {
-				hmap.put(c, 1);
-			}
+				hmap.put(c, hmap.getOrDefault(hmap.get(c), 0) + 1);
 		}
 
 		for (Entry<Character, Integer> entry : hmap.entrySet()) {

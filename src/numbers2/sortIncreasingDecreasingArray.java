@@ -31,6 +31,7 @@ public class sortIncreasingDecreasingArray {
 				low = mid + 1;
 			}
 		}
+		
 		int i = 0;
 		while(i < pivot){
 			result.add(arr[i]);

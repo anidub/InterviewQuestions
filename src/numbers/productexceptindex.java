@@ -1,7 +1,7 @@
 package numbers;
 
 public class productexceptindex {
-
+//if one zero then all elements zero except that. if two zero than all zeros
 	public static void main(String[] args) {
 		int[] num = {1,2,3};
 		int[] product = new int[num.length];

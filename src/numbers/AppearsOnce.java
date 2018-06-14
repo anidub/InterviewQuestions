@@ -17,6 +17,8 @@ public class AppearsOnce {
 	}
 	
 	//Time complexity : O(n) Space: O(n)
+	//Mathematical Equation = ( 3*(a+b+c+d) – (a + a + a + b + b + b + c + c + c + d) ) / 2
+//In more simple words: ( 3*(sum_of_array_without_duplicates) – (sum_of_array) ) / 2
 	public static int apearsOnce(int[] arr){
 		HashSet<Integer> set = new HashSet<Integer>();
 		int thriceSum = 0;

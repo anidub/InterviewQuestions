@@ -91,20 +91,22 @@ boolean isSafe(int maze[][], int x, int y){
  return (x >= 0 && x < N && y >= 0 &&  y < N && maze[x][y] == 1);
 }
  
- public  boolean check(int[][] matrix,int x, int y){
-if(x == N-1 && y == N-1 && matrix[N-1][N-1] == 1){
-	//sol[x][y] = 1;
-	return true;
-}	
-if(isSafe(matrix,y,x)){
-	//sol[x][y] = 1;
-	
-	if(check(matrix, x, y+1)) return true;
-	if(check(matrix, x+1, y)) return true;
-	
-	//sol[x][y] = 0;
-	return false;
-}
-return false;
- }
+	public boolean check(int[][] matrix, int x, int y) {
+		if (x == N - 1 && y == N - 1 && matrix[N - 1][N - 1] == 1) {
+			// sol[x][y] = 1;
+			return true;
+		}
+		if (isSafe(matrix, y, x)) {
+			// sol[x][y] = 1;
+
+			if (check(matrix, x, y + 1))
+				return true;
+			if (check(matrix, x + 1, y))
+				return true;
+
+			// sol[x][y] = 0;
+			return false;
+		}
+		return false;
+	}
 }

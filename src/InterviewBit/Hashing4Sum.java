@@ -1,7 +1,8 @@
-package InterviewBit;
+	package InterviewBit;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 
 public class Hashing4Sum {
@@ -11,15 +12,57 @@ Given array S = {1 0 -1 0 -2 2}, and target = 0
 A solution set is:
 (-2, -1, 1, 2)
 (-2,  0, 0, 2)
-(-1,  0, 0, 1)//O(n2)
+(-1,  0, 0, 1)//O(n3)
 https://www.interviewbit.com/problems/4-sum/
 */	public static void main(String[] args) {
 		int[] arr = {1, 0, -1, 0, -2, 2};
 		ArrayList<Integer> num = new ArrayList<Integer>();
-		num.add(1);num.add(0);num.add(-1);num.add(0);num.add(-2);
-		num.add(2);		
-		fourSum(num,0);
+		//num.add(1);num.add(0);num.add(-1);num.add(0);num.add(-2);num.add(2);
+		num.add(10);num.add(20);num.add(30);num.add(40);num.add(1);num.add(2);//10, 20, 30, 40, 1, 2
+		fourSumBetter(num,91);
 	}
+
+//O(N2)//use this!!!
+	public static ArrayList<Integer> fourSumBetter(ArrayList<Integer> arr, int target) {
+		//Collections.sort(A);
+	    ArrayList<Integer> result = new ArrayList<Integer>();
+	    HashMap<Integer, pair> map = new HashMap<Integer, pair>();
+	    for(int i = 0; i < arr.size(); i++){
+	    	for(int j = i + 1; j < arr.size(); j++){
+	    		int sum = arr.get(i) + arr.get(j);
+	    		map.put(sum, new pair(arr.get(i), arr.get(j)));
+	    	}
+	    }
+	    
+	    for(int i = 0; i < arr.size(); i++){
+	    	for(int j = i+1; j < arr.size(); j++){
+	    		int currentsum = arr.get(i) + arr.get(j);
+	    		if(map.containsKey(target - currentsum)){
+	    			pair pair = map.get(target- currentsum);
+	    			if(pair.x != arr.get(i) && pair.y != arr.get(j)
+	    					&& pair.x != arr.get(j) && pair.y != arr.get(i)){
+	    				result.add(pair.x);
+	    				result.add(pair.y);
+	    				result.add(arr.get(i));
+	    				result.add(arr.get(j));
+	    				System.out.println(result);
+	    				return result;
+	    			}
+	    		}
+	    	}
+	    }
+		return result;
+	}
+	
+	static class pair{
+		int x;
+		int y;
+		public pair(int x, int y){
+			this.x = x;
+			this.y = y;
+		}
+	}
+	
 	
 	public static ArrayList<ArrayList<Integer>> fourSum(ArrayList<Integer> A, int target) {
 		Collections.sort(A);
@@ -57,5 +100,9 @@ https://www.interviewbit.com/problems/4-sum/
 			}
 		}	 
 		return result;
-	}	
+	}
+	
+	
+	
+	
 }

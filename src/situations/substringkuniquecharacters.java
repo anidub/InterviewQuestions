@@ -137,6 +137,7 @@ public static void main (String[] args) throws java.lang.Exception{
 			int k=3;
 			kUniques(s,k);
 			getSubString(s,k);
+			getSubStringSet(s,k);
 }
 
 
@@ -177,5 +178,35 @@ public static void getSubString(String s,int k){
         System.out.println("Not enough chars");
     else System.out.println(str);
 }
+
+	//uses set
+	public static void getSubStringSet(String s, int k) {
+		int length = s.length();
+		HashSet<Character> set = new HashSet<Character>();
+		int maxWindowSize = Integer.MIN_VALUE;
+		String str = null;
+		int start = 0;
+		for (int i = 0; i < length; i++) {
+			char c = s.charAt(i);
+			if (!set.contains(c)) {
+				set.add(c);
+			}
+			if (set.size() > k) {
+				while (set.size() > k && set.contains(s.charAt(start))) {
+					set.remove(s.charAt(start));
+					start++;
+				}
+			} else if (set.size() == k) {
+				if (maxWindowSize < i - start + 1) {
+					maxWindowSize = i - start + 1;
+					str = s.substring(start, i + 1);
+				}
+			}
+		}
+		if (set.size() < k)
+			System.out.println("Not enough chars");
+		else
+			System.out.println(str);
+	}
 
 }

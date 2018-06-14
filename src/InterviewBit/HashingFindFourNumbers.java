@@ -104,7 +104,7 @@ public static boolean overlaps(Node n1, Node n2) {
     return false;
 }
 
-class Node {
+static class Node {
     int i, j;    
     public Node(int i, int j) {
         this.i = i;
